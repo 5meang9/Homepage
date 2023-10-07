@@ -31,9 +31,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d public"
+    "deploy": "gh-pages -d build"
   },
-  "homepage": "https://5meang9.github.io/Homepage/",
+  "homepage": "https://5meang9.github.io/Homepage",
   "eslintConfig": {
     "extends": [
       "react-app",
