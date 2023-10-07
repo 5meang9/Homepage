@@ -1,0 +1,83 @@
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 2;
+  // background-color: #dde0ea;
+}
+
+.contents{
+  // display: flex;
+  width: 96%;
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+// .videoWrap{
+//   position: absolute;
+//   top: 0px;
+// }
+
+.headerMainWrapper{
+  display: flex;
+  width: 96%;
+  max-width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 11;
+}
+
+.navigation{
+  position: relative;
+  cursor: pointer;
+  ul{
+    display: flex;
+    list-style: none;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+  
+  li+li{
+    margin-left: 40px;
+  }
+}
+
+// 다른 컴포넌트 hover 시, 하위 hover안됨
+
+.nav1:hover{
+  color: red;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  .hippo{
+    width: 100%;
+    height: 100%;
+  }
+  img {
+    width: 100%;
+  }
+}
+
+.headerTitle{
+  color: #ffffff;
+}
+
+.headerEtc{
+  ul{
+    display: flex;
+    margin: 0 !important;
+  }
+  ul li {
+    list-style: none;
+    margin-right: 10px;
+  }
+}

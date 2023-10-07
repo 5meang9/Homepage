@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+import RoutesSetup from './routes/RoutesSetup';
 
 // function App() {
 //   return (
@@ -26,8 +28,10 @@ import './App.css';
 // export default App;
 
 const App = () => {
-  return (
-    <h1>GitHub Pages로 리액트 프로젝트 배포</h1>
+  return ( 
+    <BrowserRouter >
+      <RoutesSetup />
+    </BrowserRouter>
   );
 };
 export default App;
