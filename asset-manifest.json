@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Homepage/static/css/main.8133e68c.css",
+    "main.js": "/Homepage/static/js/main.a16ada01.js",
+    "static/js/787.5c39024c.chunk.js": "/Homepage/static/js/787.5c39024c.chunk.js",
+    "static/media/aguafina-script-latin-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-400-normal.c19a0f6a7e95b8400940.woff",
+    "static/media/aguafina-script-latin-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-400-normal.b8fb29f7ceab55903c2f.woff2",
+    "static/media/aguafina-script-latin-ext-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.0f8e4a9bc714f266a2e2.woff",
+    "static/media/aguafina-script-latin-ext-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.695e4b0c3c7b5f50d9c4.woff2",
+    "index.html": "/Homepage/index.html",
+    "main.8133e68c.css.map": "/Homepage/static/css/main.8133e68c.css.map",
+    "main.a16ada01.js.map": "/Homepage/static/js/main.a16ada01.js.map",
+    "787.5c39024c.chunk.js.map": "/Homepage/static/js/787.5c39024c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8133e68c.css",
+    "static/js/main.a16ada01.js"
+  ]
+}
