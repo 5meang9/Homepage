@@ -8,7 +8,7 @@ export default function Board(){
       <div className='board-item-wrap'>
         <div className='board-item-img'>
           <Badge pill bg="primary">ssss</Badge>
-          <img src="/images/monsterKill.png" alt="" />
+          <img src="images/monsterKill.png" alt="" />
         </div>
         <div className='board-item-contents'>
           <p></p>
