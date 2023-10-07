@@ -21,7 +21,7 @@ export default function Board(){
           <p className='board-item-period'>개발기간 · 2015.11.01 ~ 2015.11.30</p>
           <p className='board-item-title'>
             <img src="images/Python-logo-notext.svg.png"/>
-             GUI 설계기법(게임 만들기)
+             <span> GUI 설계기법(게임 만들기)</span>
           </p>
         </div>
       </div>

@@ -2,6 +2,9 @@ import '../styles/Home.scss'
 import TypingFont from '../component/TypingFont'
 import '@fontsource/aguafina-script';
 import Board from '../component/Board';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Home(){
   
@@ -14,6 +17,18 @@ export default function Home(){
         <div className='text-collection'>
           <p>Hello World!</p>
           <TypingFont TyingContents='Thank you for visiting my page.'/>
+          <div className="text-center">
+          <div className='scroll-btn'>
+            <span className="mouse">
+              <span></span>
+            </span>
+          </div>
+          <a href="#firstSection">
+            <div className="link-arrow-bounce">
+              <FontAwesomeIcon icon={faChevronDown} bounce style={{color: "#000",}} />
+            </div>
+          </a>
+          </div>
         </div>
       </div>
       <div className='profile-wrap'>
