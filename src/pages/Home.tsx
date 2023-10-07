@@ -1,7 +1,7 @@
 import '../styles/Home.scss'
 import TypingFont from '../component/TypingFont'
 import '@fontsource/aguafina-script';
-
+import Board from '../component/Board';
 
 export default function Home(){
   
@@ -18,6 +18,7 @@ export default function Home(){
       </div>
       <div className='profile-wrap'>
         <div className='profile-title'>Profile~</div>
+        <Board/> 
       </div>
     </div>
   )
