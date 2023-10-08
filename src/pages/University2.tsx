@@ -5,9 +5,9 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 export default function University2(){
   return (
     <>
-      <section id="article-header">
+      <section id="article-header1">
         <div className='article-header-wrap'>
-          <div id="article_h1">온라인 쇼핑몰 제작 👛</div>
+          <div id="article_h1" style={{color:'#000'}}>온라인 쇼핑몰 제작 👛</div>
           <div className="text-center">
             <div className='scroll-btn'>
               <span className="mouse">
