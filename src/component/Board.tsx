@@ -4,6 +4,7 @@ import '../styles/Board.scss';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { BrowserRouter, Routes, Route, Router, Link } from "react-router-dom";
 
 export default function Board(){
   useEffect(() => {
@@ -13,7 +14,7 @@ export default function Board(){
   return(
     <div className='board-container'>
       <div className='board-item-wrap' data-aos="fade-up">
-        <a href='/University/1'>
+        <Link to="University">
           <div className='board-item-img'>
             <img src="images/monsterKill.png" alt="" />
           </div>
@@ -25,7 +26,7 @@ export default function Board(){
               <span> GUI 설계기법(게임 만들기)</span>
             </p>
           </div>
-        </a>
+        </Link>
       </div>
       <div className='board-item-wrap' data-aos="fade-up">
         <div className='board-item-img'>
