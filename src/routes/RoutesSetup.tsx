@@ -7,7 +7,7 @@ export default function RoutesSetup(){
   return(
       <Routes>
         <Route path="/Homepage" element={<HomePage />}></Route>
-        <Route path="/University/1" element={<University1 />}></Route>
+        <Route path="/Homepage/University/1" element={<University1 />}></Route>
       </Routes>
   )
 }
