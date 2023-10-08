@@ -1,0 +1,197 @@
+#article-header{
+  filter: saturate(180%);
+  width: 100vw !important;
+  margin-left: calc(((100vw - 100%) / 2) * -1) !important;
+  height: 550px !important;
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% -175px;
+  background-image: url("../../public/images/terrain_atlas.png");
+  background-color: #000;
+  --thumbnail-blur: 0px;
+}
+.article-header-wrap{
+  text-align: center;
+  font-family: NanumGothic;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#article_h1{
+  font-family: NanumGothic;
+  font-size: 44px;
+  color: #fff;
+}
+
+
+.hero-waves {
+  display: block;
+  width: 100%;
+  height: 60px;
+  z-index: 5;
+  position: absolute;
+  right: 0;
+  top: 490px;
+}
+@media screen and (min-width: 1700px) {
+  .hero-waves {
+      height: 70px;
+  }
+}
+
+.wave1 use {
+  fill: rgba(255, 255, 255, 0.1);
+
+  -webkit-animation: move-forever1 10s linear infinite;
+  animation: move-forever1 10s linear infinite;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+
+.wave2 use {
+  fill: rgba(255, 255, 255, 0.2);
+
+  -webkit-animation: move-forever2 8s linear infinite;
+  animation: move-forever2 8s linear infinite;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+
+.wave3 use {
+  fill: rgba(255, 255, 255, 1);
+
+  -webkit-animation: move-forever3 6s linear infinite;
+  animation: move-forever3 6s linear infinite;
+  -webkit-animation-delay: -2s;
+  animation-delay: -2s;
+}
+
+@-webkit-keyframes move-forever1 {
+  0% {
+      transform: translate(85px, 0%);
+  }
+
+  100% {
+      transform: translate(-90px, 0%);
+  }
+}
+
+@keyframes move-forever1 {
+  0% {
+      transform: translate(85px, 0%);
+  }
+
+  100% {
+      transform: translate(-90px, 0%);
+  }
+}
+
+@-webkit-keyframes move-forever2 {
+  0% {
+      transform: translate(-90px, 0%);
+  }
+
+  100% {
+      transform: translate(85px, 0%);
+  }
+}
+
+@keyframes move-forever2 {
+  0% {
+      transform: translate(-90px, 0%);
+  }
+
+  100% {
+      transform: translate(85px, 0%);
+  }
+}
+
+@-webkit-keyframes move-forever3 {
+  0% {
+      transform: translate(-90px, 0%);
+  }
+
+  100% {
+      transform: translate(85px, 0%);
+  }
+}
+
+@keyframes move-forever3 {
+  0% {
+      transform: translate(-90px, 0%);
+  }
+
+  100% {
+      transform: translate(85px, 0%);
+  }
+}
+
+
+.scroll-btn .mouse {
+  position: relative;
+  display: block;
+  width: 35px;
+  height: 55px;
+  margin: 0 auto 18px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  border-radius: 23px;
+  opacity: 0.75;
+  z-index: 1;
+}
+.scroll-btn > * {
+  display: inline-block;
+  line-height: 18px;
+  font-size: 13px;
+  font-weight: normal;
+  color: #7f8c8d;
+  color: #000;
+  letter-spacing: 2px;
+}
+.scroll-btn {
+  display: block;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.scroll-btn .mouse > * {
+  position: absolute;
+  display: block;
+  top: 29%;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background-color: #fff;
+  border-radius: 50%;
+  animation: ani-mouse 2.5s linear infinite;
+}
+
+@keyframes ani-mouse{
+  0% {
+    opacity: 1;
+    transform: translate(0, 29%);
+  }
+  15% {
+    opacity: 1;
+    transform: translate(0, 150%);
+  } 
+  50% {
+    opacity: 0;
+    transform: translate(0, 150%);
+  }
+  100% {
+      opacity: 0;
+      transform: translate(0, 29%);
+  }
+}
+
+.text-center{
+  margin-top: 35px;
+}
