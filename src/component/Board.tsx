@@ -29,14 +29,19 @@ export default function Board(){
         </Link>
       </div>
       <div className='board-item-wrap' data-aos="fade-up">
-        <div className='board-item-img'>
-          <img src="" alt="" />
-        </div>
-        <Badge pill bg="primary">2학년</Badge>
-        <div className='board-item-contents'>
-          <p></p>
-          <p className='board-item-title'></p>
-        </div>
+        <Link to="University/2">
+          <div className='board-item-img'>
+            <img src="images/shoppingMall.png" alt="" />
+          </div>
+          <Badge pill bg="primary">2학년</Badge>
+          <div className='board-item-contents'>
+            <p className='board-item-period'>개발기간 · 2016.09.01 ~ 2016.09.30</p>
+            <p className='board-item-title'>
+              <img src="images/webLogo1.png"/>
+              <span> 온라인 쇼핑몰 제작</span>
+            </p>
+          </div>
+        </Link>
       </div>
       <div className='board-item-wrap' data-aos="fade-up">
         <div className='board-item-img'>
