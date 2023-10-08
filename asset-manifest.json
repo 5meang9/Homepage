@@ -1,20 +1,15 @@
 {
   "files": {
-    "main.css": "/Homepage/static/css/main.55ad8017.css",
-    "main.js": "/Homepage/static/js/main.c6f28bef.js",
+    "main.css": "/Homepage/static/css/main.073c9b0a.css",
+    "main.js": "/Homepage/static/js/main.b67ac2fe.js",
     "static/js/787.5c39024c.chunk.js": "/Homepage/static/js/787.5c39024c.chunk.js",
-    "static/media/terrain_atlas.png": "/Homepage/static/media/terrain_atlas.5e05e0a69888e0c35adb.png",
-    "static/media/aguafina-script-latin-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-400-normal.c19a0f6a7e95b8400940.woff",
-    "static/media/aguafina-script-latin-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-400-normal.b8fb29f7ceab55903c2f.woff2",
-    "static/media/aguafina-script-latin-ext-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.0f8e4a9bc714f266a2e2.woff",
-    "static/media/aguafina-script-latin-ext-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.695e4b0c3c7b5f50d9c4.woff2",
     "index.html": "/Homepage/index.html",
-    "main.55ad8017.css.map": "/Homepage/static/css/main.55ad8017.css.map",
-    "main.c6f28bef.js.map": "/Homepage/static/js/main.c6f28bef.js.map",
+    "main.073c9b0a.css.map": "/Homepage/static/css/main.073c9b0a.css.map",
+    "main.b67ac2fe.js.map": "/Homepage/static/js/main.b67ac2fe.js.map",
     "787.5c39024c.chunk.js.map": "/Homepage/static/js/787.5c39024c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.55ad8017.css",
-    "static/js/main.c6f28bef.js"
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b67ac2fe.js"
   ]
 }
