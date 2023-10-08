@@ -13,7 +13,7 @@ export default function Board(){
   return(
     <div className='board-container'>
       <div className='board-item-wrap' data-aos="fade-up">
-        <a href='/Homepage/University/1'>
+        <a href='/University/1'>
           <div className='board-item-img'>
             <img src="images/monsterKill.png" alt="" />
           </div>

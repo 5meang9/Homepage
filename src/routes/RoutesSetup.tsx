@@ -6,8 +6,8 @@ import University1 from "../pages/University1";
 export default function RoutesSetup(){
   return(
       <Routes>
-        <Route path="/Homepage" element={<HomePage />}></Route>
-        <Route path="/Homepage/University/1" element={<University1 />}></Route>
+        <Route path="/" element={<HomePage />}></Route>
+        <Route path="/University/1" element={<University1 />}></Route>
       </Routes>
   )
 }
