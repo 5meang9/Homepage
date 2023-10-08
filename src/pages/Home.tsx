@@ -15,24 +15,26 @@ export default function Home(){
           <source src='videos/homePage_video.mp4' type='video/mp4'/>
         </video>
         <div className='text-collection'>
-          <p>Hello World!</p>
-          <TypingFont TyingContents='Thank you for visiting my page.'/>
-          <div className="text-center">
-          <div className='scroll-btn'>
-            <span className="mouse">
-              <span></span>
-            </span>
-          </div>
-          <a href="#firstSection">
-            <div className="link-arrow-bounce">
-              <FontAwesomeIcon icon={faChevronDown} bounce style={{color: "#000",}} />
+          <div className="text-items">
+            <p>Hello World!</p>
+            <TypingFont TyingContents='Thank you for visiting my page.'/>
+            <div className="text-center">
+              <div className='scroll-btn'>
+                <span className="mouse">
+                  <span></span>
+                </span>
+              </div>
+              <a href="#firstSection">
+                <div className="link-arrow-bounce">
+                  <FontAwesomeIcon icon={faChevronDown} bounce style={{color: "#fff",}} />
+                </div>
+              </a>
             </div>
-          </a>
           </div>
         </div>
       </div>
       <div className='profile-wrap'>
-        <div className='profile-title'>Profile~</div>
+        <div className='profile-title'>대학교 프로젝트 👩‍🎓</div>
         <Board/> 
       </div>
     </div>
