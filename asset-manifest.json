@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Homepage/static/css/main.eeda68ed.css",
-    "main.js": "/Homepage/static/js/main.52618efd.js",
+    "main.js": "/Homepage/static/js/main.81747a7a.js",
     "static/js/787.5c39024c.chunk.js": "/Homepage/static/js/787.5c39024c.chunk.js",
     "static/media/prdDetail.png": "/Homepage/static/media/prdDetail.f73ce542e4d1aa87fdbe.png",
     "static/media/terrain_atlas.png": "/Homepage/static/media/terrain_atlas.5e05e0a69888e0c35adb.png",
@@ -20,11 +20,11 @@
     "static/media/aguafina-script-latin-ext-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.695e4b0c3c7b5f50d9c4.woff2",
     "index.html": "/Homepage/index.html",
     "main.eeda68ed.css.map": "/Homepage/static/css/main.eeda68ed.css.map",
-    "main.52618efd.js.map": "/Homepage/static/js/main.52618efd.js.map",
+    "main.81747a7a.js.map": "/Homepage/static/js/main.81747a7a.js.map",
     "787.5c39024c.chunk.js.map": "/Homepage/static/js/787.5c39024c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.eeda68ed.css",
-    "static/js/main.52618efd.js"
+    "static/js/main.81747a7a.js"
   ]
 }
