@@ -34,7 +34,6 @@ export default function Home(){
         </div>
       </div>
       <div className='profile-wrap'>
-        <div className='profile-title'>대학교 프로젝트 👩‍🎓</div>
         <Board/> 
       </div>
     </div>

@@ -5,9 +5,9 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 export default function University4(){
   return (
     <>
-      <section id="article-header2">
+      <section id="article-header3">
         <div className='article-header-wrap'>
-          <div id="article_h1" style={{color:'#000'}}>유아👶교육 용 산수 프로그램 제작</div>
+          <div id="article_h1" style={{color:'#fff'}}>유아👶교육 용 산수 프로그램 제작</div>
           <div className="text-center">
             <div className='scroll-btn'>
               <span className="mouse">
@@ -44,10 +44,13 @@ export default function University4(){
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#동작화면">안드로이드 카메라 접근</a></li>
-                    <li><a href="#기본_태그_사용법">영화 상세 사항 선택 구성</a></li>
-                    <li><a href="#아이콘_크기_설정법">영화 상세 사항 전달</a></li>
-                    <li><a href="#아이콘_여백_정렬">좌석 동적 생성 및 선택</a></li>
+                    <li><a href="#동작화면">Tesseract Tools 사용하기</a></li>
+                    <li><a href="#기본_태그_사용법">Class MainActivity Tesseract import 및 사용</a></li>
+                    <li><a href="#아이콘_크기_설정법">안드로이드 카메라 접근</a></li>
+                    <li><a href="#아이콘_여백_정렬">캡쳐 이미지와 tesseract</a></li>
+                    <li><a href="#아이콘_여백_정렬">Calc 메서드 (우선순위 계산)</a></li>
+                    <li><a href="#아이콘_여백_정렬">실행화면 및 동작화면</a></li>
+
                   </ol>
                 </li>
               </ol>
