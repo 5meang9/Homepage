@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/Homepage/static/css/main.03489cde.css",
-    "main.js": "/Homepage/static/js/main.f41f7449.js",
+    "main.css": "/Homepage/static/css/main.b6f05a8a.css",
+    "main.js": "/Homepage/static/js/main.be9df07c.js",
     "static/js/787.5c39024c.chunk.js": "/Homepage/static/js/787.5c39024c.chunk.js",
     "static/media/prdDetail.png": "/Homepage/static/media/prdDetail.f73ce542e4d1aa87fdbe.png",
     "static/media/terrain_atlas.png": "/Homepage/static/media/terrain_atlas.5e05e0a69888e0c35adb.png",
     "static/media/movie_main1.jpg": "/Homepage/static/media/movie_main1.b5426a7a565f9f6467a7.jpg",
+    "static/media/child.png": "/Homepage/static/media/child.31f9d76f436e6fdc9bb2.png",
     "static/media/aguafina-script-latin-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-400-normal.c19a0f6a7e95b8400940.woff",
+    "static/media/gameBg.jpg": "/Homepage/static/media/gameBg.08bda501cb8737e3de02.jpg",
     "static/media/aguafina-script-latin-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-400-normal.b8fb29f7ceab55903c2f.woff2",
     "static/media/aguafina-script-latin-ext-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.0f8e4a9bc714f266a2e2.woff",
     "static/media/aguafina-script-latin-ext-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.695e4b0c3c7b5f50d9c4.woff2",
     "index.html": "/Homepage/index.html",
-    "main.03489cde.css.map": "/Homepage/static/css/main.03489cde.css.map",
-    "main.f41f7449.js.map": "/Homepage/static/js/main.f41f7449.js.map",
+    "main.b6f05a8a.css.map": "/Homepage/static/css/main.b6f05a8a.css.map",
+    "main.be9df07c.js.map": "/Homepage/static/js/main.be9df07c.js.map",
     "787.5c39024c.chunk.js.map": "/Homepage/static/js/787.5c39024c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.03489cde.css",
-    "static/js/main.f41f7449.js"
+    "static/css/main.b6f05a8a.css",
+    "static/js/main.be9df07c.js"
   ]
 }
