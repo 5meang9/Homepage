@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.css": "/Homepage/static/css/main.e20d725c.css",
-    "main.js": "/Homepage/static/js/main.8463ce00.js",
+    "main.css": "/Homepage/static/css/main.03489cde.css",
+    "main.js": "/Homepage/static/js/main.47a61983.js",
     "static/js/787.5c39024c.chunk.js": "/Homepage/static/js/787.5c39024c.chunk.js",
     "static/media/prdDetail.png": "/Homepage/static/media/prdDetail.f73ce542e4d1aa87fdbe.png",
     "static/media/terrain_atlas.png": "/Homepage/static/media/terrain_atlas.5e05e0a69888e0c35adb.png",
+    "static/media/movie_main1.jpg": "/Homepage/static/media/movie_main1.b5426a7a565f9f6467a7.jpg",
     "static/media/aguafina-script-latin-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-400-normal.c19a0f6a7e95b8400940.woff",
     "static/media/aguafina-script-latin-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-400-normal.b8fb29f7ceab55903c2f.woff2",
     "static/media/aguafina-script-latin-ext-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.0f8e4a9bc714f266a2e2.woff",
     "static/media/aguafina-script-latin-ext-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.695e4b0c3c7b5f50d9c4.woff2",
     "index.html": "/Homepage/index.html",
-    "main.e20d725c.css.map": "/Homepage/static/css/main.e20d725c.css.map",
-    "main.8463ce00.js.map": "/Homepage/static/js/main.8463ce00.js.map",
+    "main.03489cde.css.map": "/Homepage/static/css/main.03489cde.css.map",
+    "main.47a61983.js.map": "/Homepage/static/js/main.47a61983.js.map",
     "787.5c39024c.chunk.js.map": "/Homepage/static/js/787.5c39024c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e20d725c.css",
-    "static/js/main.8463ce00.js"
+    "static/css/main.03489cde.css",
+    "static/js/main.47a61983.js"
   ]
 }
