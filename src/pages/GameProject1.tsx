@@ -73,7 +73,7 @@ export default function GameProject1(){
             <h4><b>player 타일변환</b></h4>
             <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game3.png"} style={{width: '36%', marginTop: '-25px'}}/>
             <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
+              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
                 <code>
                   <span className="line">
@@ -159,7 +159,7 @@ export default function GameProject1(){
             <h4><b>컴퓨터 타일변환</b></h4>
             <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game4.png"} style={{width: '36%', marginTop: '-25px'}}/>
             <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
+              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
                 <code>
                   <span className="line">
