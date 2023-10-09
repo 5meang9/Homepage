@@ -59,8 +59,8 @@ import { useEffect } from 'react';
       "0JSM1TT40306F": {
         size: "S",
         imgs: [
-          "/HomePage/bespoke_assets/products/lucky_pleats_s/starry/front/LILAC.jpg",
-          "/HomePage/bespoke_assets/products/lucky_pleats_s/starry/side/LILAC.jpg",
+          "/Homepage/bespoke_assets/products/lucky_pleats_s/starry/front/LILAC.jpg",
+          "/Homepage/bespoke_assets/products/lucky_pleats_s/starry/side/LILAC.jpg",
         ],
       },
       "0JSJ1TT40602F": {
@@ -2365,13 +2365,13 @@ import { useEffect } from 'react';
       if (_this.bespokeContainer.classList.contains('active')) { //비스포크 판 및 시뮬 미노출
         _this.bespokeContainer.classList.remove('active');
         _this.previewContainer.classList.remove('active');
-        _this.toggleArrowImg.src = '/HomePage/bespoke_assets/icons/arrow-down-new.svg';
+        _this.toggleArrowImg.src = '/Homepage/bespoke_assets/icons/arrow-down-new.svg';
         _this.previewWrap.style.display = 'none';
         // _this.previewBackGround.classList.remove('active');
       } else { //비스포크 판 및 시뮬 노출
         _this.bespokeContainer.classList.add('active');
         _this.previewContainer.classList.add('active');
-        _this.toggleArrowImg.src = '/HomePage/bespoke_assets/icons/arrow-up-new.svg';
+        _this.toggleArrowImg.src = '/Homepage/bespoke_assets/icons/arrow-up-new.svg';
         _this.previewWrap.style.display = 'block';
         // _this.previewBackGround.classList.add('active');
         // console.log('bespoke.size',bespoke.size);

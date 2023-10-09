@@ -225,7 +225,7 @@ export default function Bespoke(){
                 </code>
               </pre>
             </div>
-            <h4><b>실행화면 및 동작화면</b></h4>
+            <h4><b>실행화면 및 동작화면(직접 테스트 가능합니다. [버튼]을 눌러보세요)</b></h4>
             
           </div>
           <NewBespokeCombine />

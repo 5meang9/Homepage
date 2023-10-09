@@ -82,14 +82,14 @@ let htmlTxt = `
 				<div class="bespoke-font-btn-wrap">
 					<button class="bespoke-font-select-big-textfont">
 						<img
-							src="/HomePage/bespoke_assets/bigtexts/black/A.png"
+							src="/Homepage/bespoke_assets/bigtexts/black/A.png"
 							width="30px"
 							height="30px"
 						/>
 					</button>
 					<button class="bespoke-font-select-big-petfont">
 						<img
-							src="/HomePage/bespoke_assets/bigpets/black/bichon.png"
+							src="/Homepage/bespoke_assets/bigpets/black/bichon.png"
 							width="30px"
 							height="30px"
 						/>
@@ -104,7 +104,7 @@ let htmlTxt = `
 		<div class="bespoke-front-big-symbol-btn-wrap">
 			<button class="bespoke-front-big-text-symbol-btn" value="A">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/A.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/A.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -112,7 +112,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="B">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/B.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/B.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -120,7 +120,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="C">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/C.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/C.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -128,7 +128,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="D">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/D.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/D.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -136,7 +136,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="E">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/E.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/E.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -144,7 +144,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="F">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/F.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/F.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -152,7 +152,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="G">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/G.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/G.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -160,7 +160,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="H">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/H.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/H.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -168,7 +168,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="I">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/I.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/I.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -176,7 +176,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="J">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/J.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/J.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -184,7 +184,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="K">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/K.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/K.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -192,7 +192,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="L">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/L.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/L.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -200,7 +200,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="M">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/M.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/M.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -208,7 +208,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="N">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/N.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/N.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -216,7 +216,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="O">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/O.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/O.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -224,7 +224,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="P">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/P.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/P.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -232,7 +232,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="Q">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/Q.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/Q.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -240,7 +240,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="R">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/R.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/R.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -248,7 +248,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="S">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/S.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/S.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -256,7 +256,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="T">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/T.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/T.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -264,7 +264,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="U">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/U.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/U.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -272,7 +272,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="V">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/V.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/V.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -280,7 +280,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="W">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/W.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/W.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -288,7 +288,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="X">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/X.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/X.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -296,7 +296,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="Y">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/Y.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/Y.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -304,7 +304,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-text-symbol-btn" value="Z">
 				<img
-					src="/HomePage/bespoke_assets/bigtexts/black/Z.png"
+					src="/Homepage/bespoke_assets/bigtexts/black/Z.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -317,7 +317,7 @@ let htmlTxt = `
 		<div class="bespoke-front-big-symbol-btn-wrap">
 			<button class="bespoke-front-big-pet-symbol-btn" value="bichon">
 				<img
-					src="/HomePage/bespoke_assets/bigpets/black/bichon.png"
+					src="/Homepage/bespoke_assets/bigpets/black/bichon.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -325,7 +325,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-pet-symbol-btn" value="cheese">
 				<img
-					src="/HomePage/bespoke_assets/bigpets/black/cheese.png"
+					src="/Homepage/bespoke_assets/bigpets/black/cheese.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -333,7 +333,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-pet-symbol-btn" value="bostonterrier">
 				<img
-					src="/HomePage/bespoke_assets/bigpets/black/bostonterrier.png"
+					src="/Homepage/bespoke_assets/bigpets/black/bostonterrier.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -341,7 +341,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-pet-symbol-btn" value="maltese">
 				<img
-					src="/HomePage/bespoke_assets/bigpets/black/maltese.png"
+					src="/Homepage/bespoke_assets/bigpets/black/maltese.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -349,7 +349,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-pet-symbol-btn" value="persian">
 				<img
-					src="/HomePage/bespoke_assets/bigpets/black/persian.png"
+					src="/Homepage/bespoke_assets/bigpets/black/persian.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -357,7 +357,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-pet-symbol-btn" value="toypoodle">
 				<img
-					src="/HomePage/bespoke_assets/bigpets/black/toypoodle.png"
+					src="/Homepage/bespoke_assets/bigpets/black/toypoodle.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -365,7 +365,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-front-big-pet-symbol-btn" value="tuxedo">
 				<img
-					src="/HomePage/bespoke_assets/bigpets/black/tuxedo.png"
+					src="/Homepage/bespoke_assets/bigpets/black/tuxedo.png"
 					width="30px"
 					height="30px"
 					alt=""
@@ -482,7 +482,7 @@ let htmlTxt = `
 		<div class="bespoke-symbol-btn-wrap">
 			<button class="bespoke-symbol-btn" value="①">
 				<img
-					src="/HomePage/bespoke_assets/symbols/kiss_black.png"
+					src="/Homepage/bespoke_assets/symbols/kiss_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -490,7 +490,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="②">
 				<img
-					src="/HomePage/bespoke_assets/symbols/diamond_black.png"
+					src="/Homepage/bespoke_assets/symbols/diamond_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -498,7 +498,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="③">
 				<img
-					src="/HomePage/bespoke_assets/symbols/tiamo-stroke_black.png"
+					src="/Homepage/bespoke_assets/symbols/tiamo-stroke_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -506,7 +506,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="④">
 				<img
-					src="/HomePage/bespoke_assets/symbols/tiamo-fill_black.png"
+					src="/Homepage/bespoke_assets/symbols/tiamo-fill_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -514,7 +514,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑤">
 				<img
-					src="/HomePage/bespoke_assets/symbols/heart-stroke_black.png"
+					src="/Homepage/bespoke_assets/symbols/heart-stroke_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -522,7 +522,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑥">
 				<img
-					src="/HomePage/bespoke_assets/symbols/heart-fill_black.png"
+					src="/Homepage/bespoke_assets/symbols/heart-fill_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -530,7 +530,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑦">
 				<img
-					src="/HomePage/bespoke_assets/symbols/stella_black.png"
+					src="/Homepage/bespoke_assets/symbols/stella_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -538,7 +538,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑧">
 				<img
-					src="/HomePage/bespoke_assets/symbols/star-stroke_black.png"
+					src="/Homepage/bespoke_assets/symbols/star-stroke_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -546,7 +546,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑨">
 				<img
-					src="/HomePage/bespoke_assets/symbols/star-fill_black.png"
+					src="/Homepage/bespoke_assets/symbols/star-fill_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -554,7 +554,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑩">
 				<img
-					src="/HomePage/bespoke_assets/symbols/poopoo_black.png"
+					src="/Homepage/bespoke_assets/symbols/poopoo_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -562,7 +562,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑪">
 				<img
-					src="/HomePage/bespoke_assets/symbols/jelly_black.png"
+					src="/Homepage/bespoke_assets/symbols/jelly_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -570,7 +570,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑫">
 				<img
-					src="/HomePage/bespoke_assets/symbols/at_black.png"
+					src="/Homepage/bespoke_assets/symbols/at_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -578,7 +578,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑬">
 				<img
-					src="/HomePage/bespoke_assets/symbols/sharp_black.png"
+					src="/Homepage/bespoke_assets/symbols/sharp_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -586,7 +586,7 @@ let htmlTxt = `
 			</button>
 			<button class="bespoke-symbol-btn" value="⑭">
 				<img
-					src="/HomePage/bespoke_assets/symbols/and_black.png"
+					src="/Homepage/bespoke_assets/symbols/and_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -597,7 +597,7 @@ let htmlTxt = `
 				value="Ⓛ"
 			>
 				<img
-					src="/HomePage/bespoke_assets/symbols/clover_black.png"
+					src="/Homepage/bespoke_assets/symbols/clover_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -608,7 +608,7 @@ let htmlTxt = `
 				value="Ⓜ"
 			>
 				<img
-					src="/HomePage/bespoke_assets/symbols/Tulip_black.png"
+					src="/Homepage/bespoke_assets/symbols/Tulip_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -619,7 +619,7 @@ let htmlTxt = `
 				value="Ⓞ"
 			>
 				<img
-					src="/HomePage/bespoke_assets/symbols/Bee_black.png"
+					src="/Homepage/bespoke_assets/symbols/Bee_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -630,7 +630,7 @@ let htmlTxt = `
 				value="Ⓟ"
 			>
 				<img
-					src="/HomePage/bespoke_assets/symbols/Snail_black.png"
+					src="/Homepage/bespoke_assets/symbols/Snail_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -641,7 +641,7 @@ let htmlTxt = `
 				value="Ⓠ"
 			>
 				<img
-					src="/HomePage/bespoke_assets/symbols/Bird_black.png"
+					src="/Homepage/bespoke_assets/symbols/Bird_black.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -653,7 +653,7 @@ let htmlTxt = `
 				style="background-color: #d9d9d9; border: none"
 			>
 				<img
-					src="/HomePage/bespoke_assets/symbols/daisy_stroke.png"
+					src="/Homepage/bespoke_assets/symbols/daisy_stroke.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -665,7 +665,7 @@ let htmlTxt = `
 				style="background-color: #d9d9d9; border: none"
 			>
 				<img
-					src="/HomePage/bespoke_assets/symbols/daisy_fill.png"
+					src="/Homepage/bespoke_assets/symbols/daisy_fill.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -677,7 +677,7 @@ let htmlTxt = `
 				style="background-color: #d9d9d9; border: none"
 			>
 				<img
-					src="/HomePage/bespoke_assets/symbols/cat.png"
+					src="/Homepage/bespoke_assets/symbols/cat.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -689,7 +689,7 @@ let htmlTxt = `
 				style="background-color: #d9d9d9; border: none"
 			>
 				<img
-					src="/HomePage/bespoke_assets/symbols/camellia.png"
+					src="/Homepage/bespoke_assets/symbols/camellia.png"
 					width="20px"
 					height="20px"
 					alt=""
@@ -836,7 +836,7 @@ let htmlTxt = `
 		<div class="bespoke-checked-whether-title">
 			필수확인사항
 			<img
-				src="/HomePage/bespoke_assets/icons/arrow-down.png"
+				src="/Homepage/bespoke_assets/icons/arrow-down.png"
 				width="16px"
 				height="16px"
 				alt=""

@@ -54,7 +54,7 @@ export default function Board(){
             <div className='board-item-contents'>
               <p className='board-item-period'>개발기간 · 2017.06.01 ~ 2017.06.30</p>
               <p className='board-item-title'>
-                <img src="images/C#logo.png"/>
+                <img src="images/Clogo.png"/>
                 <span> 영화예매 시스템 제작</span>
               </p>
             </div>
@@ -69,7 +69,7 @@ export default function Board(){
             <div className='board-item-contents'>
               <p className='board-item-period'>개발기간 · 2018.09.03 ~ 2018.11.30</p>
               <p className='board-item-title'>
-                <img src="images/C#logo.png"/>
+                <img src="images/android_stu.png"/>
                 <span> 유아교육 용 산수 프로그램 제작</span>
               </p>
             </div>
@@ -81,13 +81,13 @@ export default function Board(){
         <div className='board-item-wrap' data-aos="fade-up">
           <Link to="GameProject/1">
             <div className='board-item-img'>
-              <img src="images/monsterKill.png" alt="" />
+              <img src="images/img1.jpg" alt="" />
             </div>
             <Badge pill bg="primary">unity</Badge>
             <div className='board-item-contents'>
               <p className='board-item-period'>개발기간 · 2019.07.01 ~ 2019.07.19</p>
               <p className='board-item-title'>
-                <img src="images/Python-logo-notext.svg.png"/>
+                <img src="images/unityLogo.png"/>
                 <span> Unity 엔진을 이용한 땅따먹기 게임</span>
               </p>
             </div>
@@ -96,13 +96,13 @@ export default function Board(){
         <div className='board-item-wrap' data-aos="fade-up">
           <Link to="GameProject/2">
             <div className='board-item-img'>
-              <img src="images/shoppingMall.png" alt="" />
+              <img src="images/deongeon.jpg" alt="" />
             </div>
             <Badge pill bg="primary">unity</Badge>
             <div className='board-item-contents'>
               <p className='board-item-period'>개발기간 · 2019.07.29 ~ 2019.08.31</p>
               <p className='board-item-title'>
-                <img src="images/webLogo1.png"/>
+                <img src="images/webLogo2.png"/>
                 <span> Unity 엔진을 이용한 던전 게임</span>
               </p>
             </div>
@@ -114,29 +114,29 @@ export default function Board(){
         <div className='board-item-wrap' data-aos="fade-up">
           <Link to="Bespoke/1">
             <div className='board-item-img'>
-              <img src="images/monsterKill.png" alt="" />
+              <img src="images/bespoke.jpg" alt="" />
             </div>
             <Badge pill bg="primary">unity</Badge>
             <div className='board-item-contents'>
-              <p className='board-item-period'>개발기간 · 2019.07.01 ~ 2019.07.19</p>
+              <p className='board-item-period'>운영기간 · 2020.06.01 ~ 2023.09.14</p>
               <p className='board-item-title'>
                 <img src="images/Python-logo-notext.svg.png"/>
-                <span> Unity 엔진을 이용한 땅따먹기 게임</span>
+                <span> 리뉴얼 전 비스포크</span>
               </p>
             </div>
           </Link>
         </div>
         <div className='board-item-wrap' data-aos="fade-up">
-          <Link to="GameProject/2">
+          <Link to="Company/1">
             <div className='board-item-img'>
-              <img src="images/shoppingMall.png" alt="" />
+              <img src="images/ruby1.png" alt="" />
             </div>
-            <Badge pill bg="primary">unity</Badge>
+            <Badge pill bg="primary">ruby on rails</Badge>
             <div className='board-item-contents'>
-              <p className='board-item-period'>개발기간 · 2019.07.29 ~ 2019.08.31</p>
+              <p className='board-item-period'>개발기간 · 2022.08.08 ~ 2019.08.29</p>
               <p className='board-item-title'>
                 <img src="images/webLogo1.png"/>
-                <span> Unity 엔진을 이용한 던전 게임</span>
+                <span> tui grid를 이용한 매출 집계</span>
               </p>
             </div>
           </Link>
