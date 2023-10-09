@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="14" height="8" viewBox="0 0 14 8">
+  <defs>
+    <clipPath id="clip-화살표">
+      <rect width="14" height="8"/>
+    </clipPath>
+  </defs>
+  <g id="화살표" clip-path="url(#clip-화살표)">
+    <rect width="14" height="8" fill="#fff"/>
+    <path id="패스_92" data-name="패스 92" d="M1460.91,19702.307l6.343,6.344,6.343-6.344" transform="translate(-1460.253 -19701.65)" fill="none" stroke="#000" stroke-width="1"/>
+  </g>
+</svg>
