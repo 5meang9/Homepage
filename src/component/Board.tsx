@@ -109,6 +109,39 @@ export default function Board(){
           </Link>
         </div>
       </div>
+      <div className='profile-title' style={{marginTop: '50px'}}>회사 프로젝트 👩‍💼</div>
+      <div className='board-container'>
+        <div className='board-item-wrap' data-aos="fade-up">
+          <Link to="Bespoke/1">
+            <div className='board-item-img'>
+              <img src="images/monsterKill.png" alt="" />
+            </div>
+            <Badge pill bg="primary">unity</Badge>
+            <div className='board-item-contents'>
+              <p className='board-item-period'>개발기간 · 2019.07.01 ~ 2019.07.19</p>
+              <p className='board-item-title'>
+                <img src="images/Python-logo-notext.svg.png"/>
+                <span> Unity 엔진을 이용한 땅따먹기 게임</span>
+              </p>
+            </div>
+          </Link>
+        </div>
+        <div className='board-item-wrap' data-aos="fade-up">
+          <Link to="GameProject/2">
+            <div className='board-item-img'>
+              <img src="images/shoppingMall.png" alt="" />
+            </div>
+            <Badge pill bg="primary">unity</Badge>
+            <div className='board-item-contents'>
+              <p className='board-item-period'>개발기간 · 2019.07.29 ~ 2019.08.31</p>
+              <p className='board-item-title'>
+                <img src="images/webLogo1.png"/>
+                <span> Unity 엔진을 이용한 던전 게임</span>
+              </p>
+            </div>
+          </Link>
+        </div>
+      </div>
     </>
   )
 }

@@ -7,6 +7,7 @@ import University3 from "../pages/University3";
 import University4 from "../pages/University4";
 import GameProject1 from "../pages/GameProject1";
 import GameProject2 from "../pages/GameProject2";
+import Bespoke from "../pages/Bespoke";
 
 export default function RoutesSetup(){
   return(
@@ -18,6 +19,8 @@ export default function RoutesSetup(){
         <Route path="/University/4" element={<University4 />}></Route>
         <Route path="/GameProject/1" element={<GameProject1 />}></Route>
         <Route path="/GameProject/2" element={<GameProject2 />}></Route>
+        <Route path="/Bespoke/1" element={<Bespoke />}></Route>
+
       </Routes>
   )
 }
