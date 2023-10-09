@@ -34,7 +34,7 @@ const NewBespokeCombine = () => {
 
   return(
       <>
-        <div className='wrap'>
+        <div className='wrap' id='maxTop'>
           <div className="preview-container active">
             <div className="preview-background"></div>
           </div>

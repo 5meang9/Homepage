@@ -2539,7 +2539,9 @@ import { useEffect } from 'react';
   
       if(_this.previewWrap.style.display == 'block'){
         let _target = window.pageYOffset + document.querySelector("#maxTop").getBoundingClientRect().top - 30;
-        _this.previewWrap.style.top = position < _target ? position+'px' : _target+'px';
+        // _this.previewWrap.style.top = position < _target ? position+'px' : _target+'px';
+        _this.previewWrap.style.top = '0px';
+
       }
     }
    
