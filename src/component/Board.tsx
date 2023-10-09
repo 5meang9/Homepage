@@ -44,14 +44,19 @@ export default function Board(){
         </Link>
       </div>
       <div className='board-item-wrap' data-aos="fade-up">
-        <div className='board-item-img'>
-          <img src="" alt="" />
-        </div>
-        <Badge pill bg="primary">3학년</Badge>
-        <div className='board-item-contents'>
-          <p></p>
-          <p className='board-item-title'></p>
-        </div>
+        <Link to="University/3">
+          <div className='board-item-img'>
+            <img src="images/movie1.png" alt="" />
+          </div>
+          <Badge pill bg="primary">3학년</Badge>
+          <div className='board-item-contents'>
+            <p className='board-item-period'>개발기간 · 2017.06.01 ~ 2017.06.30</p>
+            <p className='board-item-title'>
+              <img src="images/C#logo.png"/>
+              <span> 영화예매 시스템 제작</span>
+            </p>
+          </div>
+        </Link>
       </div>
       <div className='board-item-wrap' data-aos="fade-up">
         <div className='board-item-img'>

@@ -26,6 +26,20 @@
   background-color: #000;
   --thumbnail-blur: 0px;
 }
+#article-header2{
+  filter: saturate(180%);
+  width: 100vw !important;
+  margin-left: calc(((100vw - 100%) / 2) * -1) !important;
+  height: 550px !important;
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% -175px;
+  background-image: url("../../public/images/movie_main1.jpg");
+  background-color: #000;
+  --thumbnail-blur: 0px;
+}
 .article-header-wrap{
   text-align: center;
   font-family: NanumGothic;
@@ -382,7 +396,7 @@
 }
 .article1_contents_img{
   span{
-    font-size: 102px;
+    font-size: 8vw;
   }
 }
 .article1_contents_img2{
