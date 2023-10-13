@@ -1,17 +1,20 @@
 {
   "files": {
-    "main.css": "/Homepage/static/css/main.37e0af1c.css",
-    "main.js": "/Homepage/static/js/main.7af0a30d.js",
+    "main.css": "/Homepage/static/css/main.378dabbf.css",
+    "main.js": "/Homepage/static/js/main.9cb3d72e.js",
     "static/js/787.5c39024c.chunk.js": "/Homepage/static/js/787.5c39024c.chunk.js",
     "static/media/prdDetail.png": "/Homepage/static/media/prdDetail.f73ce542e4d1aa87fdbe.png",
     "static/media/terrain_atlas.png": "/Homepage/static/media/terrain_atlas.5e05e0a69888e0c35adb.png",
+    "static/media/dashboard.png": "/Homepage/static/media/dashboard.4c7a975a6fecd270ed5c.png",
     "static/media/GaramondPremrPro.woff": "/Homepage/static/media/GaramondPremrPro.d8b211fda9c81007f4e9.woff",
+    "static/media/report3.png": "/Homepage/static/media/report3.6976710c1214abe4b81e.png",
     "static/media/bespoke.jpg": "/Homepage/static/media/bespoke.0adac6c2d603a8f644f9.jpg",
     "static/media/math2.jpg": "/Homepage/static/media/math2.05ccb18de425116662cb.jpg",
     "static/media/movie_main1.jpg": "/Homepage/static/media/movie_main1.b5426a7a565f9f6467a7.jpg",
     "static/media/Courgette-Regular.woff": "/Homepage/static/media/Courgette-Regular.22f177eb35a3d022fb4d.woff",
     "static/media/CardenioModern-Bold.woff": "/Homepage/static/media/CardenioModern-Bold.5eda0b8019f41233cc37.woff",
     "static/media/KuenstlerScriptLTStd-Black.woff": "/Homepage/static/media/KuenstlerScriptLTStd-Black.7eef80ea52b75981124d.woff",
+    "static/media/request1.jpg": "/Homepage/static/media/request1.ebbeef8d7120821211f6.jpg",
     "static/media/child.png": "/Homepage/static/media/child.31f9d76f436e6fdc9bb2.png",
     "static/media/aguafina-script-latin-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-400-normal.c19a0f6a7e95b8400940.woff",
     "static/media/gameBg.jpg": "/Homepage/static/media/gameBg.08bda501cb8737e3de02.jpg",
@@ -20,12 +23,12 @@
     "static/media/aguafina-script-latin-ext-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.0f8e4a9bc714f266a2e2.woff",
     "static/media/aguafina-script-latin-ext-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.695e4b0c3c7b5f50d9c4.woff2",
     "index.html": "/Homepage/index.html",
-    "main.37e0af1c.css.map": "/Homepage/static/css/main.37e0af1c.css.map",
-    "main.7af0a30d.js.map": "/Homepage/static/js/main.7af0a30d.js.map",
+    "main.378dabbf.css.map": "/Homepage/static/css/main.378dabbf.css.map",
+    "main.9cb3d72e.js.map": "/Homepage/static/js/main.9cb3d72e.js.map",
     "787.5c39024c.chunk.js.map": "/Homepage/static/js/787.5c39024c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.37e0af1c.css",
-    "static/js/main.7af0a30d.js"
+    "static/css/main.378dabbf.css",
+    "static/js/main.9cb3d72e.js"
   ]
 }
