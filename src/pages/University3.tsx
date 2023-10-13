@@ -45,9 +45,9 @@ export default function University3(){
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
                     <li><a href="#동작화면">실행화면 및 동작화면</a></li>
-                    <li><a href="#기본_태그_사용법">영화 상세 사항 선택 구성</a></li>
-                    <li><a href="#아이콘_크기_설정법">영화 상세 사항 전달</a></li>
-                    <li><a href="#아이콘_여백_정렬">좌석 동적 생성 및 선택</a></li>
+                    <li><a href="#영화 상세 사항 선택 구성">영화 상세 사항 선택 구성</a></li>
+                    <li><a href="#영화 상세 사항 전달">영화 상세 사항 전달</a></li>
+                    <li><a href="#좌석 동적 생성 및 선택">좌석 동적 생성 및 선택</a></li>
                   </ol>
                 </li>
               </ol>
@@ -73,14 +73,14 @@ export default function University3(){
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>실행화면 및 동작화면</b></h4>
+            <h4 id="동작화면"><b>실행화면 및 동작화면</b></h4>
             <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/movieOn.png"} style={{width: '100%', marginTop: '5px'}}/>
             <ol style={{listStyleType: 'decimal', marginTop: '25px'}} data-ke-list-type="decimal">
               <li>[예매] 클릭 시, 영화 상세 리스트 노출</li>
               <li>영화 상세 리스트 선택 시, 좌석선택 화면 노출</li>
               <li>좌석 선택 완료 시, 초록색으로 변경</li>
             </ol>
-            <h4><b>영화 상세 사항 선택 구성</b></h4>
+            <h4 id="영화 상세 사항 선택 구성"><b>영화 상세 사항 선택 구성</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -206,7 +206,7 @@ export default function University3(){
                 </code>
               </pre>
             </div>
-            <h4><b>영화 상세 사항 전달</b></h4>
+            <h4 id="영화 상세 사항 전달"><b>영화 상세 사항 전달</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>

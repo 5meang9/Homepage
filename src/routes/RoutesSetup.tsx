@@ -9,6 +9,10 @@ import GameProject1 from "../pages/GameProject1";
 import GameProject2 from "../pages/GameProject2";
 import Bespoke from "../pages/Bespoke";
 import Company1 from "../pages/Company1";
+import Company2 from "../pages/Company2";
+import Company3 from "../pages/Company3";
+import Company4 from "../pages/Company4";
+import Study1 from "../pages/Study1";
 
 export default function RoutesSetup(){
   return(
@@ -22,6 +26,10 @@ export default function RoutesSetup(){
         <Route path="/GameProject/2" element={<GameProject2 />}></Route>
         <Route path="/Bespoke/1" element={<Bespoke />}></Route>
         <Route path="/Company/1" element={<Company1 />}></Route>
+        <Route path="/Company/2" element={<Company2 />}></Route>
+        <Route path="/Company/3" element={<Company3 />}></Route>
+        <Route path="/Company/4" element={<Company4 />}></Route>
+        <Route path="/Study/1" element={<Study1 />}></Route>
       </Routes>
   )
 }

@@ -96,6 +96,48 @@
   background-color: #000;
   --thumbnail-blur: 0px;
 }
+#article-header7{
+  filter: saturate(180%);
+  width: 100vw !important;
+  margin-left: calc(((100vw - 100%) / 2) * -1) !important;
+  height: 550px !important;
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 69% -130px;
+  background-image: url("../../public/images/report3.png");
+  background-color: #000;
+  --thumbnail-blur: 0px;
+}
+#article-header8{
+  filter: saturate(180%);
+  width: 100vw !important;
+  margin-left: calc(((100vw - 100%) / 2) * -1) !important;
+  height: 550px !important;
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 69% -130px;
+  background-image: url("../../public/images/dashboard.png");
+  background-color: #000;
+  --thumbnail-blur: 0px;
+}
+#article-header9{
+  filter: saturate(180%);
+  width: 100vw !important;
+  margin-left: calc(((100vw - 100%) / 2) * -1) !important;
+  height: 550px !important;
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 69% -130px;
+  background-image: url("../../public/images/request1.jpg");
+  background-color: #000;
+  --thumbnail-blur: 0px;
+}
 .article-header-wrap{
   text-align: center;
   font-family: NanumGothic;

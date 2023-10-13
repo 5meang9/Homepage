@@ -44,9 +44,9 @@ export default function University1(){
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#기본_태그_사용법">배경 이미지</a></li>
-                    <li><a href="#아이콘_크기_설정법">캐릭터</a></li>
-                    <li><a href="#아이콘_여백_정렬">실행화면</a></li>
+                    <li><a href="#배경 이미지">배경 이미지</a></li>
+                    <li><a href="#캐릭터">캐릭터</a></li>
+                    <li><a href="#실행화면">실행화면</a></li>
                   </ol>
                 </li>
               </ol>
@@ -78,7 +78,7 @@ export default function University1(){
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>배경 이미지</b></h4>
+            <h4 id="배경 이미지"><b>배경 이미지</b></h4>
             <img className='article2_contents_img1' src={process.env.PUBLIC_URL+"/images/terrain_atlas.png"}/>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="python">python</span></div>
@@ -177,7 +177,7 @@ export default function University1(){
               <li>wall_list = setupRoomOne() 변수에 잔디 위치 저장</li>
               <li>wall_list.draw(screen) 배경에 잔디 노출</li>
             </ol>
-            <h4><b>캐릭터</b></h4>
+            <h4 id="캐릭터"><b>캐릭터</b></h4>
             <div className='article2_contents_imgs_wrap'>
               <img className='article2_contents_imgs' src={process.env.PUBLIC_URL+"/images/main1.png"}/>
               <img className='article2_contents_imgs' src={process.env.PUBLIC_URL+"/images/main2.png"}/>
@@ -316,7 +316,7 @@ export default function University1(){
               <li>if event.type == pygame.KEYDOWN <span style={{color: '#2B91AF'}}>{'--->'}</span> player.changespeed(-10,0)</li>
               <li>게임시작 <span style={{color: '#2B91AF'}}>{'--->'}</span> 몬스터와 총알 충돌 시, bullet_list.remove(bullet) 로 사라지게 한다.</li>
             </ol>
-            <h4><b>실행화면</b></h4>
+            <h4 id="실행화면"><b>실행화면</b></h4>
             <div style={{display: 'flex'}}>
               <img style={{width: '50%'}} src={process.env.PUBLIC_URL+"/images/gameStart1.png"}/>
               <img style={{width: '50%'}} src={process.env.PUBLIC_URL+"/images/gameStart2.png"}/>

@@ -44,9 +44,9 @@ export default function University2(){
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#기본_태그_사용법">다이나믹 배너(HTML)</a></li>
-                    <li><a href="#아이콘_크기_설정법">다이나믹 배너(JABASCRIPT)</a></li>
-                    <li><a href="#아이콘_여백_정렬">실행화면</a></li>
+                    <li><a href="#다이나믹 배너(HTML)">다이나믹 배너(HTML)</a></li>
+                    <li><a href="#다이나믹 배너(JABASCRIPT)">다이나믹 배너(JABASCRIPT)</a></li>
+                    <li><a href="#실행화면">실행화면</a></li>
                   </ol>
                 </li>
               </ol>
@@ -70,7 +70,7 @@ export default function University2(){
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>다이나믹 배너(HTML)</b></h4>
+            <h4 id="다이나믹 배너(HTML)"><b>다이나믹 배너(HTML)</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="HTML">HTML</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -191,7 +191,7 @@ export default function University2(){
               <li>첫번째 이미지만 노출 되도록 css 조정</li>
               <li>arrow 버튼 위치 absolute, top 픽셀 220 </li>
             </ol>
-            <h4><b>다이나믹 배너(JABASCRIPT)</b></h4>
+            <h4 id="다이나믹 배너(JABASCRIPT)"><b>다이나믹 배너(JABASCRIPT)</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="python">python</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -329,7 +329,7 @@ export default function University2(){
                 </code>
               </pre>
             </div>
-            <h4><b>실행화면</b></h4>
+            <h4 id="실행화면"><b>실행화면</b></h4>
             <div style={{display: 'flex'}}>
               <img style={{width: '45%', marginRight: '88px', border: '1px solid #000'}} src={process.env.PUBLIC_URL+"/images/prdDetail.png"}/>
               <img style={{width: '45%', border: '1px solid #000'}} src={process.env.PUBLIC_URL+"/images/prdDetail1.png"}/>
