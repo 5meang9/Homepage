@@ -48,8 +48,10 @@ export default function Bespoke(){
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#동작화면">비스포크 이미지 불러오기</a></li>
-                    <li><a href="#기본_태그_사용법">addClass active</a></li>
+                    <li><a href="#비스포크 이미지 불러오기">비스포크 이미지 불러오기</a></li>
+                    <li><a href="#addClass active">addClass active</a></li>
+                    <li><a href="#실행화면 및 동작 화면">실행화면 및 동작화면</a></li>
+
                   </ol>
                 </li>
               </ol>
@@ -72,7 +74,7 @@ export default function Bespoke(){
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>비스포크 이미지 불러오기</b></h4>
+            <h4 id="비스포크 이미지 불러오기"><b>비스포크 이미지 불러오기</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JAVASCRIPT">JAVASCRIPT</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -168,7 +170,7 @@ export default function Bespoke(){
               </pre>
             </div>
 
-            <h4><b>addClass active</b></h4>
+            <h4 id="addClass active"><b>addClass active</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JAVASCRIPT">JAVASCRIPT</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -225,7 +227,7 @@ export default function Bespoke(){
                 </code>
               </pre>
             </div>
-            <h4><b>실행화면 및 동작화면(직접 테스트 가능합니다. [버튼]을 눌러보세요)</b></h4>
+            <h4 id="실행화면 및 동작화면"><b>실행화면 및 동작화면(직접 테스트 가능합니다. [버튼]을 눌러보세요)</b></h4>
             
           </div>
           <NewBespokeCombine />

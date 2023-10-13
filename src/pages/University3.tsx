@@ -258,7 +258,7 @@ export default function University3(){
                 </code>
               </pre>
             </div>
-            <h4><b>좌석 동적 생성 및 선택</b></h4>
+            <h4 id="좌석 동적 생성 및 선택"><b>좌석 동적 생성 및 선택</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>

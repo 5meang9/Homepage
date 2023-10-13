@@ -44,9 +44,9 @@ export default function Company2(){
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#기본_태그_사용법">Query 구조</a></li>
-                    <li><a href="#아이콘_크기_설정법">thead 데이터 만들기</a></li>
-                    <li><a href="#아이콘_크기_설정법">thead 주별 주기</a></li>
+                    <li><a href="#Query 구조">Query 구조</a></li>
+                    <li><a href="#thead 데이터 만들기">thead 데이터 만들기</a></li>
+                    <li><a href="#thead 주별 주기">thead 주별 주기</a></li>
                   </ol>
                 </li>
               </ol>
@@ -79,10 +79,10 @@ export default function Company2(){
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>Query 구조</b></h4>
+            <h4 id="Query 구조"><b>Query 구조</b></h4>
             <img className='article2_contents_img1' style={{width: '56%'}} src={process.env.PUBLIC_URL+"/images/query_coll.png"}/>
            
-            <h4><b>thead 데이터 만들기</b></h4>
+            <h4 id="thead 데이터 만들기"><b>thead 데이터 만들기</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -136,7 +136,7 @@ export default function Company2(){
               <li>같은 주간의 개수/매출액 노출위해 존재</li>
               <li>is_date {'===>'} 파라미터로 받아온 날짜</li>
             </ol>
-            <h4><b>thead 주별 주기</b></h4>
+            <h4 id="thead 주별 주기"><b>thead 주별 주기</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -204,7 +204,7 @@ export default function Company2(){
                 </code>
               </pre>
             </div>
-            <h4><b>자세한 화면을 보고 싶으면 이동해주세요.</b></h4>
+            <h4 id="자세한 화면을 보고 싶으면 이동해주세요."><b>자세한 화면을 보고 싶으면 이동해주세요.</b></h4>
             <div style={{marginLeft: '14px', marginTop: '-30px', marginBottom: '20px'}}>id: jw.oh / pw: 1111</div>
             <div style={{marginLeft: '14px', marginBottom: '50px'}}>
               <a href="http://obbbfb.com:2020/weekly_reports" target={'_blank'}>http://obbbfb.com:2020/weekly_reports</a>

@@ -44,9 +44,9 @@ export default function Company1(){
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#기본_태그_사용법">Query 구조</a></li>
-                    <li><a href="#아이콘_크기_설정법">Tui Grid Tree 구조 설명</a></li>
-                    <li><a href="#아이콘_여백_정렬">트리구조 구현</a></li>
+                    <li><a href="#Query 구조">Query 구조</a></li>
+                    <li><a href="#Tui Grid Tree 구조 설명">Tui Grid Tree 구조 설명</a></li>
+                    <li><a href="#트리구조 구현">트리구조 구현</a></li>
                   </ol>
                 </li>
               </ol>
@@ -80,7 +80,7 @@ export default function Company1(){
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>Query 구조</b></h4>
+            <h4 id="Query 구조"><b>Query 구조</b></h4>
             <img className='article2_contents_img1' style={{width: '56%'}} src={process.env.PUBLIC_URL+"/images/query_coll.png"}/>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="postgresql">postgresql</span></div>
@@ -187,7 +187,7 @@ export default function Company1(){
               <li>매출집계 테이블 <span style={{color: '#4F6DFF'}}>union all </span>로 합치기</li>
               <li>with as 로 묶은 쿼리 조회</li>
             </ol>
-            <h4><b>Tui Grid Tree 구조 설명</b></h4>
+            <h4 id="Tui Grid Tree 구조 설명"><b>Tui Grid Tree 구조 설명</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -221,7 +221,7 @@ export default function Company1(){
               <li>_children {'==>'} name 의 하위로 노출될 서브 카테고리 객체</li>
               <li>하위로 만들고 싶지 않다면, 대카테고리의 같은 선상에 객체를 만들면 된다.</li>
             </ol>
-            <h4><b>트리구조 커스텀</b></h4>
+            <h4 id="트리구조 커스텀"><b>트리구조 커스텀</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -305,7 +305,7 @@ export default function Company1(){
                 </code>
               </pre>
             </div>
-            <h4><b>자세한 화면을 보고 싶으면 이동해주세요.</b></h4>
+            <h4 id="자세한 화면을 보고 싶으면 이동해주세요."><b>자세한 화면을 보고 싶으면 이동해주세요.</b></h4>
             <div style={{marginLeft: '14px', marginTop: '-30px', marginBottom: '20px'}}>id: jw.oh / pw: 1111</div>
             <div style={{marginBottom: '20px'}}>
               <img className='article2_contents_img1' style={{width: '11%', marginLeft: '5px', marginTop: '-5px', border: '1px solid red'}} src={process.env.PUBLIC_URL+"/images/tree.png"}/>

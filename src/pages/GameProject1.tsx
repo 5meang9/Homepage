@@ -44,9 +44,9 @@ export default function GameProject1(){
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#기본_태그_사용법">player 타일변환</a></li>
-                    <li><a href="#아이콘_크기_설정법">컴퓨터 타일변환</a></li>
-                    <li><a href="#아이콘_여백_정렬">실행화면</a></li>
+                    <li><a href="#player 타일변환">player 타일변환</a></li>
+                    <li><a href="#컴퓨터 타일변환">컴퓨터 타일변환</a></li>
+                    <li><a href="#실행화면">실행화면</a></li>
                   </ol>
                 </li>
               </ol>
@@ -70,7 +70,7 @@ export default function GameProject1(){
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>player 타일변환</b></h4>
+            <h4 id="player 타일변환"><b>player 타일변환</b></h4>
             <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game3.png"} style={{width: '36%', marginTop: '-25px'}}/>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
@@ -156,7 +156,7 @@ export default function GameProject1(){
                 </code>
               </pre>
             </div>
-            <h4><b>컴퓨터 타일변환</b></h4>
+            <h4 id="컴퓨터 타일변환"><b>컴퓨터 타일변환</b></h4>
             <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game4.png"} style={{width: '36%', marginTop: '-25px'}}/>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
@@ -234,7 +234,7 @@ export default function GameProject1(){
                 </code>
               </pre>
             </div>
-            <h4><b>실행화면 및 동작화면</b></h4>
+            <h4 id="실행화면 및 동작화면"><b>실행화면 및 동작화면</b></h4>
             <div className='img_col' style={{display: 'flex'}}>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game1.jpg"} style={{width: '49%', marginTop: '5px', marginRight: '20x'}}/>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game2.jpg"} style={{width: '48%', marginTop: '5px'}}/>

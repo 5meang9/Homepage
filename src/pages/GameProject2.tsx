@@ -44,10 +44,10 @@ export default function GameProject2(){
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#기본_태그_사용법">캐릭터 직업 xml파일로 세팅</a></li>
-                    <li><a href="#기본_태그_사용법">XML 로드</a></li>
-                    <li><a href="#기본_태그_사용법">XML 적용</a></li>
-                    <li><a href="#아이콘_여백_정렬">실행화면</a></li>
+                    <li><a href="#캐릭터 직업 xml파일로 세팅">캐릭터 직업 xml파일로 세팅</a></li>
+                    <li><a href="#XML 로드">XML 로드</a></li>
+                    <li><a href="#XML 적용">XML 적용</a></li>
+                    <li><a href="#실행화면">실행화면</a></li>
                   </ol>
                 </li>
               </ol>
@@ -70,7 +70,7 @@ export default function GameProject2(){
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>캐릭터 직업 xml파일로 세팅</b></h4>
+            <h4 id="캐릭터 직업 xml파일로 세팅"><b>캐릭터 직업 xml파일로 세팅</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="XML">XML</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -125,7 +125,7 @@ export default function GameProject2(){
                 </code>
               </pre>
             </div>
-            <h4><b>XML 로드</b></h4>
+            <h4 id="XML 로드"><b>XML 로드</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -163,7 +163,7 @@ export default function GameProject2(){
                 </code>
               </pre>
             </div>
-            <h4><b>XML 적용</b></h4>
+            <h4 id="XML 적용"><b>XML 적용</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -215,7 +215,7 @@ export default function GameProject2(){
                 </code>
               </pre>
             </div>
-            <h4><b>실행화면</b></h4>
+            <h4 id="실행화면"><b>실행화면</b></h4>
             <div className='img_col' style={{display: 'flex'}}>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game5.jpg"} style={{width: '48%', marginTop: '5px'}}/>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game6.jpg"} style={{width: '48%', marginTop: '5px', marginLeft: '20x !important'}}/>

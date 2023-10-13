@@ -44,12 +44,12 @@ export default function University4(){
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#동작화면">Tesseract Tools 사용하기</a></li>
-                    <li><a href="#기본_태그_사용법">Class MainActivity Tesseract import 및 사용</a></li>
-                    <li><a href="#아이콘_크기_설정법">안드로이드 카메라 접근</a></li>
-                    <li><a href="#아이콘_여백_정렬">캡쳐 이미지와 tesseract</a></li>
-                    <li><a href="#아이콘_여백_정렬">Calc 메서드 (우선순위 계산)</a></li>
-                    <li><a href="#아이콘_여백_정렬">실행화면 및 동작화면</a></li>
+                    <li><a href="#Tesseract Tools 사용하기">Tesseract Tools 사용하기</a></li>
+                    <li><a href="#Class MainActivity Tesseract import 및 사용">Class MainActivity Tesseract import 및 사용</a></li>
+                    <li><a href="#안드로이드 카메라 접근">안드로이드 카메라 접근</a></li>
+                    <li><a href="#캡쳐 이미지와 tesseract">캡쳐 이미지와 tesseract</a></li>
+                    <li><a href="#Calc 메서드 (우선순위 계산)">Calc 메서드 (우선순위 계산)</a></li>
+                    <li><a href="#실행화면 및 동작화면_정렬">실행화면 및 동작화면</a></li>
 
                   </ol>
                 </li>
@@ -76,7 +76,7 @@ export default function University4(){
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>Tesseract Tools 사용하기</b></h4>
+            <h4 id="Tesseract Tools 사용하기"><b>Tesseract Tools 사용하기</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -98,7 +98,7 @@ export default function University4(){
               </pre>
             </div>
 
-            <h4><b>Class MainActivity Tesseract import 및 사용</b></h4>
+            <h4 id='Class MainActivity Tesseract import 및 사용'><b>Class MainActivity Tesseract import 및 사용</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -150,7 +150,7 @@ export default function University4(){
                 </code>
               </pre>
             </div>
-            <h4><b>안드로이드 카메라 접근</b></h4>
+            <h4 id='안드로이드 카메라 접근'><b>안드로이드 카메라 접근</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -200,7 +200,7 @@ export default function University4(){
                 </code>
               </pre>
             </div>
-            <h4><b>캡쳐 이미지와 tesseract</b></h4>
+            <h4 id="캡쳐 이미지와 tesseract"><b>캡쳐 이미지와 tesseract</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -245,7 +245,7 @@ export default function University4(){
                 </code>
               </pre>
             </div>
-            <h4><b>Tesseract 인식</b></h4>
+            <h4 id="Tesseract 인식"><b>Tesseract 인식</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -300,7 +300,7 @@ export default function University4(){
                 </code>
               </pre>
             </div>
-            <h4><b>Calc 메서드 (우선순위 계산)</b></h4>
+            <h4 id="Calc 메서드 (우선순위 계산)"><b>Calc 메서드 (우선순위 계산)</b></h4>
             <div className='code_box'>
               <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
@@ -409,7 +409,7 @@ export default function University4(){
                 </code>
               </pre>
             </div>
-            <h4><b>실행화면 및 동작화면</b></h4>
+            <h4 id="실행화면 및 동작화면"><b>실행화면 및 동작화면</b></h4>
             <div className='img_col' style={{display: 'flex'}}>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/plus1.png"} style={{width: '45%', marginTop: '5px', marginRight: '64x'}}/>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/plus2.png"} style={{width: '45%', marginTop: '5px'}}/>
