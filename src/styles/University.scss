@@ -82,6 +82,20 @@
   background-color: #000;
   --thumbnail-blur: 0px;
 }
+#article-header6{
+  filter: saturate(180%);
+  width: 100vw !important;
+  margin-left: calc(((100vw - 100%) / 2) * -1) !important;
+  height: 550px !important;
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% -120px;
+  background-image: url("../../public/images/math2.jpg");
+  background-color: #000;
+  --thumbnail-blur: 0px;
+}
 .article-header-wrap{
   text-align: center;
   font-family: NanumGothic;
@@ -717,4 +731,35 @@ table.hljs-ln tr:hover .hljs-ln-numbers .hljs-ln-n {
   left: 9px;
   margin-top: 5px;
   box-sizing: content-box;
+}
+
+#article_1{
+  a{
+    background-color: #54AEFF;
+    display: flex;
+    border-radius: 50px;
+    color: #fff;
+    padding: 3px 15px;
+    width: 41%;
+    text-decoration: none;
+    justify-content: center;
+    min-width: 290px;
+  }
+}
+#article_2{
+  a{
+    background-color: #54AEFF;
+    display: flex;
+    border-radius: 50px;
+    color: #fff;
+    padding: 3px 15px;
+    width: 41%;
+    text-decoration: none;
+    justify-content: center;
+    min-width: 290px;
+  }
+}
+
+.company_wrap .article1_contents_img{
+  margin-top: 24px;
 }

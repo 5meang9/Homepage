@@ -39,7 +39,7 @@ export default function Board(){
             <div className='board-item-contents'>
               <p className='board-item-period'>개발기간 · 2016.09.01 ~ 2016.09.30</p>
               <p className='board-item-title'>
-                <img src="images/webLogo1.png"/>
+                <img src="images/webLogo2.jpg"/>
                 <span> 온라인 쇼핑몰 제작</span>
               </p>
             </div>
@@ -87,7 +87,7 @@ export default function Board(){
             <div className='board-item-contents'>
               <p className='board-item-period'>개발기간 · 2019.07.01 ~ 2019.07.19</p>
               <p className='board-item-title'>
-                <img src="images/unityLogo.png"/>
+                <img src="images/unityLogo.png" style={{width:'36%'}}/>
                 <span> Unity 엔진을 이용한 땅따먹기 게임</span>
               </p>
             </div>
@@ -102,7 +102,7 @@ export default function Board(){
             <div className='board-item-contents'>
               <p className='board-item-period'>개발기간 · 2019.07.29 ~ 2019.08.31</p>
               <p className='board-item-title'>
-                <img src="images/webLogo2.png"/>
+                <img src="images/unityLogo.png" style={{width:'36%'}}/>
                 <span> Unity 엔진을 이용한 던전 게임</span>
               </p>
             </div>
@@ -129,13 +129,13 @@ export default function Board(){
         <div className='board-item-wrap' data-aos="fade-up">
           <Link to="Company/1">
             <div className='board-item-img'>
-              <img src="images/ruby1.png" alt="" />
+              <img src="images/obbbfb.png" alt="" />
             </div>
             <Badge pill bg="primary">ruby on rails</Badge>
             <div className='board-item-contents'>
               <p className='board-item-period'>개발기간 · 2022.08.08 ~ 2019.08.29</p>
               <p className='board-item-title'>
-                <img src="images/webLogo1.png"/>
+                <img src="images/webLogo.png"/>
                 <span> tui grid를 이용한 매출 집계</span>
               </p>
             </div>

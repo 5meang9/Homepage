@@ -5,9 +5,9 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 export default function Company1(){
   return (
     <>
-      <section id="article-header">
+      <section id="article-header6">
         <div className='article-header-wrap'>
-          <div id="article_h1">몬스터 👹 죽이기 게임</div>
+          <div id="article_h1">매출집계📊 구축</div>
           <div className="text-center">
             <div className='scroll-btn'>
               <span className="mouse">
@@ -40,286 +40,275 @@ export default function Company1(){
         <nav className="toc2 book-toc">
           <h4 className="nav__title"><i className="fal fa-list-ol"></i> 목차</h4>
           <ol className="toc__menu">
-            <li><a href="#article_1">Python (v3.4), pygame</a>
+            <li><a href="#article_1">Tui Grid, JavaScript, Ruby on Rails</a>
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#기본_태그_사용법">배경 이미지</a></li>
-                    <li><a href="#아이콘_크기_설정법">캐릭터</a></li>
-                    <li><a href="#아이콘_여백_정렬">실행화면</a></li>
+                    <li><a href="#기본_태그_사용법">Query 구조</a></li>
+                    <li><a href="#아이콘_크기_설정법">Tui Grid Tree 구조 설명</a></li>
+                    <li><a href="#아이콘_여백_정렬">트리구조 구현</a></li>
                   </ol>
                 </li>
               </ol>
             </li>
           </ol>
         </nav>
-        <div id='article_1'>
-          <h2 data-ke-size="size26"><b>Python (v3.4), pygame</b></h2>
+        <div id='article_1' className='company_wrap'>
+          <h2 data-ke-size="size26"><b>Tui Grid, JavaScript, Ruby on Rails</b></h2>
           <div className='article1_contents contents_style'>
-            <p>Python, Pygame 다운로드 후, py 파일에 Pygame import</p>
-            <div className='article1_contents_img'>
-              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/Python-logo-notext.svg.png"}/>
-              <span>➕</span>
-              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/pygameImg1.png"}/>
-              
+            <p>Tui Grid</p>
+            <p style={{marginTop: '17px', marginLeft: '14px'}}> - 데이터 편집, 필터링, 정렬 등과 같은 기능이 있는 라이브러리이며 <br/> 
+            편집기나 렌더러를 원하는 형식으로 사용자 정의하는데 사용할 수 있다.</p>
+            <div style={{marginLeft: '14px'}}>
+              <a href="https://github.com/nhn/tui.grid" target={'_blank'}>https://github.com/nhn/tui.grid</a>
             </div>
-            <div className="codeBlock_stylish"><span data-ke-language="python">python</span></div>
-            <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-              <code>
-                <span className="line">
-                  <span style={{color: '#4F6DFF'}}>import</span>
-                  <span style={{color: '#ABB2BF'}}> </span>
-                  <span style={{color: '#ABB2BF'}}>pygame</span>
-                </span>
-              </code>
-            </pre>
+            <p>Ruby on Rails</p>
+            <p style={{marginTop: '17px', marginLeft: '14px'}}> - MVC 패턴 사용</p>
+            <p style={{marginTop: '17px', marginLeft: '20px'}}> * Model : 애플리케이션 정보, 데이터를 나타냄.</p>
+            <p style={{marginTop: '17px', marginLeft: '20px'}}> * View : input 텍스트, 체크박스 항목 등과 같은 사용자 인터페이스 요소를 나타냄.</p>
+            <p style={{marginTop: '17px', marginLeft: '20px'}}> * Controller : 데이터와 사용자 인터페이스 요소들을 잇는 다리역할.</p>
+
+            <div className='article1_contents_img'>
+              <img className='article1_contents_img1' style={{marginTop: '-39px', width: '34%'}} src={process.env.PUBLIC_URL+"/images/toast_ui.png"}/>
+              <span>➕</span>
+              <img className='article1_contents_img2' style={{width: '13%'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
+              <span>➕</span>
+              <img className='article1_contents_img2' style={{width: '23%'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
+            </div>
           </div>
         </div>
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
-            <h4><b>배경 이미지</b></h4>
-            <img className='article2_contents_img1' src={process.env.PUBLIC_URL+"/images/terrain_atlas.png"}/>
+            <h4><b>Query 구조</b></h4>
+            <img className='article2_contents_img1' style={{width: '56%'}} src={process.env.PUBLIC_URL+"/images/query_coll.png"}/>
             <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="python">python</span></div>
+              <div className="codeBlock_stylish"><span data-ke-language="postgresql">postgresql</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
                 <code>
                   <span className="line">
-                    <span style={{color: '#008000'}}># 장애물을 정의하는 클래스(Sprite 부모 클래스를 상속)</span>
+                    <span style={{color: '#2B91AF'}}>with tabs as{'('}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>class </span>
-                    <span style={{color: '#2B91AF'}}>GraphicWall</span>
-                    <span style={{color: '#ABB2BF'}}>{"("}</span>
-                    <span style={{color: '#2B91AF'}}>pygame.sprite.Sprite</span>
-                    <span style={{color: '#ABB2BF'}}>{"):"}</span>
+                    <span style={{color: '#ABB2BF'}}>   {"(select"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>   # 이미지 추출 여러 개 복사 함수, 타일 위치/크기</span>
+                    <span style={{color: '#ABB2BF'}}>       {"date_trunc('month',date)as gagongdate,"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>   # 스크린 위치/크기 인수로 전달</span>
+                    <span style={{color: '#ABB2BF'}}>       {"..."}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   def </span>
-                    <span style={{color: '#2B91AF'}}>setGraphic</span>
-                    <span style={{color: '#ABB2BF'}}>(self,tilex,tiley,tilewidth,tileheight,x,y,width,height):</span>
+                    <span style={{color: '#ABB2BF'}}>       {"sum(coalesce(p_ea,0)) as p_ea"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>   # 이미지 적재</span>
+                    <span style={{color: '#ABB2BF'}}>   {"from sales"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       myimage = pygame.image.load{'('}</span>
-                    <span style={{color: '#A31515'}}>"terrain_atlas.png"</span>
-                    <span style={{color: '#ABB2BF'}}>{')'}.convert()</span>
+                    <span style={{color: '#ABB2BF'}}>   {"where data::date between {start_date}::date and {end_date}::date"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>   # 스크린에 표시될 이미지 Surface 생성</span>
+                    <span style={{color: '#ABB2BF'}}>   {"group by 1,2,3,4)"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       self</span>
-                    <span style={{color: '#ABB2BF'}}>.image = pygame.Surface([width, height])</span>
+                    <span style={{color: '#4F6DFF'}}>   {"union all"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>       # 타일 크기 배수로 복사</span>
+                    <span style={{color: '#ABB2BF'}}>   {"(select"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       for </span>
-                    <span style={{color: '#ABB2BF'}}>row in </span>
-                    <span style={{color: '#4F6DFF'}}>range</span>
-                    <span style={{color: '#ABB2BF'}}>(height//tileheight):</span>
+                    <span style={{color: '#ABB2BF'}}>       {"date_trunc('month',closed_at)as gagongdate,"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>           for </span>
-                    <span style={{color: '#ABB2BF'}}>column in </span>
-                    <span style={{color: '#4F6DFF'}}>range</span>
-                    <span style={{color: '#ABB2BF'}}>(width//tilewidth):</span>
+                    <span style={{color: '#ABB2BF'}}>       {"..."}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>             self</span>
-                    <span style={{color: '#ABB2BF'}}>.image.blit(myimage,[column*tilewidth,row*tileheight],[tilex,tiley,tilewidth,tileheight])</span>
+                    <span style={{color: '#ABB2BF'}}>       {"sum(coalesce(sod.shipping_qty,0)) as p_ea"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>       # 이미지 크기의 rect 객체 지정</span>
+                    <span style={{color: '#ABB2BF'}}>   {"from sales_orders so"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       self</span>
-                    <span style={{color: '#ABB2BF'}}>.rect = </span>
-                    <span style={{color: '#4F6DFF'}}>self</span>
-                    <span style={{color: '#ABB2BF'}}>.image.get_rect() </span>
+                    <span style={{color: '#ABB2BF'}}>   {"join sales_order_details sod"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>       # 장애물의 스크린 위치 지정</span>
+                    <span style={{color: '#ABB2BF'}}>       {"on so.id = sod.sales_order_id and so.rm_tf is no true"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       self</span>
-                    <span style={{color: '#ABB2BF'}}>.rect.y = y</span>
+                    <span style={{color: '#ABB2BF'}}>   {"where closed_at::date between {start_date}::date and {end_date}::date"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       self</span>
-                    <span style={{color: '#ABB2BF'}}>.rect.x = x</span>
+                    <span style={{color: '#ABB2BF'}}>   {"group by 1,2,3,4)"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>       # 투명키 설정</span>
+                    <span style={{color: '#ABB2BF'}}>   {"(select"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       self</span>
-                    <span style={{color: '#ABB2BF'}}>.image.set_colorkey(black)</span>
+                    <span style={{color: '#ABB2BF'}}>       {"date_trunc('month',o.closed_at)as gagongdate,"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"..."}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"sum(p_ea) - sum(case when claim_return_status_code == '04' then claim_return_qty else 0 end) as p_ea,"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   {"from sabang_orders o"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   {"where closed_at::date between {start_date}::date and {end_date}::date"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   {"group by 1,2,3,4)"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#4F6DFF'}}>   {"union all"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   {"..."}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}> {")select"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>     {"..."}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}> {"from tabs t"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}> {"..."}</span>
                   </span>
                 </code>
               </pre>
             </div>
             <ol style={{listStyleType: 'decimal'}} data-ke-list-type="decimal">
-              <li>GraphicWall 부모 클래스를 상속하는 Grass1 정의</li>
-              <li><span style={{color: '#4F6DFF'}}>self</span>.setGraphic(tilex,tiley,tilewidth,tileheight,x,y,width,height) 호출해서 잔디 가져오기</li>
-              <li>배경에 위치할 setupRoomOne() 메서드 생성</li>
-              <li>배경에 위치할 setupRoomOne() 메서드 생성</li>
-              <li>wall_list = setupRoomOne() 변수에 잔디 위치 저장</li>
-              <li>wall_list.draw(screen) 배경에 잔디 노출</li>
+              <li>각 매출집계 테이블의 필요한 컬럼 조회</li>
+              <li>매출집계 테이블 <span style={{color: '#4F6DFF'}}>union all </span>로 합치기</li>
+              <li>with as 로 묶은 쿼리 조회</li>
             </ol>
-            <h4><b>캐릭터</b></h4>
-            <div className='article2_contents_imgs_wrap'>
-              <img className='article2_contents_imgs' src={process.env.PUBLIC_URL+"/images/main1.png"}/>
-              <img className='article2_contents_imgs' src={process.env.PUBLIC_URL+"/images/main2.png"}/>
-              <img className='article2_contents_imgs' src={process.env.PUBLIC_URL+"/images/main3.png"}/>
-              <img className='article2_contents_imgs' src={process.env.PUBLIC_URL+"/images/main4.png"}/>
-              <img className='article2_contents_imgs' src={process.env.PUBLIC_URL+"/images/main5.png"}/>
-              <img className='article2_contents_imgs' src={process.env.PUBLIC_URL+"/images/main6.png"}/>
-              <img className='article2_contents_imgs' src={process.env.PUBLIC_URL+"/images/main7.png"}/>
-            </div>
+            <h4><b>Tui Grid Tree 구조 설명</b></h4>
             <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="python">python</span></div>
+              <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
                 <code>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>class </span>
-                    <span style={{color: '#2B91AF'}}>Player</span>
-                    <span style={{color: '#ABB2BF'}}>{"("}</span>
-                    <span style={{color: '#2B91AF'}}>pygame.sprite.Sprite</span>
-                    <span style={{color: '#ABB2BF'}}>{"):"}</span>
+                    <span style={{color: '#ABB2BF'}}>{"name: 'main category',"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   def </span>
-                    <span style={{color: '#2B91AF'}}>__init__</span>
-                    <span style={{color: '#ABB2BF'}}>(self):</span>
+                    <span style={{color: '#ABB2BF'}}>   {"_children: ["}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>   # 부모 클래스 생성자 호출</span>
+                    <span style={{color: '#ABB2BF'}}>     {"{"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   pygame.sprite.Sprite.</span>
-                    <span style={{color: '#4F6DFF'}}>__init__</span>
-                    <span style={{color: '#ABB2BF'}}>(self)</span>
+                    <span style={{color: '#ABB2BF'}}>       {"name: 'sub category'"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>   # 플레이어 이미지 리스트 초기화</span>
+                    <span style={{color: '#ABB2BF'}}>     {"},"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   self</span>
-                    <span style={{color: '#ABB2BF'}}>.images=[]</span>
+                    <span style={{color: '#ABB2BF'}}>      {"..."}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>   # cat1.png ~ cat8.png 플레이어 이미지 적재</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   for</span>
-                    <span style={{color: '#ABB2BF'}}> i in </span>
-                    <span style={{color: '#4F6DFF'}}>range</span>
-                    <span style={{color: '#ABB2BF'}}>(1,9):</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       img = pygame.image.load{'('}</span>
-                    <span style={{color: '#A31515'}}>"main"</span>
-                    <span style={{color: '#ABB2BF'}}>+</span>
-                    <span style={{color: '#2B91AF'}}>str</span>
-                    <span style={{color: '#ABB2BF'}}>(i)+</span>
-                    <span style={{color: '#A31515'}}>".png"</span>
-                    <span style={{color: '#ABB2BF'}}>{')'}.convert()</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       img.set_colorkey(white)</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       self</span>
-                    <span style={{color: '#ABB2BF'}}>.images.append(img)</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   # 디폴트로 플레이어 images[0] 사용</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>     self.</span>
-                    <span style={{color: '#ABB2BF'}}>image = </span>
-                    <span style={{color: '#4F6DFF'}}>self</span>
-                    <span style={{color: '#ABB2BF'}}>.images[0]</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   # 이미지 크기의 rect 객체 지정</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>     self</span>
-                    <span style={{color: '#ABB2BF'}}>.rect = </span>
-                    <span style={{color: '#4F6DFF'}}>self</span>
-                    <span style={{color: '#ABB2BF'}}>.image.get_rect()</span>
-                  </span>
-                </code>
-              </pre>
-
-            </div>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="python">python</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>def </span>
-                    <span style={{color: '#2B91AF'}}>update</span>
-                    <span style={{color: '#ABB2BF'}}>(self, walls):</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>------------------중략-------------------</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   # 왼쪽 방향 이동 중인 경우</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   if </span>
-                    <span style={{color: '#ABB2BF'}}>self.change_x {'<'} 0:</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>       # 프레임 카운터 증가</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       self</span>
-                    <span style={{color: '#ABB2BF'}}>.frame += 1</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>       # 프레임 리셋</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       if </span>
-                    <span style={{color: '#4F6DFF'}}>self</span>
-                    <span style={{color: '#ABB2BF'}}>.frame {'>'} 3*4:</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           self.frame = 0</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       self </span>
-                    <span style={{color: '#ABB2BF'}}>.image= </span>
-                    <span style={{color: '#4F6DFF'}}>self</span>
-                    <span style={{color: '#ABB2BF'}}>.images[self.frame//4]</span>
+                    <span style={{color: '#ABB2BF'}}>   {"]"}</span>
                   </span>
                 </code>
               </pre>
             </div>
             <ol style={{listStyleType: 'decimal'}} data-ke-list-type="decimal">
-              <li>방향 키 이동 속도 벡터 값 설정</li>
-              <li>if event.type == pygame.KEYDOWN <span style={{color: '#2B91AF'}}>{'--->'}</span> player.changespeed(-10,0)</li>
-              <li>게임시작 <span style={{color: '#2B91AF'}}>{'--->'}</span> 몬스터와 총알 충돌 시, bullet_list.remove(bullet) 로 사라지게 한다.</li>
+              <li>name {'==>'} tree 구조 객체를 만들기 위한 key, 커스텀 가능</li>
+              <li>_children {'==>'} name 의 하위로 노출될 서브 카테고리 객체</li>
+              <li>하위로 만들고 싶지 않다면, 대카테고리의 같은 선상에 객체를 만들면 된다.</li>
             </ol>
-            <h4><b>실행화면</b></h4>
-            <div style={{display: 'flex'}}>
-              <img style={{width: '50%'}} src={process.env.PUBLIC_URL+"/images/gameStart1.png"}/>
-              <img style={{width: '50%'}} src={process.env.PUBLIC_URL+"/images/gameStart2.png"}/>
+            <h4><b>트리구조 커스텀</b></h4>
+            <div className='code_box'>
+              <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
+              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
+                <code>
+                  <span className="line">
+                    <span style={{color: '#4F6DFF'}}>function </span>
+                    <span style={{color: '#2B91AF'}}>makeTreeData</span>
+                    <span style={{color: '#ABB2BF'}}>(datas, onlyNameCol){'{'}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   trees = [];</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   let brandTmp;</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   let findBrandIndex = 0;</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   ...</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   {'datas.forEach((row, index) => {'}</span>
+                    <span style={{color: '#008000'}}>  //컨트롤러 데이터 row 별로 순회</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"Object.keys(row).forEach(col => {"}</span>
+                    <span style={{color: '#008000'}}>  //brand, gubun1, gubun2, gubun3 ... 키값으로 순회</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>           {"if(col == 'brand'){"}</span>
+                    <span style={{color: '#008000'}}> //컬럼이 brand 일 때</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>             //{"[{item:'AGL',depth:1,_children:[]}, {item:'AND',depth:1,_children:[]}]"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>             //{" => item 에 brand, 트리구조로 만들 _children 배열 구조로 생성"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>             {"brandTmp = row[col];"}</span>
+                    <span style={{color: '#008000'}}> //이전 brand 저장</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>             //col 을 제외한 sum, 2023-01-01, 2023-02-01 등의 키를 가진 객체 생성</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>             {"onlyNameCol.forEach(col => makeObj[col] = row[col]);"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>             {"trees.push({item:row[col],depth:1, ...makeObj, ...(hasCategory && {_children:[]})});"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>             //previous 브랜드와 같은 값을 가진 트리의 인덱스 구하기</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>             {"findBrandIndex = trees.findIndex(obj => obj.item === brandTmp);"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>             {"gubun1Tmp = '';"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>           {"}else{"}</span>
+                    <span style={{color: '#008000'}}>  //현재 행의 브랜드가 previous 브랜드와 같지을 경우</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>             //sum, 2023-01-01, 2023-02-01 등 키의 값을 더해준다.</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>             {"onlyNameCol.forEach(col => trees[findBrandIndex][col] += row[col]);"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>             {"makeObj = {};"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>           {"}"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>            -------------------중략------------------------ </span>
+                  </span>
+                </code>
+              </pre>
+            </div>
+            <h4><b>자세한 화면을 보고 싶으면 이동해주세요.</b></h4>
+            <div style={{marginLeft: '14px', marginTop: '-30px', marginBottom: '20px'}}>id: jw.oh / pw: 1111</div>
+            <div style={{marginLeft: '14px', marginBottom: '50px'}}>
+              <a href="http://obbbfb.com:2020/sales" target={'_blank'}>http://obbbfb.com:2020/sales</a>
             </div>
           </div>
         </div>
