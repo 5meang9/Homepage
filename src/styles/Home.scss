@@ -131,8 +131,22 @@
   margin-top: 100px;
 }
 
+
+@media (min-width: 640px){
+  .profile-title{
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-title{
+    font-size: 3rem;
+  }
+  
+}
+
 .profile-title{
-  font-size: 43px;
+  // font-size: 43px;
   font-family: NanumGothic;
   font-weight: 500;
   margin: 0 11%;

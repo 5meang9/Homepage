@@ -6,10 +6,10 @@ import '../styles/Layout.scss'
 const Layout = (props:{children: React.ReactNode}) => {
   return (
     <div className='layout'>
-      <Header /> 
+      {/* <Header />  */}
       {/* <Header1 /> */}
       <main className='main'>{props.children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }

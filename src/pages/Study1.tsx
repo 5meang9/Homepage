@@ -5,9 +5,9 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 export default function Study1(){
   return (
     <>
-      <section id="article-header9">
+      <section id="article-header10">
         <div className='article-header-wrap'>
-          <div id="article_h1" style={{color: '#000'}}>DX팀에 요청❓</div>
+          <div id="article_h1" style={{color: '#000'}}>드래곤🐉 플라이트 구현하기</div>
           <div className="text-center">
             <div className='scroll-btn'>
               <span className="mouse" style={{borderColor: '#000'}}>
@@ -40,13 +40,14 @@ export default function Study1(){
         <nav className="toc2 book-toc">
           <h4 className="nav__title"><i className="fal fa-list-ol"></i> 목차</h4>
           <ol className="toc__menu">
-            <li><a href="#article_1">Modal, JavaScript, Ruby on Rails</a>
+            <li><a href="#article_1">C#, Unity Engine</a>
               <ol>
                 <li><a href="#article_2">주요 기능</a>
                   <ol style={{paddingLeft: 0}}>
-                    <li><a href="#Active Storage">Active Storage</a></li>
-                    <li><a href="#첨부파일 추가">첨부파일 추가</a></li>
-                    <li><a href="#첨부파일 다운로드">첨부파일 다운로드</a></li>
+                    <li><a href="#배경 이미지">배경 이미지</a></li>
+                    <li><a href="#캐릭터">캐릭터</a></li>
+                    <li><a href="#적과 무기의 상호작용">적과 무기의 상호작용</a></li>
+                    <li><a href="#실행화면">실행화면</a></li>
                   </ol>
                 </li>
               </ol>
@@ -54,197 +55,60 @@ export default function Study1(){
           </ol>
         </nav>
         <div id='article_1' className='company_wrap'>
-          <h2 data-ke-size="size26"><b>Modal, JavaScript, Ruby on Rails</b></h2>
+          <h2 data-ke-size="size26"><b>C#, Unity Engine</b></h2>
           <div className='article1_contents contents_style'>
-            <p>Modal</p>
-            <p style={{marginTop: '17px', marginLeft: '14px'}}> - 부트스트랩 모달 사용</p>
-            <div style={{marginLeft: '14px'}}>
-              <a href="https://getbootstrap.com/docs/4.0/components/modal/" target={'_blank'}>https://getbootstrap.com/docs/4.0/components/modal/</a>
+            <p>C#</p>
+            <p style={{marginTop: '17px', marginLeft: '14px'}}> - 무한 배경이미지</p>
+            <p style={{marginTop: '17px', marginLeft: '14px'}}> - 캐릭터 움직임, 무기 구현</p>
+            <p style={{marginTop: '17px', marginLeft: '14px'}}> - 랜덤 적 배치</p>
+            <p>Unity</p>
+            <p style={{marginTop: '17px', marginLeft: '14px'}}> - prefabs 객체</p>
+            <p style={{marginTop: '17px', marginLeft: '14px'}}> - Rigidbody 2D</p>
+            <p style={{marginTop: '17px', marginLeft: '14px'}}> - Circle Collider 2D</p>
+            <p>reference</p>
+            <div className='reference_text'>
+              <a href='https://www.youtube.com/@nadocoding' style={{marginTop: '17px', marginLeft: '14px'}}><p> - 유튜버 나도코딩</p></a>
             </div>
-            <p>JavaScript</p>
-            <p style={{marginTop: '17px', marginLeft: '14px'}}> - 첨부파일 드래그 앤 드랍 추가</p>
-            <p style={{marginTop: '17px', marginLeft: '14px'}}> - 첨부파일 탐색기 오픈</p>
-            <p style={{marginTop: '17px', marginLeft: '14px'}}> - 첨부파일 여러개 추가 가능</p>
-            <p>Ruby on Rails</p>
-            <p style={{marginTop: '17px', marginLeft: '14px'}}> - Active Storage 사용</p>
 
             <div className='article1_contents_img'>
-              <img className='article1_contents_img1' style={{marginTop: '-57px', width: '18%'}} src={process.env.PUBLIC_URL+"/images/boot.png"}/>
-              <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '13%'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
-              <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '23%'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
+              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/unityLogo.png"} style={{width: '20%', marginTop: '-25px'}}/>
+              <span style={{fontSize: '5vw'}}>➕</span>
+              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/Clogo.png"} style={{width: '8%', marginTop: '-50px'}}/>
             </div>
+            
           </div>
         </div>
         <div id='article_2'>
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style' id="Active Storage">
-            <h4><b>Active Storage</b></h4>
-            <img className='article2_contents_img1' style={{width: '80%'}} src={process.env.PUBLIC_URL+"/images/polymorphic.jpg"}/>
-            <h4 id='Tui Chart 구조 설명'><b>Model 정의</b></h4>
+            <h4 id="배경 이미지"><b>배경 이미지</b></h4>
             <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
+              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
                 <code>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"Class Request < ApplicationRecord"}</span>
+                    <span style={{color: '#ABB2BF'}}>{"private float moveSpeed = 3f;"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"...."}</span>
+                    <span style={{color: '#ABB2BF'}}>{"void Update(){"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"has_many_attached :files"}</span>
+                    <span style={{color: '#008000'}}>   // 속도 3인 아래방향으로 배경 흐름</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"end"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
-            <h4 id='Tui Chart 구조 설명'><b>Controller 정의</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"private"}</span>
+                    <span style={{color: '#ABB2BF'}}>   {"transform.position += Vector3.down * moveSpeed * Time.deltaTime;"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"def request_params"}</span>
+                    <span style={{color: '#008000'}}>   // 배경의 y 좌표가 -10으로 떨어지면 20으로 올림</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"params.require(:requests).permit(:id, :title, :request, :response, :requester_id, :respondents_id, :responsed_at, files: [])"}</span>
+                    <span style={{color: '#ABB2BF'}}>   {"if(transform.position.y < -10){"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"end"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>// 삽입</span>
+                    <span style={{color: '#ABB2BF'}}>       {"transform.position += new Vector3(0, 20f, 0);"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"_request.files.attach(params[:fileList])"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>// 삭제</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"delete_files.each{|el| _request.files.find_by_id(el).purge} unless delete_files.nil?"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
-            <h4 id="첨부파일 추가"><b>첨부파일 추가</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#008000'}}> // drag over 시, 효과 주기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const dragOverHandler = (ev) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"ev.preventDefault();"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"let getFileAttach = document.querySelector('.file_attach');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"getFileAttach.classList.add('drag_in');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}> // drag and drop 파일 첨부</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const dropHandler = (ev) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"let fileListUl = document.querySelector('.upld_flist > ul');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"let getFileAttach = document.querySelector('.file_attach');"}</span>
-                  </span>
-                  <span className="line">
-                      <span style={{color: '#ABB2BF'}}>   {"getFileAttach.classList.remove('drag_in');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   // 이벤트 더블링 막기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"ev.preventDefault();"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"if (ev.dataTransfer.items) {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>       // dataTransfer 를 이용하여 파일에 접근</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"[...ev.dataTransfer.items].forEach((item, i) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>         // drop한 item이 파일이 아닌 경우, 거절하기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>         {"if (item.kind === 'file') {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"const file = item.getAsFile();"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"dataTransfer.items.add(file);"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>         {"}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"});"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"} else {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>     {"[...ev.dataTransfer.files].forEach((file, i) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>         {"dataTransfer.items.add(file);"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>     {"});"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"}"}</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>{"// PC 텍스트 클릭 > 파일첨부 창으로 첨부하는 경우"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const onFilePicked = (e) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"let fileListUl = document.querySelector('.upld_flist > ul');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"if(isNew){ fileListUl.replaceChildren();}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"[...(e.target.files)].forEach(row => {dataTransfer.items.add(row);});"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"drawFileList(dataTransfer.files, fileListUl);"}</span>
+                    <span style={{color: '#ABB2BF'}}>   {"}"}</span>
                   </span>
                   <span className="line">
                     <span style={{color: '#ABB2BF'}}>{"}"}</span>
@@ -252,21 +116,160 @@ export default function Study1(){
                 </code>
               </pre>
             </div>
-            <h4 id="첨부파일 다운로드"><b>첨부파일 다운로드</b></h4>
+            <h4 id='캐릭터'><b>캐릭터</b></h4>
+            <h6><b>마우스로 움직이고 배경안에 머무르기</b></h6>
             <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
+              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
               <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
                 <code>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"url:Rails.application.routes.url_helpers.rails_blob_path(f,only_path:true)"}</span>
+                    <span style={{color: '#008000'}}>// 현재 마우스 위치를 가져온다</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>// 최소,최대보다 작거나 크면 해당하는 값을 적용하여 배경 밖으로 나가지 않게 유지</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"float toX = Mathf.Clamp(mousePos.x, -2.35f, 2.35f);"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>// 캐릭터 좌우로 움직임</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"transform.position = new Vector3(toX, transform.position.y, transform.position.z);"}</span>
                   </span>
                 </code>
               </pre>
             </div>
-            <h4><b>자세한 화면을 보고 싶으면 이동해주세요.</b></h4>
-            <div style={{marginLeft: '14px', marginTop: '-30px', marginBottom: '20px'}}>id: jw.oh / pw: 1111</div>
-            <div style={{marginLeft: '14px', marginBottom: '50px'}}>
-              <a href="http://obbbfb.com:2020/requests" target={'_blank'}>http://obbbfb.com:2020/requests</a>
+            <h6><b>무기 발사</b></h6>
+            <div className='code_box'>
+              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
+              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
+                <code>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>// 객체 연결</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"[SerializeField]"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"private GameObject[] weapons;"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>// 무기가 시작 될 위치 선정</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"[SerializeField]"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"private Transform shootTransform;"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"private Transform shootTransform;"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"[SerializeField]"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>// 0.05초로 무기 발사</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"private float shootInterval = 0.05f;"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>// 마지막으로 무기를 발사한 시간</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"private float lastShotTime = 0f;"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"void Shoot(){"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   {"if(Time.time - lastShotTime > shootInterval){"}</span>
+                    <span style={{color: '#008000'}}> // 무기 발사하는 시간의 간격을 준다</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>       // 회전 없이 shootTransform 위치에서 무기 객체 노출</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"Instantiate(weapons[weaponIndex], shootTransform.position, Quaternion.identity);"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"lastShotTime = Time.time;"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   {"}"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"}"}</span>
+                  </span>
+                </code>
+              </pre>
+            </div>
+            <h4 id="적과 무기의 상호작용"><b>적과 무기의 상호작용</b></h4>
+            <div className='code_box'>
+              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
+              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
+                <code>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"[SerializeField]"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>// 적의 체력</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"private float hp = 1f;"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}> // 충돌 감지</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"private void OnTriggerEnter2D(Collider2D other){"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>   // 무기와 적이 충돌했을 때</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   {'if(other.gameObject.tag == "Weapon"){'}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"Weapon weapon = other.gameObject.GetComponent<Weapon>();"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"hp -= weapon.damage;"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"if(hp <= 0){"}</span>
+                    <span style={{color: '#008000'}}> // 적의 체력이 닳았을 때</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>           {"Destroy(gameObject);"}</span>
+                    <span style={{color: '#008000'}}> // 적 사라짐</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"}"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>       // 무기 사라짐</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>       {"Destroy(other.gameObject);"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>   {"}"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>{"}"}</span>
+                  </span>
+                </code>
+              </pre>
+            </div>
+            <h4 id="실행화면"><b>실행화면</b></h4>
+            <div className='img_col' style={{display: 'flex'}}>
+              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/gamePlay.gif"} style={{width: '29%', marginTop: '5px', marginBottom: '50px'}}/>
             </div>
           </div>
         </div>

@@ -138,6 +138,20 @@
   background-color: #000;
   --thumbnail-blur: 0px;
 }
+#article-header10{
+  filter: saturate(180%);
+  width: 100vw !important;
+  margin-left: calc(((100vw - 100%) / 2) * -1) !important;
+  height: 550px !important;
+  position: relative;
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 69% -130px;
+  background-image: url("../../public/images/dragon.jpg");
+  background-color: #000;
+  --thumbnail-blur: 0px;
+}
 .article-header-wrap{
   text-align: center;
   font-family: NanumGothic;
@@ -786,6 +800,17 @@ table.hljs-ln tr:hover .hljs-ln-numbers .hljs-ln-n {
     text-decoration: none;
     justify-content: center;
     min-width: 290px;
+  }
+}
+.reference_text{
+  a{
+    background-color: initial !important;
+    padding: 0 !important;
+    justify-content: initial !important;
+
+  }
+  p{
+    margin-top: 0 !important;
   }
 }
 #article_2{
