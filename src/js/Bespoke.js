@@ -2499,9 +2499,9 @@ import { useEffect } from 'react';
       for (var i = 0; i < inputTotalVal.length; i++) {
         if (Object.keys(_this.symbols).includes(inputTotalVal[i])) {
           if ("⑮⑯ⒸⒹⒺⒻⒼⒽⒾⒿⓀⓃ".includes(inputTotalVal[i])) { //데이지, 고양이, 동백꽃 등 색 미변경 처리 부분
-            temp += `<img class='image-shadow' src='/HomePage/bespoke_assets/symbols/${_this.symbols[inputTotalVal[i]]}.png'>`;
+            temp += `<img class='image-shadow' src='/Homepage/bespoke_assets/symbols/${_this.symbols[inputTotalVal[i]]}.png'>`;
           } else { // 그 외 심볼
-            temp += `<img class='image-shadow' src='/HomePage/bespoke_assets/symbols/${_this.symbols[inputTotalVal[i]]}_${_this.convertActiveValue(_this.symbolColors, 'value')}.png'>`;
+            temp += `<img class='image-shadow' src='/Homepage/bespoke_assets/symbols/${_this.symbols[inputTotalVal[i]]}_${_this.convertActiveValue(_this.symbolColors, 'value')}.png'>`;
           }
         } else { // 텍스트
           if (inputTotalVal[i]) {
@@ -2633,7 +2633,7 @@ import { useEffect } from 'react';
         case 'bespoke-font-select-big-textfont active': //빅텍스트 > 시뮬에 이미지 노출, 판 변경
         _this.previewBig.replaceChildren();
           if(_this.convertActiveValue(_this.bigTextSymbol, 'value')){
-            _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/HomePage/bespoke_assets/bigtexts/${_this.convertActiveValue(_this.inputColors, 'value')}/${_this.convertActiveValue(_this.bigTextSymbol, 'value')}.png'>`)
+            _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/Homepage/bespoke_assets/bigtexts/${_this.convertActiveValue(_this.inputColors, 'value')}/${_this.convertActiveValue(_this.bigTextSymbol, 'value')}.png'>`)
           }
           document.getElementsByClassName('bespoke-front-big-symbol-text-wrap')[0].classList.add('active');
           document.getElementsByClassName('bespoke-color-wrap')[0].classList.add('active');
@@ -2648,7 +2648,7 @@ import { useEffect } from 'react';
         case 'bespoke-font-select-big-petfont active': //빅펫 > 시뮬에 이미지 노출, 판 변경
           _this.previewBig.replaceChildren();
           if(_this.convertActiveValue(_this.bigPetsSymbol, 'value')){
-            _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/HomePage/bespoke_assets/bigpets/${_this.convertActiveValue(_this.petColors, 'value')}/${_this.convertActiveValue(_this.bigPetsSymbol, 'value')}.png'>`)
+            _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/Homepage/bespoke_assets/bigpets/${_this.convertActiveValue(_this.petColors, 'value')}/${_this.convertActiveValue(_this.bigPetsSymbol, 'value')}.png'>`)
           }
           document.getElementsByClassName('bespoke-front-big-symbol-text-wrap')[0].classList.remove('active');
           document.getElementsByClassName('bespoke-symbol-wrap')[0].classList.remove('active');
@@ -2724,27 +2724,27 @@ import { useEffect } from 'react';
   
       if(_this.convertActiveValue(_this.bigTextSymbol, 'value')){
         _this.previewBig.replaceChildren();
-        _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/HomePage/bespoke_assets/bigtexts/${_this.convertActiveValue(_this.inputColors, 'value')}/${_this.convertActiveValue(_this.bigTextSymbol, 'value')}.png'>`)
+        _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/Homepage/bespoke_assets/bigtexts/${_this.convertActiveValue(_this.inputColors, 'value')}/${_this.convertActiveValue(_this.bigTextSymbol, 'value')}.png'>`)
       }
     }
   
     applyBigTextSymbol(obj, _this){ //빅텍스트 그리기
       _this.addAndRemoveClass(_this.bigTextSymbol, obj, 'value');
       _this.previewBig.replaceChildren();
-      _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/HomePage/bespoke_assets/bigtexts/${_this.convertActiveValue(_this.inputColors, 'value')}/${_this.convertActiveValue(_this.bigTextSymbol, 'value')}.png'>`)
+      _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/Homepage/bespoke_assets/bigtexts/${_this.convertActiveValue(_this.inputColors, 'value')}/${_this.convertActiveValue(_this.bigTextSymbol, 'value')}.png'>`)
     }
   
     applyBigPetsSymbol(obj, _this){ //빅펫 그리기
       _this.addAndRemoveClass(_this.bigPetsSymbol, obj, 'value');
       _this.previewBig.replaceChildren();
-      _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/HomePage/bespoke_assets/bigpets/${_this.convertActiveValue(_this.petColors, 'value')}/${_this.convertActiveValue(_this.bigPetsSymbol, 'value')}.png'>`)
+      _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/Homepage/bespoke_assets/bigpets/${_this.convertActiveValue(_this.petColors, 'value')}/${_this.convertActiveValue(_this.bigPetsSymbol, 'value')}.png'>`)
     }
   
     applyPetColors(obj, _this){ //펫 색상 변경
       _this.addAndRemoveClass(_this.petColors, obj, 'value');
       if(_this.convertActiveValue(_this.bigPetsSymbol, 'value')){
         _this.previewBig.replaceChildren();
-        _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/HomePage/bespoke_assets/bigpets/${_this.convertActiveValue(_this.petColors, 'value')}/${_this.convertActiveValue(_this.bigPetsSymbol, 'value')}.png'>`)
+        _this.previewBig.insertAdjacentHTML('afterbegin', `<img src='/Homepage/bespoke_assets/bigpets/${_this.convertActiveValue(_this.petColors, 'value')}/${_this.convertActiveValue(_this.bigPetsSymbol, 'value')}.png'>`)
       }
     }
   
@@ -2775,10 +2775,10 @@ import { useEffect } from 'react';
     openConsentBlock(_this){ //필수확인사항 펼치기&닫기
       if(_this.requireConfirm.classList.contains('active')){
         _this.requireConfirm.classList.remove('active');
-        document.querySelector('.bespoke-checked-whether-title img').src = '/HomePage/bespoke_assets/icons/arrow-down.png';
+        document.querySelector('.bespoke-checked-whether-title img').src = '/Homepage/bespoke_assets/icons/arrow-down.png';
       }else{
         _this.requireConfirm.classList.add('active');
-        document.querySelector('.bespoke-checked-whether-title img').src = '/HomePage/bespoke_assets/icons/arrow-up.png';
+        document.querySelector('.bespoke-checked-whether-title img').src = '/Homepage/bespoke_assets/icons/arrow-up.png';
       }
     }
   
@@ -3012,7 +3012,7 @@ import { useEffect } from 'react';
           }
           [..._this.bespokeLetters].forEach(char =>{ //이미지 만드는 부분
             if(Object.keys(_this.symbols).includes(char)){  //symbol 처리
-              connection += `<img class='bescon-img-${"⑮⑯ⒸⒹⒺⒻⒼⒽⒾⒿⓀⓃ".includes(char)? "daisy" : _this.bespokeSymbolColor}' src='/HomePage/bespoke_assets/symbols/${_this.symbols[char]}${"⑮⑯ⒸⒹⒺⒻⒼⒽⒾⒿⓀⓃ".includes(char) ? "" : "_" + _this.bespokeSymbolColor}.png'>`
+              connection += `<img class='bescon-img-${"⑮⑯ⒸⒹⒺⒻⒼⒽⒾⒿⓀⓃ".includes(char)? "daisy" : _this.bespokeSymbolColor}' src='/Homepage/bespoke_assets/symbols/${_this.symbols[char]}${"⑮⑯ⒸⒹⒺⒻⒼⒽⒾⒿⓀⓃ".includes(char) ? "" : "_" + _this.bespokeSymbolColor}.png'>`
             }else{ //텍스트 처리
               if (char == "ˇ") {
                 connection += `<div class='bescon-text-${_this.bespokeFontColor}' style=" width:4px; font-family:'${_this.bespokeFont}'; color: ${_this.fontColorChange(_this.bespokeFontColor, _this)};">${char.replace("ˇ", "")}</div>`;
@@ -3030,7 +3030,7 @@ import { useEffect } from 'react';
           if(bespoke.size == 'SM' || bespoke.size == 'MT'){
             document.getElementsByClassName('bescon-big')[0].style.backgroundPosition = '52% 83%'
           }
-          connection += `<img class="bescon-big-img" src='/HomePage/bespoke_assets/${_this.bespokeResultKind.toLowerCase()}s/${_this.bespokeBigSymbolColor}/${_this.bespokeBigSymbol}.png'>`;
+          connection += `<img class="bescon-big-img" src='/Homepage/bespoke_assets/${_this.bespokeResultKind.toLowerCase()}s/${_this.bespokeBigSymbolColor}/${_this.bespokeBigSymbol}.png'>`;
           document.getElementsByClassName('bescon-big')[0].insertAdjacentHTML('afterbegin', connection);
           break;
       }
