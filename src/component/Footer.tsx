@@ -4,9 +4,11 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.contents}>
-        <h2 className={styles.title}>
-          Do what you love
-        </h2>
+        <a className={styles.url} href="https://github.com/5meang9" target={'_blank'}>
+          <h2 className={styles.title}>
+            https://github.com/5meang9
+          </h2>
+        </a>
       </div>
     </footer>
   )
