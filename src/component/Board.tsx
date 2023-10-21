@@ -149,7 +149,7 @@ export default function Board(){
               </div>
               <Badge pill bg="primary">ruby on rails</Badge>
               <div className='board-item-contents'>
-                <p className='board-item-period'>개발기간 · 2022.09.05 ~ 2019.09.16</p>
+                <p className='board-item-period'>개발기간 · 2022.09.05 ~ 2022.09.16</p>
                 <p className='board-item-title'>
                   <img src="images/ruby1.png"/>
                   <span> 주간보고 매출</span>
