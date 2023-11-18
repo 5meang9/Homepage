@@ -54,7 +54,7 @@ export default function Company2(){
           </ol>
         </nav>
         <div id='article_1' className='company_wrap'>
-          <h2 data-ke-size="size26"><b>HTML, JavaScript, Ruby on Rails</b></h2>
+          <h2 data-ke-size="size26"><b style={{fontSize: '1.2rem'}}>HTML, JavaScript, Ruby on Rails</b></h2>
           <div className='article1_contents contents_style'>
             <p>HTML</p>
             <p style={{marginTop: '17px', marginLeft: '14px'}}> - position sticky를 이용하여 thead, 대/중분류 틀고정 추가</p>
@@ -68,11 +68,11 @@ export default function Company2(){
             <p style={{marginTop: '17px', marginLeft: '20px'}}> * Controller : 데이터와 사용자 인터페이스 요소들을 잇는 다리역할.</p>
 
             <div className='article1_contents_img'>
-              <img className='article1_contents_img1' style={{marginTop: '-55px', width: '14%'}} src={process.env.PUBLIC_URL+"/images/htmlLogo2.png"}/>
+              <img className='article1_contents_img1' style={{verticalAlign: 'bottom', width: '14%'}} src={process.env.PUBLIC_URL+"/images/htmlLogo2.png"}/>
               <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '13%'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
+              <img className='article1_contents_img2' style={{width: '13%',verticalAlign: 'bottom'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
               <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '23%'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
+              <img className='article1_contents_img2' style={{width: '16%', verticalAlign: 'bottom'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
             </div>
           </div>
         </div>

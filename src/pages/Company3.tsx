@@ -55,7 +55,7 @@ export default function Company3(){
           </ol>
         </nav>
         <div id='article_1' className='company_wrap'>
-          <h2 data-ke-size="size26"><b>Tui Chart, JavaScript, Ruby on Rails</b></h2>
+          <h2 data-ke-size="size26"><b style={{fontSize: '1.1rem'}}>Tui Chart, JavaScript, Ruby on Rails</b></h2>
           <div className='article1_contents contents_style'>
             <p>Tui Chart</p>
             <p style={{marginTop: '17px', marginLeft: '14px'}}> - 막대, 기둥, 선 등과 같은 여러 차트 제공</p>
@@ -72,11 +72,11 @@ export default function Company3(){
             <p style={{marginTop: '17px', marginLeft: '20px'}}> * Controller : 데이터와 사용자 인터페이스 요소들을 잇는 다리역할.</p>
 
             <div className='article1_contents_img'>
-              <img className='article1_contents_img1' style={{marginTop: '-42px', width: '34%'}} src={process.env.PUBLIC_URL+"/images/chartLogo.png"}/>
+              <img className='article1_contents_img1' style={{verticalAlign: 'super', width: '34%'}} src={process.env.PUBLIC_URL+"/images/chartLogo.png"}/>
               <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '13%'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
+              <img className='article1_contents_img2' style={{width: '13%', verticalAlign: 'bottom'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
               <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '23%'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
+              <img className='article1_contents_img2' style={{width: '16%', verticalAlign: 'bottom'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
             </div>
           </div>
         </div>

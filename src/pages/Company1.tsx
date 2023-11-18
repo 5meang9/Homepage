@@ -54,7 +54,7 @@ export default function Company1(){
           </ol>
         </nav>
         <div id='article_1' className='company_wrap'>
-          <h2 data-ke-size="size26"><b>Tui Grid, JavaScript, Ruby on Rails</b></h2>
+          <h2 data-ke-size="size26"><b style={{fontSize: '1.2rem'}}>Tui Grid, JavaScript, Ruby on Rails</b></h2>
           <div className='article1_contents contents_style'>
             <p>Tui Grid</p>
             <p style={{marginTop: '17px', marginLeft: '14px'}}> - 데이터 편집, 필터링, 정렬 등과 같은 기능이 있는 라이브러리이며 <br/> 
@@ -69,11 +69,11 @@ export default function Company1(){
             <p style={{marginTop: '17px', marginLeft: '20px'}}> * Controller : 데이터와 사용자 인터페이스 요소들을 잇는 다리역할.</p>
 
             <div className='article1_contents_img'>
-              <img className='article1_contents_img1' style={{marginTop: '-39px', width: '34%'}} src={process.env.PUBLIC_URL+"/images/toast_ui.png"}/>
+              <img className='article1_contents_img1' style={{verticalAlign: 'super', width: '34%'}} src={process.env.PUBLIC_URL+"/images/toast_ui.png"}/>
               <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '13%'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
+              <img className='article1_contents_img2' style={{verticalAlign: 'bottom', width: '13%'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
               <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '23%'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
+              <img className='article1_contents_img2' style={{verticalAlign: 'bottom', width: '16%'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
             </div>
           </div>
         </div>
@@ -256,48 +256,54 @@ export default function Company1(){
                     <span style={{color: '#008000'}}> //컬럼이 brand 일 때</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>             //{"[{item:'AGL',depth:1,_children:[]}, {item:'AND',depth:1,_children:[]}]"}</span>
+                    <span style={{color: '#ABB0080002BF'}}>             {"//현재 행의 브랜드가 이전 브랜드와 같지 않을 경우에 객체 배열 만들어줌."}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>             //{" => item 에 brand, 트리구조로 만들 _children 배열 구조로 생성"}</span>
+                    <span style={{color: '#ABB2BF'}}>             {"if(row[col] !== brandTmp){"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"brandTmp = row[col];"}</span>
+                    <span style={{color: '#008000'}}>                 //{"[{item:'AGL',depth:1,_children:[]}, {item:'AND',depth:1,_children:[]}]"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#008000'}}>                 //{" => item 에 brand, 트리구조로 만들 _children 배열 구조로 생성"}</span>
+                  </span>
+                  <span className="line">
+                    <span style={{color: '#ABB2BF'}}>                 {"brandTmp = row[col];"}</span>
                     <span style={{color: '#008000'}}> //이전 brand 저장</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>             //col 을 제외한 sum, 2023-01-01, 2023-02-01 등의 키를 가진 객체 생성</span>
+                    <span style={{color: '#008000'}}>                 //col 을 제외한 sum, 2023-01-01, 2023-02-01 등의 키를 가진 객체 생성</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"onlyNameCol.forEach(col => makeObj[col] = row[col]);"}</span>
+                    <span style={{color: '#ABB2BF'}}>                 {"onlyNameCol.forEach(col => makeObj[col] = row[col]);"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"trees.push({item:row[col],depth:1, ...makeObj, ...(hasCategory && {_children:[]})});"}</span>
+                    <span style={{color: '#ABB2BF'}}>                 {"trees.push({item:row[col],depth:1, ...makeObj, ...(hasCategory && {_children:[]})});"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>             //previous 브랜드와 같은 값을 가진 트리의 인덱스 구하기</span>
+                    <span style={{color: '#008000'}}>                 //previous 브랜드와 같은 값을 가진 트리의 인덱스 구하기</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"findBrandIndex = trees.findIndex(obj => obj.item === brandTmp);"}</span>
+                    <span style={{color: '#ABB2BF'}}>                 {"findBrandIndex = trees.findIndex(obj => obj.item === brandTmp);"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"gubun1Tmp = '';"}</span>
+                    <span style={{color: '#ABB2BF'}}>                 {"gubun1Tmp = '';"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"}else{"}</span>
+                    <span style={{color: '#ABB2BF'}}>              {"}else{"}</span>
                     <span style={{color: '#008000'}}>  //현재 행의 브랜드가 previous 브랜드와 같지을 경우</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#008000'}}>             //sum, 2023-01-01, 2023-02-01 등 키의 값을 더해준다.</span>
+                    <span style={{color: '#008000'}}>                  //sum, 2023-01-01, 2023-02-01 등 키의 값을 더해준다.</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"onlyNameCol.forEach(col => trees[findBrandIndex][col] += row[col]);"}</span>
+                    <span style={{color: '#ABB2BF'}}>                 {"onlyNameCol.forEach(col => trees[findBrandIndex][col] += row[col]);"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"makeObj = {};"}</span>
+                    <span style={{color: '#ABB2BF'}}>                 {"makeObj = {};"}</span>
                   </span>
                   <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"}"}</span>
+                    <span style={{color: '#ABB2BF'}}>              {"}"}</span>
                   </span>
                   <span className="line">
                     <span style={{color: '#ABB2BF'}}>            -------------------중략------------------------ </span>

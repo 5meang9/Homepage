@@ -54,7 +54,7 @@ export default function Company4(){
           </ol>
         </nav>
         <div id='article_1' className='company_wrap'>
-          <h2 data-ke-size="size26"><b>Modal, JavaScript, Ruby on Rails</b></h2>
+          <h2 data-ke-size="size26"><b style={{fontSize: '1.1rem'}}>Modal, JavaScript, Ruby on Rails</b></h2>
           <div className='article1_contents contents_style'>
             <p>Modal</p>
             <p style={{marginTop: '17px', marginLeft: '14px'}}> - 부트스트랩 모달 사용</p>
@@ -69,11 +69,11 @@ export default function Company4(){
             <p style={{marginTop: '17px', marginLeft: '14px'}}> - Active Storage 사용</p>
 
             <div className='article1_contents_img'>
-              <img className='article1_contents_img1' style={{marginTop: '-57px', width: '18%'}} src={process.env.PUBLIC_URL+"/images/boot.png"}/>
+              <img className='article1_contents_img1' style={{verticalAlign: 'bottom', width: '18%'}} src={process.env.PUBLIC_URL+"/images/boot.png"}/>
               <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '13%'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
+              <img className='article1_contents_img2' style={{width: '13%', verticalAlign: 'bottom'}} src={process.env.PUBLIC_URL+"/images/javascript.png"}/>
               <span>➕</span>
-              <img className='article1_contents_img2' style={{width: '23%'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
+              <img className='article1_contents_img2' style={{width: '16%', verticalAlign: 'bottom'}} src={process.env.PUBLIC_URL+"/images/ruby1.png"}/>
             </div>
           </div>
         </div>
