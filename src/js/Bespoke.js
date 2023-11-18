@@ -2247,7 +2247,11 @@ import { useEffect } from 'react';
         case "S": case "PS": case "SM": case "SD":
           this.bespokeContainer.insertAdjacentHTML("afterbegin", small.htmlTxt);
           this.previewContainer.insertAdjacentHTML("afterbegin", small.preview);
-          this.setSmallTextPosition(width/3, height/3, this);
+          if(width <= 640){
+            this.setSmallTextPosition(width, height, this);
+          }else{
+            this.setSmallTextPosition(width/3, height/3, this);
+          }
           // document.getElementsByClassName('bespoke-container-toggle')[0].click();
           // document.getElementsByClassName('bespoke-container-toggle')[0].click();
           break;
@@ -2568,7 +2572,7 @@ import { useEffect } from 'react';
                 _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width:${h-p*2}px; padding-top: ${p*2}px;`);
                 _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width:${h-p*2}px; padding-top: ${p*2}px;`);
               }
-              if(width <=640){
+              if(width <= 640){
                 _this.setSmallTextPosition(width, height, _this);
               }else{
                 _this.setSmallTextPosition(width/3, height/3, _this);
