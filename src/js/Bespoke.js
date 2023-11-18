@@ -2241,10 +2241,13 @@ import { useEffect } from 'react';
       console.log("bespoke.size",bespoke.size);
       this.bespokeContainer.replaceChildren();
       this.previewContainer.replaceChildren();
+      let width = window.innerWidth;
+      let height = window.innerWidth; 
       switch(bespoke.size){
         case "S": case "PS": case "SM": case "SD":
           this.bespokeContainer.insertAdjacentHTML("afterbegin", small.htmlTxt);
           this.previewContainer.insertAdjacentHTML("afterbegin", small.preview);
+          this.setSmallTextPosition(width/3, height/3, this);
           // document.getElementsByClassName('bespoke-container-toggle')[0].click();
           // document.getElementsByClassName('bespoke-container-toggle')[0].click();
           break;
@@ -2488,6 +2491,13 @@ import { useEffect } from 'react';
       })
       return activeEl;
     }
+
+    applySingleAndWholeElCss(obj, cssConent){
+      obj.forEach(el =>{
+        // console.log("obj.style.cssText", el.style.cssText + cssConent);
+        el.style.cssText += cssConent;
+      })
+    }
   
     input_appear(inputTotalVal, _this) { //input 입력 글자, 심볼 시뮬에 노출 부분
       // console.log("++++++++++++++++++++++++++",_this)
@@ -2513,25 +2523,431 @@ import { useEffect } from 'react';
           }
         }
       }
-      if (bespoke) { //시뮬에 그리는 부분
+      // if (bespoke) { //시뮬에 그리는 부분
+      //   switch (bespoke.size) {
+      //     case "SC": //Front 6글자, Strap 8글자 시뮬 노출
+      //       inputTotal = _this.input.maxLength;
+      //       _this.input.value = inputTotalVal.slice(0, inputTotal);
+      //       _this.previewFront.replaceChildren();
+      //       _this.previewStrap.replaceChildren();
+      //       _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+      //       _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+      //       break;
+      //     default: 
+      //       _this.previewFront.replaceChildren();
+      //       _this.previewStrap.replaceChildren();
+      //       _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+      //       _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+      //       break;
+      //   }
+      // }
+      if (bespoke) {
+        let h, p;
+        let isClickMediumFont = document.querySelector('.bespoke-font-select-medium-afont').classList.contains('active');
+        let windowWidth = window.innerWidth;
+        // let windowHeight = window.innerHeight;
+        let mediumFontWrapper = _this.previewFront;
+        let width = window.innerWidth;
+        let height = window.innerWidth;
+        _this.previewFront.replaceChildren();
+        _this.previewStrap.replaceChildren();
         switch (bespoke.size) {
-          case "SC": //Front 6글자, Strap 8글자 시뮬 노출
-            inputTotal = _this.input.maxLength;
-            _this.input.value = inputTotalVal.slice(0, inputTotal);
-            _this.previewFront.replaceChildren();
-            _this.previewStrap.replaceChildren();
+          case "S": case "SM": case "SD": case "PS":
             _this.previewFront.insertAdjacentHTML('afterbegin', temp);
             _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            if(isClickMediumFont){
+              mediumFontWrapper.style.cssText += `width: ${windowWidth/20}px; font-size: ${windowWidth/25}px; top: 82% !important; left: 44.3% !important`;
+            }else{
+              h = Number(_this.previewFront.style.height.replace('px', ''));
+              p = Math.trunc(h / 6);
+  
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.front-text'), `font-size: ${h-p}px; padding-top: ${p*2}px; margin-right: ${p}px;`);
+              // 심볼 크기 지정하는 부분
+              if(document.querySelector('.image-shadow')){
+                // 여러개 적용
+                _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width:${h-p*2}px; padding-top: ${p*2}px;`);
+                _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width:${h-p*2}px; padding-top: ${p*2}px;`);
+              }
+              _this.setSmallTextPosition(width/3, height/3, _this);
+            }
             break;
-          default: 
-            _this.previewFront.replaceChildren();
-            _this.previewStrap.replaceChildren();
+          case 'M': case "MW": case "MP":
             _this.previewFront.insertAdjacentHTML('afterbegin', temp);
             _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            // if(isClickMediumFont){
+            //   mediumFontWrapper.style.cssText += `width: ${windowWidth/2}px; font-size: ${windowWidth/13}px; top: 76.5%; left: 32.3%`;
+            // }else{
+              h = Number(_this.previewFront.style.height.replace('px', ''));
+              p = Math.trunc(h / 5);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.front-text'), `font-size: ${h-p}px; padding-top: ${p}px; margin-right: ${p}px`);
+              if(document.querySelector('.image-shadow')){
+                _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p}px; margin-top: ${p+1}px;`);
+                _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p}px; margin-top: ${p+1}px;`);
+              }
+              _this.setMediumTextPosition(width, height, _this);
+            // }
+            break;
+          case 'H':
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            h = Number(_this.previewFront.style.height.replace('px', ''));
+            p = Math.trunc(h / 5);
+            let halfFontConst = Math.trunc(p/4);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${h - p - halfFontConst}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h - p - 1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            if(document.querySelector('.image-shadow')){
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p/2}px;`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p/2}px;`);
+            }
+            break;
+          case 'MC':
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            h = Number(_this.previewFront.style.height.replace('px', ''));
+            p = Math.trunc(h / 5);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${h-p}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h-p+1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            if(document.querySelector('.image-shadow')){
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p}px; margin-right: ${p}px;`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p}px; margin-right: ${p}px;`);
+            }
+            break;
+          case 'MT':
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            // if(isClickMediumFont){
+            //   mediumFontWrapper.style.cssText += `width: ${windowWidth/2}px; font-size: ${windowWidth/13}px; top: 81%; left: 37.3%;`;
+            // }else{
+              mediumFontWrapper.style.cssText += `width: ${windowWidth*0.2}pxpx; font-size: 12px; top: 83.5%; left: 41%;`;
+              h = Number(_this.previewFront.style.height.replace('px', ''));
+              p = Math.trunc(h / 5);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${h-p+1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h-p-1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+              if(document.querySelector('.image-shadow')){
+                _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p/2}px;`);
+                _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p/2}px;`);
+              }
+            // }
+            break;
+          case 'SC':
+            let inputTotal = _this.input.maxLength;
+            _this.input.value = _this.input.value.slice(0, inputTotal);
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            h = Number(_this.previewFront.style.height.replace('px', ''));
+            p = Math.trunc(h/6);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${h-p}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h-p-1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            if(document.querySelector('.image-shadow')){
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*1.5}px; margin-right: ${p}px;`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*1.5}px; margin-right: ${p}px;`);
+            }
+            break;
+          case "SH": case "SDD":
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            h = Number(_this.previewFront.style.height.replace('px', ''));
+            p = Math.trunc(h/3);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${h*2-p*2}px; padding-top: ${p/2}px; margin-right: ${p/2}px;`);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h*2-p*2+1}px; padding-top: ${p/2}px; margin-right: ${p/2}px;`);
+            if(document.querySelector('.image-shadow')){
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h*2-p*2.7}px; margin-bottom: ${p}px; margin-right: ${p/2}px;`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h*2-p*2.7}px; margin-bottom: ${p/2}px; margin-right: ${p/2}px;`);
+            }
+            break;
+          case 'XM': case "DW": case "PW":
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            h = Number(_this.previewFront.style.height.replace('px', ''));
+            p = Math.trunc(h/5);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${h-p}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h-p-1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            if(document.querySelector('.image-shadow')){
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p/2}px; padding-top: ${p};`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p/2}px; padding-top: ${p};`);
+            }
+            break;
+          case 'MF':
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            h = Number(_this.previewFront.style.height.replace('px', ''));
+            p = Math.trunc(h/5);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${1.15*h-p}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h-p-1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            if(document.querySelector('.image-shadow')){
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p/2}px;`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p*2}px; margin-right: ${p/2}px;`);
+            }
+            break;
+          case "L_DT":
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            mediumFontWrapper.style.cssText += `width: ${windowWidth*0.2}px; font-size: 12px; top: 46%; left: 58.5%;`;
+            h = Number(_this.previewFront.style.height.replace('px', ''));
+            p = Math.trunc(h / 5);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${h-p+3}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h-p-1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            if(document.querySelector('.image-shadow')){
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p}px; margin-right: ${p/2}px;`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p}px; margin-right: ${p/2}px;`);
+            }
+            break;
+          case "M_DT":
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            mediumFontWrapper.style.cssText += `width: ${windowWidth*0.2}px; font-size: 10px; top: 50%; left: 58%;`;
+            h = Number(_this.previewFront.style.height.replace('px', ''));
+            p = Math.trunc(h / 5);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${h-p}px; padding-top: ${p}px; margin-right: ${p}px; margin-left:1px;`);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h-p-1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            if(document.querySelector('.image-shadow')){
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p}px; margin-right: ${p/2}px;`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p}px; margin-right: ${p/2}px;`);
+            }
+            break;
+          case "S_DT":
+            _this.previewFront.insertAdjacentHTML('afterbegin', temp);
+            _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
+            mediumFontWrapper.style.cssText += `width: ${windowWidth*0.2}px; font-size: 10px; top: 57.5%; left: 48.2%;`;
+            h = Number(_this.previewFront.style.height.replace('px', ''));
+            p = Math.trunc(h / 5);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-front .front-text'), `font-size: ${h-p-1}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            _this.applySingleAndWholeElCss(document.querySelectorAll('.preview-strap .front-text'), `font-size: ${h-p-2}px; padding-top: ${p}px; margin-right: ${p}px;`);
+            if(document.querySelector('.image-shadow')){
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p}px; margin-right: ${p/2}px;`);
+              _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width: ${h-p}px; margin-right: ${p/2}px;`);
+            }
             break;
         }
       }
     }
+
+    // 시뮬레이션 제품 이미지 조정
+  setSize(el, width, height) {
+    document.querySelector(el).style.cssText += `width: ${width}px; height: ${height}px;`
+  }
+  
+  setPosition(el, width, height, top, left) {
+    // console.log('width', width);
+    // console.log('height', height);
+    // console.log('top', top);
+    // console.log('left', left);
+
+    document.querySelector(el).style.cssText += `width: ${width}px; height: ${height}px; top: ${top}; left: ${left};`
+  }
+  
+  setRotate(el, degrees) {
+    document.querySelector(el).style.cssText += `-webkit-transform: rotate(${degrees}deg); -moz-transform: rotate(${degrees}deg); -ms-transform: rotate(${degrees}deg); transform: rotate(${degrees}deg);`
+  }
+  
+  // setCloseBtnPosition(el, width, height) {
+  //   const top = width * 0.032;
+  //   const right = height * 0.026;
+  //   const w = width * 0.09;
+  //   const img = el + ">img";
+
+  //   document.querySelector(img).style.cssText += `width: ${w}px; height: ${w}px;`
+  //   document.querySelector(el).style.cssText += `top: ${top}px; right: ${right}px;`
+  // }
+
+  setSmallTextPosition(width, height, _this){
+    let textboxFrontWidth, textboxFrontHeight, textboxFrontTop, textboxFrontLeft;
+    let textboxBigWidth, textboxBigHeight, textboxBigTop, textboxBigLeft;
+    let textboxStrapWidth, textboxStrapHeight, textboxStrapTop, textboxStrapLeft;
+
+    switch(bespoke.size){
+      case 'S': case 'PS':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.04);
+        textboxFrontTop = "81%";
+        textboxFrontLeft = "40.2%";
+        textboxBigWidth = Math.trunc(width * 0.23);
+        textboxBigHeight = Math.trunc(height * 0.23);
+        textboxBigTop = "60.5%";
+        textboxBigLeft = "38%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.04);
+        textboxStrapTop = "29.5%";
+        textboxStrapLeft = "40.2%";
+        break;
+      case 'SM': case 'SD':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.04);
+        textboxFrontTop = "76%";
+        textboxFrontLeft = "40.3%";
+        textboxBigWidth = Math.trunc(width * 0.23);
+        textboxBigHeight = Math.trunc(height * 0.23);
+        textboxBigTop = "63.5%";
+        textboxBigLeft = "38.7%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.04);
+        textboxStrapTop = "29.5%";
+        textboxStrapLeft = "40.2%";
+        break;
+      case "S_DT":
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.04);
+        textboxFrontTop = "76%";
+        textboxFrontLeft = "40.3%";
+        textboxBigWidth = Math.trunc(width * 0.23);
+        textboxBigHeight = Math.trunc(height * 0.23);
+        textboxBigTop = "63.5%";
+        textboxBigLeft = "38.7%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.04);
+        textboxStrapTop = "39.5%";
+        textboxStrapLeft = "36.7%";
+        _this.setRotate(".preview-strap", 279);
+        break;
+    }
+    //front,strap wrap과 img 크기 설정
+    _this.setSize("#small-preview", width, height);
+    // _this.setSize(".preview-container", width, height);
+    _this.setSize(".preview-front-img > img", width, height);
+    _this.setSize(".preview-strap-img > img", width, height);
+    // _this.setCloseBtnPosition(".preview-close-btn", width, height);
+  
+    //bigfont front-text strap-text 위치 설정
+    _this.setPosition(".preview-front", textboxFrontWidth, textboxFrontHeight, textboxFrontTop, textboxFrontLeft);
+    _this.setPosition(".preview-big", textboxBigWidth, textboxBigHeight, textboxBigTop, textboxBigLeft);
+    _this.setPosition(".preview-strap",textboxStrapWidth,textboxStrapHeight,textboxStrapTop,textboxStrapLeft);
+
+    if (bespoke.size === 'S_DT') return;
+
+    _this.setRotate(".preview-strap", 264);
+  }
+  
+  setMediumTextPosition(width, height, _this){
+    let textboxFrontWidth, textboxFrontHeight, textboxFrontTop, textboxFrontLeft;
+    let textboxStrapWidth, textboxStrapHeight, textboxStrapTop, textboxStrapLeft;
+    switch(bespoke.size){
+      case 'M': case 'DW': case 'PW': case "MW": case "MP":
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "81%";
+        textboxFrontLeft = "40%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "28%";
+        textboxStrapLeft = "40.2%";
+        _this.setRotate(".preview-strap", 267);
+        break;
+      case 'H':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "85%";
+        textboxFrontLeft = "42%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "35%";
+        textboxStrapLeft = "46.5%";
+        _this.setRotate(".preview-strap", 267);
+        break;
+      case 'MC':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "83.5%";
+        textboxFrontLeft = "41.6%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "47.5%";
+        textboxStrapLeft = "41.8%";
+        _this.setRotate(".preview-strap", 265);
+        _this.previewFront.style.justifyContent = 'flex-end';
+        break;
+      case 'MT':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "83.5%";
+        textboxFrontLeft = "41%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "32%";
+        textboxStrapLeft = "40.2%";
+        _this.setRotate(".preview-strap", 266);
+        break;
+      case 'SC':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "91.1%";
+        textboxFrontLeft = "42%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "53%";
+        textboxStrapLeft = "46.8%";
+        _this.setRotate(".preview-strap", 263);
+        _this.previewFront.style.justifyContent = 'flex-end';
+        break;
+      case 'SH': case "SDD":
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "83.7%";
+        textboxFrontLeft = "50%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "41%";
+        textboxStrapLeft = "44.2%";
+        _this.setRotate(".preview-strap", 260);
+        _this.previewFront.style.justifyContent = 'flex-end';
+        break;
+      case 'XM':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "85%";
+        textboxFrontLeft = "42%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "39%";
+        textboxStrapLeft = "49.5%";
+        _this.setRotate(".preview-strap", 259);
+        break;
+      case 'MF':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "62%";
+        textboxFrontLeft = "40%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "39%";
+        textboxStrapLeft = "49.5%";
+        _this.setRotate(".preview-strap", 259);
+        _this.previewFront.style.justifyContent = 'flex-start';
+        break;
+      case 'M_DT':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "62%";
+        textboxFrontLeft = "40%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "32.5%";
+        textboxStrapLeft = "37%";
+        _this.setRotate(".preview-strap", 282);
+        _this.previewFront.style.justifyContent = 'flex-start';
+        break;
+      case 'L_DT':
+        textboxFrontWidth = Math.trunc(width * 0.2);
+        textboxFrontHeight = Math.trunc(height * 0.03);
+        textboxFrontTop = "62%";
+        textboxFrontLeft = "40%";
+        textboxStrapWidth = Math.trunc(width * 0.2);
+        textboxStrapHeight = Math.trunc(height * 0.03);
+        textboxStrapTop = "28%";
+        textboxStrapLeft = "35%";
+        _this.setRotate(".preview-strap", 285);
+        _this.previewFront.style.justifyContent = 'flex-start';
+        break;
+    }
+    //front,strap wrap과 img 크기 설정
+    _this.setSize("#medium-preview", width, height);
+    _this.setSize(".preview-front-img > img", width, height);
+    _this.setSize(".preview-strap-img > img", width, height);
+    // _this.setCloseBtnPosition(".preview-close-btn", width, height);
+  
+    //bigfont front-text strap-text 위치 설정
+    _this.setPosition(".preview-front",textboxFrontWidth,textboxFrontHeight,textboxFrontTop,textboxFrontLeft);
+    _this.setPosition(".preview-strap",textboxStrapWidth,textboxStrapHeight,textboxStrapTop,textboxStrapLeft);
+  }
   
     simulMove(_this){ //시뮬 배경 이미지 스크롤 시, 움직이는 부분
       // console.log("움직여~~");

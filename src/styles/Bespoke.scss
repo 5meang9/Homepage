@@ -1,12 +1,13 @@
 .setting{
-  width: 350px;
+  width: 100%;
+  display: block;
 }
 .wrap{
-  display: flex;
+  display: block;
   justify-content: space-evenly;
   position: relative;
   margin: auto;
-  width: 880px;
+  width: 100%;
 }
 /* 비스포크 선택완료 이미지 노출 */
 .bespoke-img-result.active{
@@ -863,7 +864,7 @@ top: 3px;
   top: 0px;
   left: 0px;
   display: block;
-  width: 450px;
+  // width: 450px;
 }
 
 #small-preview,
@@ -879,6 +880,8 @@ display: block;
 #small-preview .preview-wrap {
 display: none;
 position: relative;
+width: 100%;
+height: 100%;
 }
 .preview-background {
 width: 450px;
