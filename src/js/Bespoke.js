@@ -2560,7 +2560,11 @@ import { useEffect } from 'react';
             _this.previewFront.insertAdjacentHTML('afterbegin', temp);
             _this.previewStrap.insertAdjacentHTML('afterbegin', temp);
             if(isClickMediumFont){
-              mediumFontWrapper.style.cssText += `width: ${windowWidth/20}px; font-size: ${windowWidth/25}px; top: 82% !important; left: 44.3% !important`;
+              if(width <= 640){
+                mediumFontWrapper.style.cssText += `width: ${windowWidth/20}px; font-size: ${windowWidth/25}px; top: 82% !important; left: 53.3% !important`;
+              }else{
+                mediumFontWrapper.style.cssText += `width: ${windowWidth/20}px; font-size: ${windowWidth/25}px; top: 82% !important; left: 44.3% !important`;
+              }
             }else{
               h = Number(_this.previewFront.style.height.replace('px', ''));
               p = Math.trunc(h / 6);
@@ -2573,7 +2577,7 @@ import { useEffect } from 'react';
                 _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width:${h-p*2}px; padding-top: ${p*2}px;`);
               }
               if(width <= 640){
-                _this.setSmallTextPosition(width, height, _this);
+                // _this.setSmallTextPosition(width, height, _this);
               }else{
                 _this.setSmallTextPosition(width/3, height/3, _this);
               }
@@ -2769,10 +2773,10 @@ import { useEffect } from 'react';
         textboxFrontHeight = Math.trunc(height * 0.04);
         textboxFrontTop = "81%";
         textboxFrontLeft = "40.2%";
-        textboxBigWidth = Math.trunc(width * 0.23);
-        textboxBigHeight = Math.trunc(height * 0.23);
-        textboxBigTop = "60.5%";
-        textboxBigLeft = "38%";
+        textboxBigWidth = Math.trunc(width * 0.30);
+        textboxBigHeight = Math.trunc(height * 0.25);
+        textboxBigTop = "50.5%";
+        textboxBigLeft = "35%";
         textboxStrapWidth = Math.trunc(width * 0.2);
         textboxStrapHeight = Math.trunc(height * 0.04);
         textboxStrapTop = "29.5%";

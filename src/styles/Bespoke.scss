@@ -1025,8 +1025,10 @@ left: 180px;
 display: block;
 }
 #small-preview .preview-big img {
-width: 100px;
-height: 100px;
+// width: 100px;
+// height: 100px;
+width: 100%;
+height: 100%;
 }
 #small-preview .preview-strap {
 position: absolute;
