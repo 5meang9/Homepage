@@ -455,6 +455,7 @@ input:checked + .slider:before {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  color: #000;
 }
 .bespoke-font-select-afont {
   font-size: 27px;
@@ -856,6 +857,8 @@ align-items: baseline;
 .bespoke-checked-whether-content input {
 position: relative;
 top: 3px;
+width: 13px;
+height: 13px;
 }
 /* !input 값 보여지는 부분 */
 /* !small */
@@ -898,7 +901,7 @@ display: block;
 background-color: #ffffff;
 position: absolute;
 z-index: 100;
-width: 450px;
+width: 100%;
 }
 
 .preview-front-img img,
@@ -912,7 +915,7 @@ image-rendering: inherit;
 background-color: #ffffff;
 position: absolute;
 z-index: 50;
-width: 450px;
+width: 100%;
 }
 
 #small-preview .preview-front {

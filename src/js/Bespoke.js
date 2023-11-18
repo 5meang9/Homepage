@@ -2548,11 +2548,12 @@ import { useEffect } from 'react';
       if (bespoke) {
         let h, p;
         let isClickMediumFont = document.querySelector('.bespoke-font-select-medium-afont').classList.contains('active');
+        console.log('isClickMediumFont', isClickMediumFont); 
         let windowWidth = window.innerWidth;
         // let windowHeight = window.innerHeight;
         let mediumFontWrapper = _this.previewFront;
         let width = window.innerWidth;
-        let height = window.innerWidth;
+        let height = window.innerWidth; 
         _this.previewFront.replaceChildren();
         _this.previewStrap.replaceChildren();
         switch (bespoke.size) {
@@ -2577,7 +2578,7 @@ import { useEffect } from 'react';
                 _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width:${h-p*2}px; padding-top: ${p*2}px;`);
               }
               if(width <= 640){
-                // _this.setSmallTextPosition(width, height, _this);
+                _this.setSmallTextPosition(width, height, _this);
               }else{
                 _this.setSmallTextPosition(width/3, height/3, _this);
               }
@@ -2736,7 +2737,7 @@ import { useEffect } from 'react';
 
     // 시뮬레이션 제품 이미지 조정
   setSize(el, width, height) {
-    document.querySelector(el).style.cssText += `width: ${width}px; height: ${height}px;`
+    document.querySelector(el).style.cssText += `height: ${width-(width/10)}px;`
   }
   
   setPosition(el, width, height, top, left) {
@@ -2745,7 +2746,7 @@ import { useEffect } from 'react';
     // console.log('top', top);
     // console.log('left', left);
 
-    document.querySelector(el).style.cssText += `width: ${width}px; height: ${height}px; top: ${top}; left: ${left};`
+    document.querySelector(el).style.cssText += `width: ${width}px; height: ${height}px; top: ${top}; left: ${left} !important;` 
   }
   
   setRotate(el, degrees) {
@@ -3138,6 +3139,7 @@ import { useEffect } from 'react';
             case 'S': case 'PS': case 'SD': case 'SM':
               document.getElementsByClassName('bespoke-pet-color-wrap')[0].classList.remove('active');
               _this.previewBig.classList.remove('active');
+              _this.input_appear(_this.input.value, _this);
               break;
           }
           _this.previewFront.classList.remove('medium-font-size');
