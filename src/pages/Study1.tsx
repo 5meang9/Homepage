@@ -71,9 +71,9 @@ export default function Study1(){
             </div>
 
             <div className='article1_contents_img'>
-              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/unityLogo.png"} style={{width: '20%', marginTop: '-25px'}}/>
+              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/unityLogo.png"} style={{width: '20%', verticalAlign: 'bottom'}}/>
               <span style={{fontSize: '5vw'}}>➕</span>
-              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/Clogo.png"} style={{width: '8%', marginTop: '-50px'}}/>
+              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/Clogo.png"} style={{width: '8%', verticalAlign: 'bottom'}}/>
             </div>
             
           </div>
