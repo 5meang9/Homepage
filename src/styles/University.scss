@@ -162,7 +162,7 @@
 }
 #article_h1{
   font-family: NanumGothic;
-  font-size: 44px;
+  font-size: 2rem;
   color: #fff;
 }
 
@@ -398,6 +398,7 @@
 .toc2 ol {
   counter-reset: listitem;
   list-style: none;
+  padding: 0;
 }
 .toc2 ol > li > a:before {
   padding-right: 10px;
@@ -456,7 +457,7 @@
 #postArticle{
   margin-top: 120px;
   // width: 1440px;
-  margin: 120px 100px 0 100px;
+  margin: 10% 5% 0 10%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -469,7 +470,7 @@
 #article_1 h2:before {
   content: '';
   border-bottom: 2px solid rgb(246, 86, 96);
-  top: 45px;
+  top: 95%;
   height: 0;
   position: absolute;
   width: 100%;
@@ -477,7 +478,7 @@
 }
 #article_1 h2:after {
   border-bottom: 2px solid #ddd;
-  top: 45px;
+  top: 95%;
   content: '';
   position: absolute;
   width: 100%;
@@ -494,8 +495,17 @@
 
 #article_1 h2 {
   padding-bottom: 5px;
-  // overflow: hidden;
   position: relative;
+  overflow: hidden;
+  font-size: 1.9rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.8 !important;
+  margin: 15px 0;
+}
+
+#article_1 h2 > b{
+  font-size: 1.3rem;
 }
 
 *, *::before, *::after {
@@ -514,6 +524,7 @@
 .article1_contents_img2{
   width: 57%;
   margin-top: -65px;
+  vertical-align: middle;
 }
 // 코드블럭
 .contents_style span[data-ke-language] {

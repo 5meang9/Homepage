@@ -61,9 +61,9 @@ export default function GameProject1(){
             <p style={{marginTop: 0}}>Raycast hit 한 빙고판 위치 확인</p>
             <p style={{marginTop: 0}}>MeshRenderer 색 변경</p>
             <div className='article1_contents_img'>
-              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/unityLogo.png"} style={{width: '36%', marginTop: '-25px'}}/>
+              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/unityLogo.png"} style={{width: '36%', verticalAlign: 'bottom'}}/>
               <span>➕</span>
-              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/Clogo.png"} style={{width: '15%', marginTop: '-50px'}}/>
+              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/Clogo.png"} style={{width: '15%', verticalAlign: 'bottom'}}/>
             </div>
           </div>
         </div>
@@ -235,7 +235,7 @@ export default function GameProject1(){
               </pre>
             </div>
             <h4 id="실행화면 및 동작화면"><b>실행화면 및 동작화면</b></h4>
-            <div className='img_col' style={{display: 'flex'}}>
+            <div className='img_col' style={{display: 'flex', marginBottom: '50px'}}>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game1.jpg"} style={{width: '49%', marginTop: '5px', marginRight: '20x'}}/>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game2.jpg"} style={{width: '48%', marginTop: '5px'}}/>
             </div>

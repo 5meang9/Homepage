@@ -61,9 +61,9 @@ export default function University2(){
             <p style={{marginTop: 0}}>HTML DIR : Shopping {'>'} WebContent</p>
             <p style={{marginTop: 0}}>JS DIR : Shopping {'>'} WebContent {'>'} js</p>
             <div className='article1_contents_img'>
-              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/webLogo2.jpg"} style={{width: '41%', marginTop: '-50px'}}/>
+              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/webLogo2.jpg"} style={{width: '41%', marginTop: '-50px', verticalAlign: 'bottom'}}/>
               <span>➕</span>
-              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/Eclipse-Luna-Logo.svg.png"} style={{width: '41%'}}/>
+              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/Eclipse-Luna-Logo.svg.png"} style={{width: '41%', verticalAlign: 'bottom'}}/>
             </div>
           </div>
         </div>
@@ -330,7 +330,7 @@ export default function University2(){
               </pre>
             </div>
             <h4 id="실행화면"><b>실행화면</b></h4>
-            <div style={{display: 'flex'}}>
+            <div style={{display: 'flex', marginBottom: '50px', justifyContent: 'space-between'}}>
               <img style={{width: '45%', marginRight: '88px', border: '1px solid #000'}} src={process.env.PUBLIC_URL+"/images/prdDetail.png"}/>
               <img style={{width: '45%', border: '1px solid #000'}} src={process.env.PUBLIC_URL+"/images/prdDetail1.png"}/>
             </div>

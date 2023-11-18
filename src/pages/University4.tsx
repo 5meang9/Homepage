@@ -58,18 +58,18 @@ export default function University4(){
           </ol>
         </nav>
         <div id='article_1'>
-          <h2 data-ke-size="size26"><b>JAVA, Window Form Application</b></h2>
+          <h2 data-ke-size="size26"><b style={{fontSize: '1.2rem'}}>JAVA, Window Form Application</b></h2>
           <div className='article1_contents contents_style'>
             <p>Java SE 10, Android Studio 3.1, OPENCV, TESSERACT OCR</p>
             <p style={{marginTop: 0}}>OPENCV : 문자인식, OCR 학습</p>
             <p style={{marginTop: 0}}>TESSERACT OCR : 흑백 전환, ROI 영역 처리</p>
             <p style={{marginTop: 0}}>Android Studio : 애플리케이션 구현, 카메라 연동, 촬영 된 수학문제 계산</p>
             <div className='article1_contents_img'>
-              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/android_stu.png"} style={{width: '15%', marginTop: '-50px'}}/>
+              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/android_stu.png"} style={{width: '15%', verticalAlign: 'bottom'}}/>
               <span>➕</span>
-              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/openCvLogo.png"} style={{width: '14%', marginTop: '-25px'}}/>
+              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/openCvLogo.png"} style={{width: '13%', marginTop: '1%', verticalAlign: 'bottom'}}/>
               <span>➕</span>
-              <img className='article1_contents_img3' src={process.env.PUBLIC_URL+"/images/Tesseract_OCR_logo.png"} style={{width: '33%', marginTop: '-43px'}}/>
+              <img className='article1_contents_img3' src={process.env.PUBLIC_URL+"/images/Tesseract_OCR_logo.png"} style={{width: '33%', verticalAlign: 'bottom'}}/>
             </div>
           </div>
         </div>
@@ -410,7 +410,7 @@ export default function University4(){
               </pre>
             </div>
             <h4 id="실행화면 및 동작화면"><b>실행화면 및 동작화면</b></h4>
-            <div className='img_col' style={{display: 'flex'}}>
+            <div className='img_col' style={{display: 'flex',marginBottom: '50px'}}>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/plus1.png"} style={{width: '45%', marginTop: '5px', marginRight: '64x'}}/>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/plus2.png"} style={{width: '45%', marginTop: '5px'}}/>
             </div>

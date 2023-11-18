@@ -59,15 +59,15 @@ export default function Bespoke(){
           </ol>
         </nav>
         <div id='article_1'>
-          <h2 data-ke-size="size26"><b>JAVA, Window Form Application</b></h2>
+          <h2 data-ke-size="size26"><b style={{fontSize: '1.2rem'}}>JAVA, Window Form Application</b></h2>
           <div className='article1_contents contents_style'>
             <p>JavaScript ES6, vsCode, HTML, CSS</p>
             <p style={{marginTop: 0}}>JavaScript : 제품이미지 적재, 자수 위치, 자수 노출 등 기능</p>
             <p style={{marginTop: 0}}>HTML + CSS : addClass 이용하여 화면 노출/미노출 구현</p>
             <div className='article1_contents_img'>
-              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/webLogo2.jpg"} style={{width: '41%', marginTop: '-50px'}}/>
+              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/webLogo2.jpg"} style={{width: '41%', verticalAlign: 'bottom'}}/>
               <span>➕</span>
-              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/vscodeLogo.png"} style={{width: '14%', marginTop: '-44px'}}/>
+              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/vscodeLogo.png"} style={{width: '14%', verticalAlign: 'bottom'}}/>
             </div>
           </div>
         </div>

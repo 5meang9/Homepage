@@ -10,13 +10,13 @@ export default function University3(){
           <div id="article_h1" style={{color:'#000'}}>영화🎬 예매 시스템 제작</div>
           <div className="text-center">
             <div className='scroll-btn'>
-              <span className="mouse">
-                <span></span>
+              <span className="mouse" style={{border: '3px solid #000',}}>
+                <span style={{backgroundColor: '#000'}}></span>
               </span>
             </div>
             <a href="#firstSection">
               <div className="link-arrow-bounce">
-                <FontAwesomeIcon icon={faChevronDown} bounce style={{color: "#fff",}} />
+                <FontAwesomeIcon icon={faChevronDown} bounce style={{color: "#000",}} />
               </div>
             </a>
           </div>
@@ -62,11 +62,11 @@ export default function University3(){
             <p style={{marginTop: 0}}>리스트 폼 DIR : Form3.Designer</p>
             <p style={{marginTop: 0}}>좌석선택 DIR : Form4.Designer, form4.cs</p>
             <div className='article1_contents_img'>
-              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/Clogo.png"} style={{width: '15%', marginTop: '-50px'}}/>
+              <img className='article1_contents_img1' src={process.env.PUBLIC_URL+"/images/Clogo.png"} style={{width: '15%', verticalAlign: 'bottom'}}/>
               <span>➕</span>
-              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/windowForm.png"} style={{width: '41%', marginTop: '-43px'}}/>
+              <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/windowForm.png"} style={{width: '41%', verticalAlign: 'bottom'}}/>
               <span>➕</span>
-              <img className='article1_contents_img3' src={process.env.PUBLIC_URL+"/images/vscodeLogo.png"} style={{width: '15%', marginTop: '-43px'}}/>
+              <img className='article1_contents_img3' src={process.env.PUBLIC_URL+"/images/vscodeLogo.png"} style={{width: '15%', verticalAlign: 'bottom'}}/>
             </div>
           </div>
         </div>
