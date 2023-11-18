@@ -2568,7 +2568,11 @@ import { useEffect } from 'react';
                 _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width:${h-p*2}px; padding-top: ${p*2}px;`);
                 _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width:${h-p*2}px; padding-top: ${p*2}px;`);
               }
-              _this.setSmallTextPosition(width/3, height/3, _this);
+              if(width <=640){
+                _this.setSmallTextPosition(width, height, _this);
+              }else{
+                _this.setSmallTextPosition(width/3, height/3, _this);
+              }
             }
             break;
           case 'M': case "MW": case "MP":
