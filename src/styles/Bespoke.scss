@@ -432,10 +432,10 @@ input:checked + .slider:before {
   margin-right: 8px;
   cursor: pointer;
 }
-.bespoke-font-select-big-petfont,
-.bespoke-font-select-big-textfont {
-  padding-left: 5px;
-}
+// .bespoke-font-select-big-petfont,
+// .bespoke-font-select-big-textfont {
+//   padding-left: 5px;
+// }
 /* removeClass 확인용 */
 /* !bespoke font select css */
 .bespoke-font-select-wrap {
@@ -547,7 +547,7 @@ box-sizing: border-box;
 width: 170px;
 height: 20px;
 padding-left: 8px;
-margin-bottom: 6px;
+// margin-bottom: 6px;
 border: none;
 text-transform: uppercase;
 }
@@ -602,7 +602,7 @@ justify-content: center;
 -webkit-box-align: center;
 -ms-flex-align: center;
 align-items: center;
-padding-left: 4px;
+// padding-left: 4px;
 }
 
 .bespoke-symbol-btn {
@@ -791,6 +791,7 @@ border-radius: 23px;
 .bespoke-button-reset {
 background-color: #ffffff;
 border: 1px solid #000000;
+color: #000;
 }
 .bespoke-button-apply {
 background-color: #000000;

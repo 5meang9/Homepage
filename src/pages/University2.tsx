@@ -331,7 +331,7 @@ export default function University2(){
             </div>
             <h4 id="실행화면"><b>실행화면</b></h4>
             <div style={{display: 'flex', marginBottom: '50px', justifyContent: 'space-between'}}>
-              <img style={{width: '45%', marginRight: '88px', border: '1px solid #000'}} src={process.env.PUBLIC_URL+"/images/prdDetail.png"}/>
+              <img style={{width: '45%', border: '1px solid #000'}} src={process.env.PUBLIC_URL+"/images/prdDetail.png"}/>
               <img style={{width: '45%', border: '1px solid #000'}} src={process.env.PUBLIC_URL+"/images/prdDetail1.png"}/>
             </div>
           </div>
