@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Homepage/static/css/main.7e685f21.css",
-    "main.js": "/Homepage/static/js/main.ccea87c5.js",
+    "main.css": "/Homepage/static/css/main.b2be3049.css",
+    "main.js": "/Homepage/static/js/main.a247598d.js",
     "static/js/787.5c39024c.chunk.js": "/Homepage/static/js/787.5c39024c.chunk.js",
     "static/media/prdDetail.png": "/Homepage/static/media/prdDetail.f73ce542e4d1aa87fdbe.png",
     "static/media/terrain_atlas.png": "/Homepage/static/media/terrain_atlas.5e05e0a69888e0c35adb.png",
@@ -24,12 +24,12 @@
     "static/media/aguafina-script-latin-ext-400-normal.woff": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.0f8e4a9bc714f266a2e2.woff",
     "static/media/aguafina-script-latin-ext-400-normal.woff2": "/Homepage/static/media/aguafina-script-latin-ext-400-normal.695e4b0c3c7b5f50d9c4.woff2",
     "index.html": "/Homepage/index.html",
-    "main.7e685f21.css.map": "/Homepage/static/css/main.7e685f21.css.map",
-    "main.ccea87c5.js.map": "/Homepage/static/js/main.ccea87c5.js.map",
+    "main.b2be3049.css.map": "/Homepage/static/css/main.b2be3049.css.map",
+    "main.a247598d.js.map": "/Homepage/static/js/main.a247598d.js.map",
     "787.5c39024c.chunk.js.map": "/Homepage/static/js/787.5c39024c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7e685f21.css",
-    "static/js/main.ccea87c5.js"
+    "static/css/main.b2be3049.css",
+    "static/js/main.a247598d.js"
   ]
 }
