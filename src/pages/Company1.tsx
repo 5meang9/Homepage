@@ -317,8 +317,12 @@ export default function Company1(){
               <img className='article2_contents_img1' style={{width: '11%', marginLeft: '5px', marginTop: '-5px', border: '1px solid red'}} src={process.env.PUBLIC_URL+"/images/tree.png"}/>
               <span style={{marginLeft: '14px', marginTop: '-30px', marginBottom: '20px', fontSize: '14px'}}>Tree 항목을 True 로 바꿔야 트리구조가 노출됩니다.</span>
             </div>
-            <div style={{marginLeft: '14px', marginBottom: '50px'}}>
+            <div style={{marginLeft: '14px', marginBottom: '25px'}}>
               <a href="http://obbbfb.com:2020/sales" target={'_blank'}>http://obbbfb.com:2020/sales</a>
+            </div>
+            <div>
+              <b>링크에 바로 연결이 안될 시, 아래 메뉴를 통해 확인 부탁 드립니다.</b>
+              <img className='article1_contents_img1' style={{width: '100%', marginTop: '25px', marginBottom: '50px'}} src={process.env.PUBLIC_URL+"/images/sales.png"}/>
             </div>
           </div>
         </div>

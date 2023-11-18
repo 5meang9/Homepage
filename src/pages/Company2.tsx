@@ -206,8 +206,12 @@ export default function Company2(){
             </div>
             <h4 id="자세한 화면을 보고 싶으면 이동해주세요."><b>자세한 화면을 보고 싶으면 이동해주세요.</b></h4>
             <div style={{marginLeft: '14px', marginTop: '-30px', marginBottom: '20px'}}>id: jw.oh / pw: 1111</div>
-            <div style={{marginLeft: '14px', marginBottom: '50px'}}>
+            <div style={{marginLeft: '14px', marginBottom: '25px'}}>
               <a href="http://obbbfb.com:2020/weekly_reports" target={'_blank'}>http://obbbfb.com:2020/weekly_reports</a>
+            </div>
+            <div>
+              <b>링크에 바로 연결이 안될 시, 아래 메뉴를 통해 확인 부탁 드립니다.</b>
+              <img className='article1_contents_img1' style={{width: '100%', marginTop: '25px', marginBottom: '50px'}} src={process.env.PUBLIC_URL+"/images/weekly_reports.png"}/>
             </div>
           </div>
         </div>
