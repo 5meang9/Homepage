@@ -2248,9 +2248,9 @@ import { useEffect } from 'react';
           this.bespokeContainer.insertAdjacentHTML("afterbegin", small.htmlTxt);
           this.previewContainer.insertAdjacentHTML("afterbegin", small.preview);
           if(width <= 640){
-            this.setSmallTextPosition(width, height, this);
+            this.setSmallTextPosition(width, height, this, width);
           }else{
-            this.setSmallTextPosition(width/3, height/3, this);
+            this.setSmallTextPosition(width/3, height/3, this, width);
           }
           // document.getElementsByClassName('bespoke-container-toggle')[0].click();
           // document.getElementsByClassName('bespoke-container-toggle')[0].click();
@@ -2446,7 +2446,7 @@ import { useEffect } from 'react';
     }
   
     setInputValToMax(change, _this) { //input maxLength 및 inputLimit 변경
-      let inputTotal;
+      let inputTotal; 
   
       _this.input.maxLength = `${change}`;
       inputTotal = _this.input.maxLength;
@@ -2504,7 +2504,7 @@ import { useEffect } from 'react';
     }
   
     input_appear(inputTotalVal, _this) { //input 입력 글자, 심볼 시뮬에 노출 부분
-      // console.log("++++++++++++++++++++++++++",_this)
+      // console.log("++++++++++++++++++++++++++",_this)f
       let temp = "";
   
       _this.inputLimit.innerText = inputTotalVal.length;
@@ -2548,7 +2548,7 @@ import { useEffect } from 'react';
       if (bespoke) {
         let h, p;
         let isClickMediumFont = document.querySelector('.bespoke-font-select-medium-afont').classList.contains('active');
-        console.log('isClickMediumFont', isClickMediumFont); 
+        // console.log('isClickMediumFont', isClickMediumFont); 
         let windowWidth = window.innerWidth;
         // let windowHeight = window.innerHeight;
         let mediumFontWrapper = _this.previewFront;
@@ -2578,9 +2578,9 @@ import { useEffect } from 'react';
                 _this.applySingleAndWholeElCss(document.querySelectorAll('.image-shadow'), `width:${h-p*2}px; padding-top: ${p*2}px;`);
               }
               if(width <= 640){
-                _this.setSmallTextPosition(width, height, _this);
+                _this.setSmallTextPosition(width, height, _this, width);
               }else{
-                _this.setSmallTextPosition(width/3, height/3, _this);
+                _this.setSmallTextPosition(width/3, height/3, _this, width);
               }
             }
             break;
@@ -2736,8 +2736,17 @@ import { useEffect } from 'react';
     }
 
     // 시뮬레이션 제품 이미지 조정
-  setSize(el, width, height) {
-    document.querySelector(el).style.cssText += `height: ${width-(width/10)}px;`
+  setSize(el, width, height, origin) {
+    console.log('width', width); 
+    // console.log('height', parseFloat() height);  
+
+    if(origin <= 640){
+      // console.log('뭔데')
+      document.querySelector(el).style.cssText += `height: ${width-(width/10)}px;`
+    }else{
+       
+      document.querySelector(el).style.cssText += `width: ${width}px !important; height: ${height}px;`
+    }
   }
   
   setPosition(el, width, height, top, left) {
@@ -2763,7 +2772,7 @@ import { useEffect } from 'react';
   //   document.querySelector(el).style.cssText += `top: ${top}px; right: ${right}px;`
   // }
 
-  setSmallTextPosition(width, height, _this){
+  setSmallTextPosition(width, height, _this, origin){
     let textboxFrontWidth, textboxFrontHeight, textboxFrontTop, textboxFrontLeft;
     let textboxBigWidth, textboxBigHeight, textboxBigTop, textboxBigLeft;
     let textboxStrapWidth, textboxStrapHeight, textboxStrapTop, textboxStrapLeft;
@@ -2814,10 +2823,10 @@ import { useEffect } from 'react';
         break;
     }
     //front,strap wrap과 img 크기 설정
-    _this.setSize("#small-preview", width, height);
+    _this.setSize("#small-preview", width, height, origin);
     // _this.setSize(".preview-container", width, height);
-    _this.setSize(".preview-front-img > img", width, height);
-    _this.setSize(".preview-strap-img > img", width, height);
+    _this.setSize(".preview-front-img > img", width, height, origin);
+    _this.setSize(".preview-strap-img > img", width, height, origin);
     // _this.setCloseBtnPosition(".preview-close-btn", width, height);
   
     //bigfont front-text strap-text 위치 설정
@@ -2952,9 +2961,9 @@ import { useEffect } from 'react';
         break;
     }
     //front,strap wrap과 img 크기 설정
-    _this.setSize("#medium-preview", width, height);
-    _this.setSize(".preview-front-img > img", width, height);
-    _this.setSize(".preview-strap-img > img", width, height);
+    _this.setSize("#medium-preview", width, height, origin);
+    _this.setSize(".preview-front-img > img", width, height, origin);
+    _this.setSize(".preview-strap-img > img", width, height, origin);
     // _this.setCloseBtnPosition(".preview-close-btn", width, height);
   
     //bigfont front-text strap-text 위치 설정
