@@ -119,7 +119,7 @@ export default function Board(){
               </div>
               <Badge pill bg="primary">JavaScript</Badge>
               <div className='board-item-contents'>
-                <p className='board-item-period'>운영기간 · 2020.06.01 ~ 2023.09.14</p>
+                <p className='board-item-period'>운영기간 · 2021.06.01 ~ 2023.09.14</p>
                 <p className='board-item-title'>
                   <img src="images/javascript.png" style={{marginTop: '-9px'}}/>
                   <span> 리뉴얼 전 비스포크</span>
