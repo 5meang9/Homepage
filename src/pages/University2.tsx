@@ -26,21 +26,26 @@ export default function University2(){
 
   const texts2 = `
   (function(){
-    var current = 0; //현재위치
-    var max = 0; //이미지 개수
-    var container; //list 요소를 감싸고 있는 ul
+    //현재위치
+    var current = 0;
+    //이미지 개수
+    var max = 0;
+    //list 요소를 감싸고 있는 ul
+    var container;
     var interval;
     function init(){
       container=jQuery(".slice ul");
       max=container.children().length;
       events();
-      interval=setInterval(next, 3000); //이미지 자동 넘김 실행
+      //이미지 자동 넘김 실행
+      interval=setInterval(next, 3000);
     }
     function events(){
       jQuery("button.prev").on("click", prev);
       jQuery("button.next").on("click", next);
     }
-    function prev(e){ //마지막 이미지일 때 첫번째로 이동
+    //마지막 이미지일 때 첫번째로 이동
+    function prev(e){ 
       current--;
       if(current <0) current=max-1;
       animation();
@@ -50,7 +55,8 @@ export default function University2(){
       if(current >max-1) current=0;
       animation();
     }
-    function animation(){ //이미지 넘김 액션
+    //이미지 넘김 액션
+    function animation(){
       var moveX=current*1200;
       TweenMax.to(container, 0.8, {marginLeft:-moveX, ease:Expo.easeOut});
       clearInterval(interval);
