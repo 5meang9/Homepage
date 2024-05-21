@@ -3,6 +3,8 @@ import NewBespokeCombine from "./BespokeCombine";
 // import './NewBespoke/NewBespoke'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
+
  
 export default function Bespoke(){
 
