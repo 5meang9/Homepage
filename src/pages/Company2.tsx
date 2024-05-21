@@ -1,8 +1,48 @@
 import '../styles/University.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
 
 export default function Company2(){
+  const texts1 = `
+  start_date = is_date.to_date
+  #작년이면, 당해년도 마지막날로 end_date 를 잡음
+  end_date = is_date.to_date.year === Date.today.year ? Date.today : is_date.to_date.at_end_of_year
+  #월요일 기준 날짜array
+  days = start_date.upto(end_date).map {|day| day.send('beginning_of_week')}.uniq
+  # ex) 2023-01-02-A : 수량/ 2023-01-02-B 매출 => columns 만들어주기
+  date_columns = days.map.with_index {|day, i| 
+    [
+      {
+        header: "#{day.strftime("%-Y/%-m/%-d")+"~"+(day+6).strftime("%-Y/%-m/%-d ")+(i.to_s+"주")+" 개수"}",
+        name:day.strftime("%Y-%m-%d")+"-A",
+        width: 80,
+      },
+    ]
+  }.flatten
+  ------------------중략-------------------
+  `;
+  const texts2 = `
+  function makeHeaderSpecs(columns){
+    let cutHeader;
+    complexColumns = [];
+    var index = 0;
+    copyHeader = ;
+    columns.forEach((c,i) =>{
+      if(c.name != 'category_1' && c.name != 'category_2'){ //대분류/중분류 제외
+        cutHeader = c.header.split(' ');
+        columns[i]['subTitle'] = cutHeader[2];//개수 or 매출액
+        if(c.subTitle == "개수"){
+          columns[i]['mainTitle'] = cutHeader[0]+' '+cutHeader[1]; //ex) 2021/12/27~2022/1/2 0주
+          index++;
+        }else{
+          columns[i]['mainTitle'] = 'empty';
+        }
+      }
+    })
+  }
+  `;
+
   return (
     <>
       <section id="article-header7">
@@ -83,127 +123,13 @@ export default function Company2(){
             <img className='article2_contents_img1' style={{width: '56%'}} src={process.env.PUBLIC_URL+"/images/query_coll.png"}/>
            
             <h4 id="thead 데이터 만들기"><b>thead 데이터 만들기</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"start_date = is_date.to_date"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>#작년이면, 당해년도 마지막날로 end_date 를 잡음</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"end_date = is_date.to_date.year === Date.today.year ? Date.today : is_date.to_date.at_end_of_year"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>#월요일 기준 날짜array</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"days = start_date.upto(end_date).map { |day| day.send('beginning_of_week')}.uniq"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>{"# ex) 2023-01-02-A : 수량/ 2023-01-02-B 매출 => columns 만들어주기"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"date_columns = days.map.with_index {|day, i| "}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"["}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"{"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'header: "#{day.strftime("%-Y/%-m/%-d")+"~"+(day+6).strftime("%-Y/%-m/%-d ")+(i.to_s+"주")+" 개수"}",'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'name:day.strftime("%Y-%m-%d")+"-A",'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'width: 80,'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"},"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"------------------중략-------------------"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="Ruby" contents={texts1} />
             <ol style={{listStyleType: 'decimal'}} data-ke-list-type="decimal">
               <li>같은 주간의 개수/매출액 노출위해 존재</li>
               <li>is_date {'===>'} 파라미터로 받아온 날짜</li>
             </ol>
             <h4 id="thead 주별 주기"><b>thead 주별 주기</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>{'function '}</span>
-                    <span style={{color: '#2B91AF'}}>makeHeaderSpecs</span>
-                    <span style={{color: '#ABB2BF'}}>(columns){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   let cutHeader;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   complexColumns = [];</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   var index = 0;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   copyHeader = {};</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'columns.forEach((c,i) =>{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"if(c.name != 'category_1' && c.name != 'category_2'){"}</span>
-                    <span style={{color: '#008000'}}> //대분류/중분류 제외</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"cutHeader = c.header.split(' ');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"columns[i]['subTitle'] = cutHeader[2];"}</span>
-                    <span style={{color: '#008000'}}>//{"개수 or 매출액"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'if(c.subTitle == "개수"){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"columns[i]['mainTitle'] = cutHeader[0]+' '+cutHeader[1];"}</span>
-                    <span style={{color: '#008000'}}> //{'ex) 2021/12/27~2022/1/2 0주'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"index++;"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'}else{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"columns[i]['mainTitle'] = 'empty';"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"})"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"}"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JAVASCRIPT" contents={texts2} />
           </div>
         </div>
       </div>

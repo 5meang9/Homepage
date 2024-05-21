@@ -1,8 +1,67 @@
 import '../styles/University.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
 
 export default function Company4(){
+  const texts1 = `
+  Class Request < ApplicationRecord
+    ....
+    has_many_attached :files
+  end
+  `;
+  const texts2 = `
+  private
+   def request_params
+       params.require(:requests).permit(:id, :title, :request, :response, :requester_id, :respondents_id, :responsed_at, files: [])
+   end
+  `;
+  const texts3 = `
+  // 삽입
+  _request.files.attach(params[:fileList])
+  // 삭제
+  delete_files.each{|el| _request.files.find_by_id(el).purge} unless delete_files.nil?
+  `;
+  const texts4 = `
+  // drag over 시, 효과 주기
+  const dragOverHandler = (ev) => {
+    ev.preventDefault();
+    let getFileAttach = document.querySelector('.file_attach');
+    getFileAttach.classList.add('drag_in');
+  }
+  // drag and drop 파일 첨부
+  const dropHandler = (ev) => {
+    let fileListUl = document.querySelector('.upld_flist > ul');
+    let getFileAttach = document.querySelector('.file_attach');
+    getFileAttach.classList.remove('drag_in');
+    // 이벤트 더블링 막기
+    ev.preventDefault();
+    if (ev.dataTransfer.items) {
+        // dataTransfer 를 이용하여 파일에 접근
+        [...ev.dataTransfer.items].forEach((item, i) => {
+          // drop한 item이 파일이 아닌 경우, 거절하기
+          if (item.kind === 'file') {
+              const file = item.getAsFile();
+              dataTransfer.items.add(file);
+          }
+        });
+    } else {
+      [...ev.dataTransfer.files].forEach((file, i) => {
+          dataTransfer.items.add(file);
+      });
+  }
+  // PC 텍스트 클릭 > 파일첨부 창으로 첨부하는 경우
+  const onFilePicked = (e) => {
+    let fileListUl = document.querySelector('.upld_flist > ul');
+    if(isNew){ fileListUl.replaceChildren();}
+    [...(e.target.files)].forEach(row => {dataTransfer.items.add(row);});
+    drawFileList(dataTransfer.files, fileListUl);
+  }
+  `;
+  const texts5 = `
+  url:Rails.application.routes.url_helpers.rails_blob_path(f,only_path:true)
+  `;
+
   return (
     <>
       <section id="article-header9">
@@ -83,186 +142,14 @@ export default function Company4(){
             <h4><b>Active Storage</b></h4>
             <img className='article2_contents_img1' style={{width: '80%'}} src={process.env.PUBLIC_URL+"/images/polymorphic.jpg"}/>
             <h4 id='Tui Chart 구조 설명'><b>Model 정의</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"Class Request < ApplicationRecord"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"...."}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"has_many_attached :files"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"end"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="Ruby" contents={texts1} />
             <h4 id='Tui Chart 구조 설명'><b>Controller 정의</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"private"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"def request_params"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"params.require(:requests).permit(:id, :title, :request, :response, :requester_id, :respondents_id, :responsed_at, files: [])"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"end"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>// 삽입</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"_request.files.attach(params[:fileList])"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>// 삭제</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"delete_files.each{|el| _request.files.find_by_id(el).purge} unless delete_files.nil?"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="Ruby" contents={texts2} />
+            <CodeBlock language="Ruby" contents={texts3} />
             <h4 id="첨부파일 추가"><b>첨부파일 추가</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#008000'}}> // drag over 시, 효과 주기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const dragOverHandler = (ev) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"ev.preventDefault();"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"let getFileAttach = document.querySelector('.file_attach');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"getFileAttach.classList.add('drag_in');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}> // drag and drop 파일 첨부</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const dropHandler = (ev) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"let fileListUl = document.querySelector('.upld_flist > ul');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"let getFileAttach = document.querySelector('.file_attach');"}</span>
-                  </span>
-                  <span className="line">
-                      <span style={{color: '#ABB2BF'}}>   {"getFileAttach.classList.remove('drag_in');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   // 이벤트 더블링 막기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"ev.preventDefault();"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"if (ev.dataTransfer.items) {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>       // dataTransfer 를 이용하여 파일에 접근</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"[...ev.dataTransfer.items].forEach((item, i) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>         // drop한 item이 파일이 아닌 경우, 거절하기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>         {"if (item.kind === 'file') {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"const file = item.getAsFile();"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"dataTransfer.items.add(file);"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>         {"}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"});"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"} else {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>     {"[...ev.dataTransfer.files].forEach((file, i) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>         {"dataTransfer.items.add(file);"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>     {"});"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"}"}</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>{"// PC 텍스트 클릭 > 파일첨부 창으로 첨부하는 경우"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const onFilePicked = (e) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"let fileListUl = document.querySelector('.upld_flist > ul');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"if(isNew){ fileListUl.replaceChildren();}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"[...(e.target.files)].forEach(row => {dataTransfer.items.add(row);});"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"drawFileList(dataTransfer.files, fileListUl);"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"}"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JavaScript" contents={texts4} />
             <h4 id="첨부파일 다운로드"><b>첨부파일 다운로드</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"url:Rails.application.routes.url_helpers.rails_blob_path(f,only_path:true)"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="Ruby" contents={texts5} />
           </div>
         </div>
       </div>

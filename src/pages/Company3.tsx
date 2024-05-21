@@ -1,8 +1,66 @@
 import '../styles/University.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
 
 export default function Company3(){
+  const texts1 = `
+  const el = document.getElementById('chart-area');
+  const data = {
+    categories: [
+      '01/01/2020',
+      '02/01/2020',
+      '03/01/2020',
+      '04/01/2020'
+    ],
+    series: [
+      {
+        name: 'Seoul',
+        data: [-3.5, -1.1, 4.0, 11.3, 17.5, 21.5, 25.9, 27.2, 24.4, 13.9, 6.6, -0.6],
+      },
+    ]
+  }
+  `;
+  const texts2 = `
+  def make_dash_board_datas
+    # common_qry 는 매출집계 쿼리와 동일
+    _is_week_qry = common_qry(true, is_week_start_date, is_week_end_date)
+    # Query 로 집계한 데이터
+    _is_week_datas = ActiveRecord::Base.connection.execute(_is_week_qry).as_json
+    is_week_sum = 0
+    _is_week_datas.each{|row| is_week_sum += row['summary'].to_i}
+    is_week_average = is_week_sum / (_is_week_datas.size*2)
+    week_series = []
+    week_series = [
+      # Tui Chart series 구성으로 데이터 구현
+      {'name' => '평균', 'data' => [is_week_average] * _is_week_datas.size},
+      {'name' => '지난해', 'data' => _is_week_datas.map{|data| data['previous'].to_i}},
+      {'name' => '올해', 'data' => _is_week_datas.map{|data| data['recent'].nil? ? nil : data['recent'].to_i}}
+    ]
+  end
+  `;
+  const texts3 = `
+  const weekOptions = {
+    chart: {height: 600, width: window.innerWidth/2.2},
+    legend: {align: 'top'},
+    series: {spline: true,selectable: false,showDot: true},
+    yAxis: {
+      label: {
+        formatter: (value) => {
+        if(value >= 100000000){
+          return `${numberWithCommas((value*0.00000001).toFixed(1))} 억`;
+   ------------------------------중략-------------------------------
+  const weekDatas = {
+    categories:weekCategories,
+    series:weekSeries
+  };
+  chart1 = new LineChart({
+    el: document.getElementById('chart-area7'),
+    data:weekDatas,
+    options:weekOptions
+  });
+  `;
+
   return (
     <>
       <section id="article-header8">
@@ -86,186 +144,15 @@ export default function Company3(){
             <h4><b>Query 구조</b></h4>
             <img className='article2_contents_img1' style={{width: '56%'}} src={process.env.PUBLIC_URL+"/images/query_coll.png"}/>
             <h4 id='Tui Chart 구조 설명'><b>Tui chart 구조 설명</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const el = document.getElementById('chart-area');"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const data = {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"categories: ["}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       '01/01/2020',</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       '02/01/2020',</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       '03/01/2020',</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       '04/01/2020'</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>    {'],'}</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'series: ['}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"{"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"name: 'Seoul',"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"data: [-3.5, -1.1, 4.0, 11.3, 17.5, 21.5, 25.9, 27.2, 24.4, 13.9, 6.6, -0.6],"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"},"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {']'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"}"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JavaScript" contents={texts1} />
             <ol style={{listStyleType: 'decimal'}} data-ke-list-type="decimal">
               <li>category {'==>'} 라인차트의 legend를 나타낸다.</li>
               <li>series {'==>'} 라인차트가 그려질 데이터</li>
             </ol>
             <h4 id="Tui chart Data 생성"><b>Tui chart Data 생성</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="Ruby">Ruby</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"def make_dash_board_datas"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   # common_qry 는 매출집계 쿼리와 동일</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"_is_week_qry = common_qry(true, is_week_start_date, is_week_end_date)"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   # Query 로 집계한 데이터</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"_is_week_datas = ActiveRecord::Base.connection.execute(_is_week_qry).as_json"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"is_week_sum = 0"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"_is_week_datas.each{|row| is_week_sum += row['summary'].to_i}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"is_week_average = is_week_sum / (_is_week_datas.size*2)"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"week_series = []"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"week_series = ["}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>       # Tui Chart series 구성으로 데이터 구현</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"{'name' => '평균', 'data' => [is_week_average] * _is_week_datas.size},"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"{'name' => '지난해', 'data' => _is_week_datas.map{|data| data['previous'].to_i}},"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"{'name' => '올해', 'data' => _is_week_datas.map{|data| data['recent'].nil? ? nil : data['recent'].to_i}}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"]"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"end"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="Ruby" contents={texts2} />
             <h4 id="Tui chart 그리기"><b>Tui chart 그리기</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const weekOptions = {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"chart: {height: 600, width: window.innerWidth/2.2},"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"legend: {align: 'top'},"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"series: {spline: true,selectable: false,showDot: true},"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"yAxis: {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"label: {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"formatter: (value) => {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"if(value >= 100000000){"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>               {"return `${numberWithCommas((value*0.00000001).toFixed(1))} 억`;"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>  {"------------------------------중략-------------------------------"}</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"const weekDatas = {"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"categories:weekCategories,"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"series:weekSeries"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"};"}</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"chart1 = new LineChart({"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"el: document.getElementById('chart-area7'),"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"data:weekDatas,"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"options:weekOptions"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"});"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JavaScript" contents={texts3} />
             <ol style={{listStyleType: 'decimal'}} data-ke-list-type="decimal">
               <li>weekOptions {'==>'} legend 위치, 라인차트에 점 노출, y축 범위 조정 등 설정.</li>
               <li>chart1 {'==>'} 옵션 및 데이터 합쳐서 라인 차트로 노출시킨다.</li>
