@@ -6,6 +6,52 @@ import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
  
 export default function Bespoke(){
 
+  const bespokeTexts1 = `
+  export class JnsBespoke{ 
+    static productsCodes = { 
+      "0JSM1TT40301F": { 
+        size: "S", 
+        imgs: [ 
+          "/bespoke_assets/products/lucky_pleats_s/starry/front/GOLD.jpg", 
+          "/bespoke_assets/products/lucky_pleats_s/starry/side/GOLD.jpg" 
+        ] 
+      } 
+    } 
+  } 
+  `
+  const bespokeTexts2 = `
+  let bespoke = JnsBespoke.productCodes["0JSM1TT40301F"];
+  defaultImg(bespoke){ 
+    if (bespoke){
+      switch (bespoke.size){
+        case "S": 
+          // front에 보여질 이미지 가져오기
+          this.previewFrontImg.getElementsByTagName("img")[0].src = bespoke.imgs[0]; 
+          // strap에 보여질 이미지 가져오기
+          this.previewStrapImg.getElementsByTagName("img")[0].src = bespoke.imgs[1]; 
+      }
+    }
+  }
+  `
+  const bespokeTexts3 = `
+  bespokeToggleClick(_this){
+    if(_this.bespokeContainer.classList.contains("active"){
+      // 비스포크 열고 닫힘이 가능
+      _this.bespokeContainer.classList.remove("active");
+    }else{
+      _this.bespokeContainer.classList.add("active");
+    }
+  }
+  `
+  const bespokeTexts4 = `
+  .bespoke-container{
+    display: none;
+  }
+  .bespoke-container.active{
+    display: block;
+  }
+  `
+  
   return(
     <>
     <div>
@@ -75,158 +121,13 @@ export default function Bespoke(){
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
             <h4 id="비스포크 이미지 불러오기"><b>비스포크 이미지 불러오기</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVASCRIPT">JAVASCRIPT</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>export class </span>
-                    <span style={{color: '#2B91AF'}}>JnsBespoke</span>
-                    <span style={{color: '#ABB2BF'}}>{'{'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   static </span>
-                    <span style={{color: '#ABB2BF'}}>{'productsCodes = {'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'"0JSM1TT40301F": {'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>           {'size:'} </span>
-                    <span style={{color: '#ABB2BF'}}>{'"S",'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>           {'imgs:'} </span>
-                    <span style={{color: '#ABB2BF'}}>{'['} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {'"/bespoke_assets/products/lucky_pleats_s/starry/front/GOLD.jpg",'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {'"/bespoke_assets/products/lucky_pleats_s/starry/side/GOLD.jpg"'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>            {']'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>        {'}'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>    {'}'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'} </span>
-                  </span>
-                </code>
-              </pre>
-            </div>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVASCRIPT">JAVASCRIPT</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>let bespoke = JnsBespoke.productCodes["0JSM1TT40301F"];</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>defaultImg</span>
-                    <span style={{color: '#ABB2BF'}}>{'(bespoke){'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   if </span>
-                    <span style={{color: '#ABB2BF'}}>{'(bespoke){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       switch </span>
-                    <span style={{color: '#ABB2BF'}}>{'(bespoke.size){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>         {'case'} </span>
-                    <span style={{color: '#ABB2BF'}}>{'"S":'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>           // front에 보여질 이미지 가져오기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>           {'this'}</span>
-                    <span style={{color: '#ABB2BF'}}>{'.previewFrontImg.getElementsByTagName("img")[0].src = bespoke.imgs[0];'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>           // strap에 보여질 이미지 가져오기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>           {'this'}</span>
-                    <span style={{color: '#ABB2BF'}}>{'.previewStrapImg.getElementsByTagName("img")[0].src = bespoke.imgs[1];'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>         {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>     {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language='JAVASCRIPT' contents={bespokeTexts1} />
+            <CodeBlock language='JAVASCRIPT' contents={bespokeTexts2} />
 
             <h4 id="addClass active"><b>addClass active</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVASCRIPT">JAVASCRIPT</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'bespokeToggleClick(_this){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'if(_this.bespokeContainer.classList.contains("active"){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>       // 비스포크 열고 닫힘이 가능</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'_this.bespokeContainer.classList.remove("active");'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}else{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'_this.bespokeContainer.classList.add("active");'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="CSS">CSS</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'.bespoke-container{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'display: none;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'.bespoke-container.active{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'display: block;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language='JAVASCRIPT' contents={bespokeTexts3} />
+            <CodeBlock language='CSS' contents={bespokeTexts4} />
+
             <h4 id="실행화면 및 동작화면"><b>실행화면 및 동작화면(직접 테스트 가능합니다. [버튼]을 눌러보세요)</b></h4>
             
           </div>
