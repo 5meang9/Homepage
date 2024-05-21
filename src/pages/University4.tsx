@@ -1,8 +1,95 @@
 import '../styles/University.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
 
 export default function University4(){
+  const texts1 = `
+  // Android 상에서 Tesseract Tools 사용하기 위한 설정
+  dependencies{
+    compile 'com.rmtheis : tess-two:6.3.0'
+  }
+  `
+  const texts2 = `
+  static TessBaseAPI  sTess;
+  @Override 
+  protected void  onCreate( Bundle savedInstanceState){
+  ---------------------중략----------------------
+    lang = "ttes";
+    datapath = getFilesDir() + "/tesseract";
+    if (checkFile(new File (datapath+"/tessdata"))){
+      sTess.init(datapath, lang);
+    }
+  }
+  `
+  const texts3 = `
+  @Override 
+  protected void  onCreate( Bundle savedInstanceState){
+    mBtnCameraView.setOnClickListener(new View.OnClickListener(){
+    @Override 
+    protected void  onClick(View v){
+      Intent mittCamera = new Intent (MainActivity.this, CameraView .class);
+      startActivityForResult(mittCamera, ACTIVITY_REQUEST_CODE);
+    }
+  });
+  `
+  const texts4 = `
+  public void onClickButton(View v){
+    bmp_result =  Bitmap.crateBitmap(m_matRoi,cols(), m_matRoi.rows(),Bitmap.ConfigARGB_8888);
+    // Mat 을 비트맵으로 변환
+    Utils.matToBitmap(m_matRoi, bmp_result);
+    // 캡쳐한 이미지를 ROI 영역 안에 표시
+    mImageCapture.setVisivility(ViewVISIVLE);
+    // 캡쳐 이미지 tesseract-ocr 입력 데이터로 사용
+    new AsyncTess()..execute(bmp_result);
+  }
+  `
+  const texts5 = `
+  private class AsyncTess extends AsyncTask<Bitmap, Integer, String>{
+    // 스레드에 의해 처리될 내용을 담기 위한 함수
+    @Override
+    protected String  doInBackground(Bitmap ... mRelativeParams){
+      // Tesseract OCR 수행
+      sTess.setImage(bmp_result);
+      // getUTF8Text를 통해 텍스트 추출 결과 반환
+      return sTess.getUTF8Text();
+    protected void  onPostexecute(String result){
+      // 계산식=값 text 출력
+      mTextOcrResult.setText(m_strOcrResult+"="+Calc(m_strOcrResult));
+    }
+ }
+  `
+  const texts6 = `
+  private String Calc(String str){
+    // 계산 결과를 저장할 변수
+    intcnt = 0;
+    // 연산자를 제외한 정수를 저장할 스택 객체 생성
+    Stack<Integer> Stk_Num = new Stack<Integer>();
+    // 계산식을 연산자 기분으로 분리
+    StringTokenizer ST_Num  = new StringTokenizer(str,"+-/* ");
+    // 계산식을 정수 기준으로 분리, 연산가 저장
+    StringTokenizer ST_Oper = new StringTokenizer(str,"1234567890 ");
+    // 첫번째 정수값을 스택에 저장
+    Stk_Num.push( IntegerparseInt(ST_Num.nextToken()));
+    // 정수값이 계속 존재할 경우
+    while( ST_Num.hasMoreTokens()){
+      // 연산자를 oper변수에 저장
+      char oper =  ST_Oper.nextToken().charAt(0);
+      // 다음 정수값을 스택에 저장
+      Stringnum =  ST_Num.nextToken();
+      int a;  
+      // 연산자가 '*' 경우
+      if(oper ==  '*'){ 
+        // 스택에 저장된 값을 꺼내
+        a = Stk_num.pop();
+        // 다음 정수값을 곱한 뒤
+        a *= Integer.parseInt(num); 
+        // 곱셈 결과를 다시 스택에 저장
+        Stk_Num .push(a);
+      }
+  ---------------------중략----------------------
+  `
+
   return (
     <>
       <section id="article-header3">
@@ -77,338 +164,18 @@ export default function University4(){
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
             <h4 id="Tesseract Tools 사용하기"><b>Tesseract Tools 사용하기</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>// Android 상에서 Tesseract Tools 사용하기 위한 설정</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>dependencies{'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   compile</span>
-                    <span style={{color: '#008000'}}> 'com.rmtheis : tess-two:6.3.0'</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JAVA" contents={texts1} />
 
             <h4 id='Class MainActivity Tesseract import 및 사용'><b>Class MainActivity Tesseract import 및 사용</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>static TessBaseAPI </span>
-                    <span style={{color: '#ABB2BF'}}> sTess;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>@Override </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}> protected void </span>
-                    <span style={{color: '#2B91AF'}}> onCreate</span>
-                    <span style={{color: '#ABB2BF'}}>{'('} </span>
-                    <span style={{color: '#0000FF'}}>{'Bundle'} </span>
-                    <span style={{color: '#ABB2BF'}}>savedInstanceState{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>---------------------중략----------------------</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   lang = </span>
-                    <span style={{color: '#ff0000'}}>"ttes"</span>
-                    <span style={{color: '#ABB2BF'}}>;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   datapath = getFilesDir() + </span>
-                    <span style={{color: '#ff0000'}}>"/tesseract"</span>
-                    <span style={{color: '#ABB2BF'}}>;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   if </span>
-                    <span style={{color: '#ABB2BF'}}>{'('}checkFile{'('}</span>
-                    <span style={{color: '#0000FF'}}>new File </span>
-                    <span style={{color: '#ABB2BF'}}>{'('}datapath+</span>
-                    <span style={{color: '#ff0000'}}>"/tessdata"</span>
-                    <span style={{color: '#ABB2BF'}}>{'))){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       sTess.init(datapath, lang);</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JAVA" contents={texts2} />
             <h4 id='안드로이드 카메라 접근'><b>안드로이드 카메라 접근</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>@Override </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>protected void </span>
-                    <span style={{color: '#2B91AF'}}> onCreate</span>
-                    <span style={{color: '#ABB2BF'}}>{'('} </span>
-                    <span style={{color: '#0000FF'}}>{'Bundle'} </span>
-                    <span style={{color: '#ABB2BF'}}>savedInstanceState{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   mBtnCameraView.setOnClickListener{'('}</span>
-                    <span style={{color: '#0000FF'}}>new View.OnClickListener</span>
-                    <span style={{color: '#ABB2BF'}}>(){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   @Override </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   protected void </span>
-                    <span style={{color: '#2B91AF'}}> onClick</span>
-                    <span style={{color: '#ABB2BF'}}>{'('}</span>
-                    <span style={{color: '#0000FF'}}>{'View'} </span>
-                    <span style={{color: '#ABB2BF'}}>v{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       Intent </span>
-                    <span style={{color: '#ABB2BF'}}>mittCamera = </span>
-                    <span style={{color: '#0000FF'}}>{'new Intent'} </span>
-                    <span style={{color: '#ABB2BF'}}>{'('}</span>
-                    <span style={{color: '#0000FF'}}>{'MainActivity.this, CameraView'} </span>
-                    <span style={{color: '#ABB2BF'}}>{'.class);'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       startActivityForResult(mittCamera, ACTIVITY_REQUEST_CODE);</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'});'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JAVA" contents={texts3} />
             <h4 id="캡쳐 이미지와 tesseract"><b>캡쳐 이미지와 tesseract</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>public void</span>
-                    <span style={{color: '#2B91AF'}}> onClickButton</span>
-                    <span style={{color: '#ABB2BF'}}>{'('}</span>
-                    <span style={{color: '#0000FF'}}>{'View'} </span>
-                    <span style={{color: '#ABB2BF'}}>v{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   bmp_result =  </span>
-                    <span style={{color: '#0000FF'}}>Bitmap</span>
-                    <span style={{color: '#ABB2BF'}}>.crateBitmap{'('}m_matRoi,cols(), m_matRoi.rows(),</span>
-                    <span style={{color: '#0000FF'}}>Bitmap.Config</span>
-                    <span style={{color: '#ABB2BF'}}>ARGB_8888{')'};</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   Utils</span>
-                    <span style={{color: '#ABB2BF'}}>.matToBitmap(m_matRoi, bmp_result);</span>
-                    <span style={{color: '#008000'}}>// Mat 을 비트맵으로 변환</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   // 캡쳐한 이미지를 ROI 영역 안에 표시</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   mImageCapture.setVisivility{'('}</span>
-                    <span style={{color: '#0000FF'}}>View</span>
-                    <span style={{color: '#ABB2BF'}}>VISIVLE{')'};</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   new AsyncTess</span>
-                    <span style={{color: '#ABB2BF'}}>()..execute(bmp_result);</span>
-                    <span style={{color: '#008000'}}>// 캡쳐 이미지 tesseract-ocr 입력 데이터로 사용</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JAVA" contents={texts4} />
             <h4 id="Tesseract 인식"><b>Tesseract 인식</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>private class</span>
-                    <span style={{color: '#2B91AF'}}> AsyncTess</span>
-                    <span style={{color: '#0000FF'}}> extends</span>
-                    <span style={{color: '#2B91AF'}}> AsyncTask{'<'}</span>
-                    <span style={{color: '#0000FF'}}>Bitmap, Integer, String</span>
-                    <span style={{color: '#2B91AF'}}>{'>'}</span>
-                    <span style={{color: '#ABB2BF'}}>{'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   @Override </span>
-                    <span style={{color: '#008000'}}>   // 스레드에 의해 처리될 내용을 담기 위한 함수</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   protected String </span>
-                    <span style={{color: '#2B91AF'}}> doInBackground</span>
-                    <span style={{color: '#ABB2BF'}}>{'('}</span>
-                    <span style={{color: '#0000FF'}}>{'Bitmap'} </span>
-                    <span style={{color: '#ABB2BF'}}>... mRelativeParams{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       sTess.setImage(bmp_result);</span>
-                    <span style={{color: '#008000'}}>// Tesseract OCR 수행</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       return </span>
-                    <span style={{color: '#ABB2BF'}}>sTess.getUTF8Text();</span>
-                    <span style={{color: '#008000'}}>// getUTF8Text를 통해 텍스트 추출 결과 반환</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   protected void </span>
-                    <span style={{color: '#2B91AF'}}> onPostexecute</span>
-                    <span style={{color: '#ABB2BF'}}>{'('}</span>
-                    <span style={{color: '#0000FF'}}>{'String'} </span>
-                    <span style={{color: '#ABB2BF'}}>result{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       mTextOcrResult.setText(m_strOcrResult+"="+Calc(m_strOcrResult));</span>
-                    <span style={{color: '#008000'}}>// 계산식=값 text 출력</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JAVA" contents={texts5} />
             <h4 id="Calc 메서드 (우선순위 계산)"><b>Calc 메서드 (우선순위 계산)</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JAVA">JAVA</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>private String</span>
-                    <span style={{color: '#2B91AF'}}> Calc</span>
-                    <span style={{color: '#ABB2BF'}}>{'('}</span>
-                    <span style={{color: '#0000FF'}}>{'String'} </span>
-                    <span style={{color: '#ABB2BF'}}>str{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   int</span>
-                    <span style={{color: '#ABB2BF'}}>cnt = 0;</span>
-                    <span style={{color: '#008000'}}>// 계산 결과를 저장할 변수</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   Stack{'<'}Integer{'>'} Stk_Num </span>
-                    <span style={{color: '#ABB2BF'}}>{'='} </span>
-                    <span style={{color: '#0000FF'}}>new Stack{'<'}Integer{'>'}</span>
-                    <span style={{color: '#ABB2BF'}}>();</span>
-                    <span style={{color: '#008000'}}>// 연산자를 제외한 정수를 저장할 스택 객체 생성</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   StringTokenizer ST_Num  </span>
-                    <span style={{color: '#ABB2BF'}}>{'='} </span>
-                    <span style={{color: '#0000FF'}}>new StringTokenizer</span>
-                    <span style={{color: '#ABB2BF'}}>{'(str,'}</span>
-                    <span style={{color: '#ff0000'}}>"+-/* "</span>
-                    <span style={{color: '#ABB2BF'}}>{');'}</span>
-                    <span style={{color: '#008000'}}>// 계산식을 연산자 기분으로 분리</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   StringTokenizer ST_Oper </span>
-                    <span style={{color: '#ABB2BF'}}>{'='} </span>
-                    <span style={{color: '#0000FF'}}>new StringTokenizer</span>
-                    <span style={{color: '#ABB2BF'}}>{'(str,'}</span>
-                    <span style={{color: '#ff0000'}}>"1234567890 "</span>
-                    <span style={{color: '#ABB2BF'}}>{');'}</span>
-                    <span style={{color: '#008000'}}>// 계산식을 정수 기준으로 분리, 연산가 저장</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   Stk_Num</span>
-                    <span style={{color: '#ABB2BF'}}>{'.push('} </span>
-                    <span style={{color: '#0000FF'}}>Integer</span>
-                    <span style={{color: '#ABB2BF'}}>{'parseInt('}</span>
-                    <span style={{color: '#0000FF'}}>ST_Num</span>
-                    <span style={{color: '#ABB2BF'}}>{'.nextToken()));'}</span>
-                    <span style={{color: '#008000'}}>// 첫번째 정수값을 스택에 저장</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'while('} </span>
-                    <span style={{color: '#0000FF'}}>ST_Num</span>
-                    <span style={{color: '#ABB2BF'}}>{'.hasMoreTokens()){'} </span>
-                    <span style={{color: '#008000'}}>// 정수값이 계속 존재할 경우</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       char </span>
-                    <span style={{color: '#ABB2BF'}}>{'oper = '} </span>
-                    <span style={{color: '#0000FF'}}>ST_Oper</span>
-                    <span style={{color: '#ABB2BF'}}>{'.nextToken().charAt(0);'} </span>
-                    <span style={{color: '#008000'}}>// 연산자를 oper변수에 저장</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       String</span>
-                    <span style={{color: '#ABB2BF'}}>{'num = '} </span>
-                    <span style={{color: '#0000FF'}}>ST_Num</span>
-                    <span style={{color: '#ABB2BF'}}>{'.nextToken();'} </span>
-                    <span style={{color: '#008000'}}>// 다음 정수값을 스택에 저장</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       int </span>
-                    <span style={{color: '#ABB2BF'}}>{'a; '} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       if</span>
-                    <span style={{color: '#ABB2BF'}}>{'(oper == '} </span>
-                    <span style={{color: '#ff0000'}}>'*'</span>
-                    <span style={{color: '#ABB2BF'}}>{'){'} </span>
-                    <span style={{color: '#008000'}}>// 연산자가 '*' 경우</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       a = </span>
-                    <span style={{color: '#0000FF'}}>Stk_num</span>
-                    <span style={{color: '#ABB2BF'}}>{'.pop();'} </span>
-                    <span style={{color: '#008000'}}>// 스택에 저장된 값을 꺼내</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       a *= </span>
-                    <span style={{color: '#0000FF'}}>Integer</span>
-                    <span style={{color: '#ABB2BF'}}>{'.parseInt(num);'} </span>
-                    <span style={{color: '#008000'}}>// 다음 정수값을 곱한 뒤</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       Stk_Num </span>
-                    <span style={{color: '#ABB2BF'}}>{'.push(a);'} </span>
-                    <span style={{color: '#008000'}}>// 곱셈 결과를 다시 스택에 저장</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>---------------------중략----------------------</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JAVA" contents={texts6} />
             <h4 id="실행화면 및 동작화면"><b>실행화면 및 동작화면</b></h4>
             <div className='img_col' style={{display: 'flex',marginBottom: '50px'}}>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/plus1.png"} style={{width: '45%', marginTop: '5px', marginRight: '64x'}}/>
