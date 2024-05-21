@@ -47,8 +47,8 @@ export default function Company3(){
     yAxis: {
       label: {
         formatter: (value) => {
-        if(value >= 100000000){
-          return `${numberWithCommas((value*0.00000001).toFixed(1))} 억`;
+          if(value >= 100000000){
+            return \`\${numberWithCommas((value*0.00000001).toFixed(1))} 억\`;
    ------------------------------중략-------------------------------
   const weekDatas = {
     categories:weekCategories,
