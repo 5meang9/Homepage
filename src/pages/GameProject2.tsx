@@ -1,8 +1,44 @@
 import '../styles/University.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
 
 export default function GameProject2(){
+  const texts1 = `
+  <?xml version ="1.0" encoding ="UTF-8" standalone ="yes"?> 
+  <Basic xmlns:xsi ="http://www.w3.org/2001/SMLSchema-instance"> 
+  <Monster-set>
+  <Monster>
+  <MoName>SKELETION</MoName>
+  <hP>9, 14, 18</hP >
+  -------------중략-------------
+  `;
+  const texts2 = `
+  void CreateXml(){ 
+    // xml 파일 로드
+    TextAsset textAsset = (TextAsset)Resources.Load("Dungeon_Data");
+    XmlDocument xmlDoc =  new XmlDocumnet();
+    // 로드 한 sml 파일 테스트 형식으로 저장
+    XmlDoc.LoadXml(textAsset.text);    
+    // 각 속성에 해당하는 부분을 찾아 Read
+    MonNodes = xmlDoc.SelectNodes("Basic/Monster-set/Monster");
+  -------------------중략-------------------
+  `;
+  const texts3 = `
+  public XmlNode OutNode(Stage.roomType.rTyp){ 
+    int count = 0; 
+    int idx = 0; 
+    XmlNode Node =  null ; 
+    switch (rTyp){ 
+      // 몬스터방 일 때, xml에 저장한 7마리 몬스터(이름, 체력, 데미지) 중 랜덤으로 1마리 뽑아 text 출력
+      case Stage.roomType.MON: 
+        count = dm.MonNodes.Count; 
+        idx = Random.Range(0, count); 
+        Node = dm.MonNodes[idx]; 
+        return Node; 
+    -------------------중략-------------------
+  `;
+
   return (
     <>
       <section id="article-header4">
@@ -71,150 +107,11 @@ export default function GameProject2(){
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
             <h4 id="캐릭터 직업 xml파일로 세팅"><b>캐릭터 직업 xml파일로 세팅</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="XML">XML</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>{'<?'}</span>
-                    <span style={{color: '#A31515'}}>{'xml'} </span>
-                    <span style={{color: '#ff0000'}}>{'version'} </span>
-                    <span style={{color: '#0000FF'}}>{'="1.0"'} </span>
-                    <span style={{color: '#ff0000'}}>{'encoding'} </span>
-                    <span style={{color: '#0000FF'}}>{'="UTF-8"'} </span>
-                    <span style={{color: '#ff0000'}}>{'standalone'} </span>
-                    <span style={{color: '#0000FF'}}>{'="yes"?>'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>{'<'}</span>
-                    <span style={{color: '#A31515'}}>{'Basic'} </span>
-                    <span style={{color: '#ff0000'}}>{'xmlns:xsi'} </span>
-                    <span style={{color: '#0000FF'}}>{'="http://www.w3.org/2001/SMLSchema-instance">'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>{'<'}</span>
-                    <span style={{color: '#A31515'}}>{'Monster-set'}</span>
-                    <span style={{color: '#0000FF'}}>{'>'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>{'<'}</span>
-                    <span style={{color: '#A31515'}}>{'Monster'}</span>
-                    <span style={{color: '#0000FF'}}>{'>'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>{'<'}</span>
-                    <span style={{color: '#A31515'}}>{'MoName'}</span>
-                    <span style={{color: '#0000FF'}}>{'>'}</span>
-                    <span style={{color: '#ABB2BF'}}>{'SKELETION'}</span>
-                    <span style={{color: '#0000FF'}}>{'</'}</span>
-                    <span style={{color: '#A31515'}}>{'MoName'}</span>
-                    <span style={{color: '#0000FF'}}>{'>'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>{'<'}</span>
-                    <span style={{color: '#A31515'}}>{'hP'}</span>
-                    <span style={{color: '#0000FF'}}>{'>'}</span>
-                    <span style={{color: '#ABB2BF'}}>{'9, 14, 18'}</span>
-                    <span style={{color: '#0000FF'}}>{'</'}</span>
-                    <span style={{color: '#A31515'}}>{'hP'} </span>
-                    <span style={{color: '#0000FF'}}>{'>'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'-------------중략-------------'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="XML" contents={texts1} />
             <h4 id="XML 로드"><b>XML 로드</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>void </span>
-                    <span style={{color: '#ABB2BF'}}>CreateXml(){'{'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'TextAsset textAsset = (TextAsset)Resources.Load('}</span>
-                    <span style={{color: '#ff0000'}}>"Dungeon_Data"</span>
-                    <span style={{color: '#ABB2BF'}}>{');'}</span>
-                    <span style={{color: '#008000'}}>   // xml 파일 로드</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'XmlDocument xmlDoc = '} </span>
-                    <span style={{color: '#0000ff'}}>new </span>
-                    <span style={{color: '#ABB2BF'}}>{'XmlDocumnet();'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'XmlDoc.LoadXml(textAsset.text);'} </span>
-                    <span style={{color: '#008000'}}>   // 로드 한 sml 파일 테스트 형식으로 저장</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   // 각 속성에 해당하는 부분을 찾아 Read</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'MonNodes = xmlDoc.SelectNodes('}</span>
-                    <span style={{color: '#ff0000'}}>"Basic/Monster-set/Monster"</span>
-                    <span style={{color: '#ABB2BF'}}>{');'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'-------------------중략-------------------'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="C#" contents={texts2} />
             <h4 id="XML 적용"><b>XML 적용</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>public </span>
-                    <span style={{color: '#ABB2BF'}}>{'XmlNode OutNode(Stage.roomType.rTyp){'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   int </span>
-                    <span style={{color: '#ABB2BF'}}>{'count = 0;'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   int </span>
-                    <span style={{color: '#ABB2BF'}}>{'idx = 0;'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'XmlNode Node = '} </span>
-                    <span style={{color: '#0000FF'}}>null </span>
-                    <span style={{color: '#ABB2BF'}}>{';'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>switch </span>
-                    <span style={{color: '#ABB2BF'}}>{'(rTyp){'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   // 몬스터방 일 때, xml에 저장한 7마리 몬스터(이름, 체력, 데미지) 중 랜덤으로 1마리 뽑아 text 출력</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       case </span>
-                    <span style={{color: '#ABB2BF'}}>{'Stage.roomType.MON:'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'count = dm.MonNodes.Count;'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'idx = Random.Range(0, count);'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'Node = dm.MonNodes[idx];'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>           return </span>
-                    <span style={{color: '#ABB2BF'}}>{'Node;'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'-------------------중략-------------------'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="C#" contents={texts3} />
             <h4 id="실행화면"><b>실행화면</b></h4>
             <div className='img_col' style={{display: 'flex', marginBottom: '50px'}}>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game5.jpg"} style={{width: '48%', marginTop: '5px'}}/>

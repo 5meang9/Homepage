@@ -1,8 +1,63 @@
 import '../styles/University.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
 
 export default function GameProject1(){
+  const texts1 =  `
+  // 마우스 왼쪽 클릭 시 플레이어 타일로 변환
+  void PlayS(){ 
+    // 마우스 왼쪽 클릭
+    if (Input.GetMouseButtonDown(0)){
+      // 화면에 레이저를 쏜다
+      Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+      // 레이저와 부딪힌 GameObject
+      RaycastHit hit;
+      // 레이저와 부딪힌 객체 있음
+      if (Physics.Raycast(ray, out hit)){
+        // 아무도 클릭하지 않은 곳 플레이어가 클릭 시, 플레이어 점수 변동 및 타일 색 변경
+        if (hit.transform.GetComponent<MeshRenderer>().material.color == Color.white){
+          hit.transform.GetComponent<MeshRenderer>().material.color = Color.Red;
+          playSound1(sounds1, musicPlayer1);
+          Score.Player_s += 1;
+        }
+        // 컴퓨터가 클릭한 곳 플레이어가 클릭할 시, 플레이어와 컴퓨터 점수 변동 및 타일 색 변경
+        else if (hit.transform.GetComponent<MeshRenderer>().material.color == Color.blue){
+          hit.transform.GetComponent<MeshRenderer>().material.color == Color.red;
+          playSound1(sounds1, musicPlayer1);
+          Score.Player_s += 1;
+          Score.Enemy_s -= 1;
+        }
+      }
+    }
+  }
+  `
+  const texts2 =  `
+  void Udate(){ 
+    // 시간 측정
+    timeSpan += Time.deltaTime;
+    if (timeSpan > checkTime){
+      Invoke("ColorChange", 3);
+      // 누적시간 초기화
+      timeSpan = 0;
+    }
+    void ColorChange(){ 
+      int i = Random.Range(0, 100);    // 빙고판 랜덤 선택
+      // 플레이어가 클릭한 곳 컴퓨터가 클릭할 시, 플레이어와 컴퓨터 점수 변동 및 타일 색 변경
+      if (tp._tilelist[i].GetComponent<Meshrenderer>().material.color == Color.red){
+        tp._tilelist[i].GetComponent<Meshrenderer>().material.color = Color.blue;
+        Score.Player_s -= 1;
+        Score.Enemy_s += 1;
+      }
+      // 아무도 클릭하지 않은 곳 컴퓨터가 클릭 시, 컴퓨터 점수 변동 및 타일 색 변경
+      else if (tp._tilelist[i].GetComponent<MeshRenderer>().material.color == Color.white){
+        tp._tilelist[i].GetComponent<MeshRenderer>().material.color == Color.blue;
+        Score.Enemy_s += 1;
+      }
+    }
+  }
+  `
+
   return (
     <>
       <section id="article-header4">
@@ -72,168 +127,10 @@ export default function GameProject1(){
           <div className='article2_contents contents_style'>
             <h4 id="player 타일변환"><b>player 타일변환</b></h4>
             <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game3.png"} style={{width: '36%', marginTop: '-25px'}}/>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>// 마우스 왼쪽 클릭 시 플레이어 타일로 변환</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>void </span>
-                    <span style={{color: '#ABB2BF'}}>PlayS(){'{'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>     if </span>
-                    <span style={{color: '#ABB2BF'}}>(Input.GetMouseButtonDown(0)){'{'}</span>
-                    <span style={{color: '#008000'}}>   // 마우스 왼쪽 클릭</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);'}</span>
-                    <span style={{color: '#008000'}}>   // 화면에 레이저를 쏜다</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'RaycastHit hit;'}</span>
-                    <span style={{color: '#008000'}}>   // 레이저와 부딪힌 GameObject</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       if </span>
-                    <span style={{color: '#ABB2BF'}}>{'(Physics.Raycast(ray,'}</span>
-                    <span style={{color: '#0000FF'}}> out </span>
-                    <span style={{color: '#ABB2BF'}}>{'hit)){'}</span>
-                    <span style={{color: '#008000'}}>   // 레이저와 부딪힌 객체 있음</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>           // 아무도 클릭하지 않은 곳 플레이어가 클릭 시, 플레이어 점수 변동 및 타일 색 변경</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>           if </span>
-                    <span style={{color: '#ABB2BF'}}>{'(hit.transform.GetComponent<MeshRenderer>().material.color == Color.white){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>               {'hit.transform.GetComponent<MeshRenderer>().material.color = Color.Red;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>               {'playSound1(sounds1, musicPlayer1);'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>               {'Score.Player_s += 1;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>             // 컴퓨터가 클릭한 곳 플레이어가 클릭할 시, 플레이어와 컴퓨터 점수 변동 및 타일 색 변경</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>           else if </span>
-                    <span style={{color: '#ABB2BF'}}>{'(hit.transform.GetComponent<MeshRenderer>().material.color == Color.blue){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>               {'hit.transform.GetComponent<MeshRenderer>().material.color == Color.red;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>               {'playSound1(sounds1, musicPlayer1);'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>               {'Score.Player_s += 1;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>               {'Score.Enemy_s -= 1;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="C#" contents={texts1} />
             <h4 id="컴퓨터 타일변환"><b>컴퓨터 타일변환</b></h4>
             <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game4.png"} style={{width: '36%', marginTop: '-25px'}}/>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>void </span>
-                    <span style={{color: '#ABB2BF'}}>Udate(){'{'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>timeSpan += Time.deltaTime;</span>
-                    <span style={{color: '#008000'}}>   // 시간 측정</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   if </span>
-                    <span style={{color: '#ABB2BF'}}>{'(timeSpan > checkTime){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'Invoke('}</span>
-                    <span style={{color: '#ff0000'}}>"ColorChange"</span>
-                    <span style={{color: '#ABB2BF'}}>{', 3);'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'timeSpan = 0;'}</span>
-                    <span style={{color: '#008000'}}>   // 누적시간 초기화</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>void </span>
-                    <span style={{color: '#ABB2BF'}}>ColorChange(){'{'} </span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   int </span>
-                    <span style={{color: '#ABB2BF'}}>{'i = Random.Range(0, 100);'} </span>
-                    <span style={{color: '#008000'}}>   // 빙고판 랜덤 선택</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   // 플레이어가 클릭한 곳 컴퓨터가 클릭할 시, 플레이어와 컴퓨터 점수 변동 및 타일 색 변경</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   if </span>
-                    <span style={{color: '#ABB2BF'}}>{'(tp._tilelist[i].GetComponent<Meshrenderer>().material.color == Color.red){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'tp._tilelist[i].GetComponent<Meshrenderer>().material.color = Color.blue;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'Score.Player_s -= 1;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'Score.Enemy_s += 1;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   // 아무도 클릭하지 않은 곳 컴퓨터가 클릭 시, 컴퓨터 점수 변동 및 타일 색 변경</span>
-                  </span>
-
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   else if </span>
-                    <span style={{color: '#ABB2BF'}}>{'(tp._tilelist[i].GetComponent<MeshRenderer>().material.color == Color.white){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'tp._tilelist[i].GetComponent<MeshRenderer>().material.color == Color.blue;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>         {'Score.Enemy_s += 1;'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}> {'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="C#" contents={texts2} />
             <h4 id="실행화면 및 동작화면"><b>실행화면 및 동작화면</b></h4>
             <div className='img_col' style={{display: 'flex', marginBottom: '50px'}}>
               <img className='article1_contents_img2' src={process.env.PUBLIC_URL+"/images/game1.jpg"} style={{width: '49%', marginTop: '5px', marginRight: '20x'}}/>
