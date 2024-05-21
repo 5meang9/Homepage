@@ -1,8 +1,84 @@
 import '../styles/University.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
 
 export default function University3(){
+  const texts1 = `
+  private void CreateMyListView(){
+    //listView 생성
+    ListView listView1 = new ListView();
+    listView1.Bounds = new Rectangle(new Point(10,10), new Size(400,200));
+    //설정한 view 상세노출
+    listView1.View = View.Details;
+    //항목 수정 가능
+    listView1.LabelEdit = true;
+    //열 재배열 가능
+    listView1.AllowColumnReorder =  true;
+    //체크박스 노출
+    listView1.CheckBoxes = true;
+    //항목 선택 시, 하위 및 항목으로 선택 가능
+    listView1.FullRowSelect = true;
+    //격자선 노출
+    listView1.GridLines = true;
+    //5개 항목 및 하위 2항목 생성
+    ListViewItem item1 = newListviewItem("미이라");
+    item1.Checked = true; //체크박스 선택 상태
+    item1.SubItems.Add("액션, 환타지");
+  -----------------중략-------------------
+    //열 세더 설정, -2 폭은 자동 크기
+    listView1.Columns.Add("제목"-2, HorizontalAlignment.Left);
+    //각 listViewItem 항목 생성
+    listView1.Items.AddRange(newListViewItem[] { item1, item2, ...});
+    this.Controls.Add(listView1);   //제어 컬렉션에 listview 추가
+  }
+  `
+  const texts2 = `
+  private void button1_Click( object sender, EventArgs e){
+    Form4 frm4 = new Form4();
+    //제목 text 전달
+    for (int i = 0; i < listView1.Columns.Count; i++){
+      if (listVeiw1.Items[i].Checked){
+        frm4.label10.Text = "영화 : "+this.listView1.Items[i].SubItems[0].Text;
+      }
+    }극장, 날짜 시간 동일 ...
+    frm4.ShowDialog();
+  }
+  `
+  const texts3 = `
+  private void BtnC(){
+    for (int i = 0; i < 50; i++){
+      btn[i] = new Button();
+      btn[i].Text = i.ToString();
+      btn[i].Name = "Butoon" + i.ToString();
+      btn[i].Size = new Size(btn_w, btn_h);
+      btn[i].Location = new Point(margin_x + (i % 10) * (btn_w + btn_s), margin_y + (i / 10) * (btn_h + btn_s));
+      btn[i].Click += btn_Click;
+      Controls.Add(btn[i]);
+    }
+  }
+  `
+  const texts4 = `
+  //좌석 선택
+  private void btn_Click( object sender, EventArgs e){
+    count++;
+    int num = int32.Parse(textBox1.Text) + int32.Parse(textBox2.Text) + int32.Parse(textBox3.Text);
+    btn_c = sender as Button;
+    if (int32.Parse(textBox1.Text) == 0 && int32.Parse(textBox2.Text) == 0 && int32.Parse(textBox3.Text) == 0){
+      MessageBox.show( "인원수를 선택해주세요.");
+    } else {
+      if(count <= num){
+        for (int i = 0; i < 19; i++){
+          if   (btn_c.Name == btn[i].Name){
+            btn_c.BackColor = System.Drawing.Color.Green;
+          }
+        }
+      } else {
+      MessageBox.show( "인원수 초과입니다.");
+    }
+  }
+  `
+
   return (
     <>
       <section id="article-header2">
@@ -81,317 +157,12 @@ export default function University3(){
               <li>좌석 선택 완료 시, 초록색으로 변경</li>
             </ol>
             <h4 id="영화 상세 사항 선택 구성"><b>영화 상세 사항 선택 구성</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>private void</span>
-                    <span style={{color: '#ABB2BF'}}> CreateMyListView(){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //listView 생성</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   ListView listView1 = </span>
-                    <span style={{color: '#0000FF'}}>new </span>
-                    <span style={{color: '#ABB2BF'}}>ListView();</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   listView1.Bounds = </span>
-                    <span style={{color: '#0000FF'}}>new </span>
-                    <span style={{color: '#ABB2BF'}}>Rectangle{'('}</span>
-                    <span style={{color: '#0000FF'}}>new </span>
-                    <span style={{color: '#ABB2BF'}}>Point{'(10,10),'} </span>
-                    <span style={{color: '#0000FF'}}>new </span>
-                    <span style={{color: '#ABB2BF'}}>Size{'(400,200));'}</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //설정한 view 상세노출</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   listView1.View = View.Details;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //항목 수정 가능</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   listView1.LabelEdit = </span>
-                    <span style={{color: '#0000FF'}}>true</span>
-                    <span style={{color: '#ABB2BF'}}>;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //열 재배열 가능</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   listView1.AllowColumnReorder =  </span>
-                    <span style={{color: '#0000FF'}}>true</span>
-                    <span style={{color: '#ABB2BF'}}>;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //체크박스 노출</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   listView1.CheckBoxes = </span>
-                    <span style={{color: '#0000FF'}}>true</span>
-                    <span style={{color: '#ABB2BF'}}>;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //항목 선택 시, 하위 및 항목으로 선택 가능</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   listView1.FullRowSelect = </span>
-                    <span style={{color: '#0000FF'}}>true</span>
-                    <span style={{color: '#ABB2BF'}}>;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //격자선 노출</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   listView1.GridLines = </span>
-                    <span style={{color: '#0000FF'}}>true</span>
-                    <span style={{color: '#ABB2BF'}}>;</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //5개 항목 및 하위 2항목 생성</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   ListViewItem item1 = </span>
-                    <span style={{color: '#0000FF'}}>new</span>
-                    <span style={{color: '#ABB2BF'}}>ListviewItem{'('}</span>
-                    <span style={{color: '#ff0000'}}>"미이라"</span>
-                    <span style={{color: '#ABB2BF'}}>{');'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   item1.Checked = </span>
-                    <span style={{color: '#0000FF'}}>true</span>
-                    <span style={{color: '#ABB2BF'}}>;</span>
-                    <span style={{color: '#008000'}}> //체크박스 선택 상태</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   item1.SubItems.Add{'('}</span>
-                    <span style={{color: '#ff0000'}}>"액션, 환타지"</span>
-                    <span style={{color: '#ABB2BF'}}>{');'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>-----------------중략-------------------</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //열 세더 설정, -2 폭은 자동 크기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   listView1.Columns.Add{'('}</span>
-                    <span style={{color: '#ff0000'}}>"제목"</span>
-                    <span style={{color: '#ABB2BF'}}>{'-2, HorizontalAlignment.Left);'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //각 listViewItem 항목 생성</span>
-                  </span>
-                  <span className="line"></span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   listView1.Items.AddRange{'('}</span>
-                    <span style={{color: '#0000FF'}}>new</span>
-                    <span style={{color: '#ABB2BF'}}>ListViewItem[] {'{'} item1, item2, ...{'});'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   this</span>
-                    <span style={{color: '#ABB2BF'}}>.Controls.Add{'(listView1);'}</span>
-                    <span style={{color: '#008000'}}>   //제어 컬렉션에 listview 추가</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="C#" contents={texts1} />
             <h4 id="영화 상세 사항 전달"><b>영화 상세 사항 전달</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>private void</span>
-                    <span style={{color: '#ABB2BF'}}> button1_Click{'('}</span>
-                    <span style={{color: '#0000FF'}}> object</span>
-                    <span style={{color: '#ABB2BF'}}> sender, EventArgs e{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   Form4 frm4 = </span>
-                    <span style={{color: '#0000FF'}}>new </span>
-                    <span style={{color: '#ABB2BF'}}>Form4();</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>   //제목 text 전달</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   for </span>
-                    <span style={{color: '#ABB2BF'}}>{'('}</span>
-                    <span style={{color: '#0000FF'}}>int </span>
-                    <span style={{color: '#ABB2BF'}}>i = 0; i {'<'} listView1.Columns.Count; i++{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       if </span>
-                    <span style={{color: '#ABB2BF'}}>(listVeiw1.Items[i].Checked){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           frm4.label10.Text = </span>
-                    <span style={{color: '#ff0000'}}>"영화 : "</span>
-                    <span style={{color: '#ABB2BF'}}>+</span>
-                    <span style={{color: '#0000FF'}}>this</span>
-                    <span style={{color: '#ABB2BF'}}>.listView1.Items[i].SubItems[0].Text;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                    <span style={{color: '#ABB2BF'}}>극장, 날짜 시간 동일 ...</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   frm4.ShowDialog();</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="C#" contents={texts2} />
             <h4 id="좌석 동적 생성 및 선택"><b>좌석 동적 생성 및 선택</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>private void</span>
-                    <span style={{color: '#ABB2BF'}}> BtnC{'(){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   for </span>
-                    <span style={{color: '#ABB2BF'}}>{'('}</span>
-                    <span style={{color: '#0000FF'}}>int </span>
-                    <span style={{color: '#ABB2BF'}}>i = 0; i {'<'} 50; i++{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       btn[i] = </span>
-                    <span style={{color: '#0000FF'}}>new </span>
-                    <span style={{color: '#ABB2BF'}}>Button();</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       btn[i].Text = i.ToString();</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       btn[i].Name = </span>
-                    <span style={{color: '#ff0000'}}>"Butoon"</span>
-                    <span style={{color: '#ABB2BF'}}> + i.ToString();</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       btn[i].Size = </span>
-                    <span style={{color: '#0000FF'}}>new </span>
-                    <span style={{color: '#ABB2BF'}}>Size(btn_w, btn_h);</span>
-                  </span> 
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       btn[i].Location = </span>
-                    <span style={{color: '#0000FF'}}>new </span>
-                    <span style={{color: '#ABB2BF'}}>Point(margin_x + (i % 10) * (btn_w + btn_s), margin_y + (i / 10) * (btn_h + btn_s));</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       btn[i].Click += btn_Click;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       Controls.Add(btn[i]);</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="C#">C#</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>//좌석 선택</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>private void</span>
-                    <span style={{color: '#ABB2BF'}}> btn_Click{'('}</span>
-                    <span style={{color: '#0000FF'}}> object</span>
-                    <span style={{color: '#ABB2BF'}}> sender, EventArgs e{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   count++;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   int </span>
-                    <span style={{color: '#ABB2BF'}}>num = int32.Parse(textBox1.Text) + int32.Parse(textBox2.Text) + int32.Parse(textBox3.Text);</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   btn_c = sender </span>
-                    <span style={{color: '#0000FF'}}>as</span>
-                    <span style={{color: '#ABB2BF'}}> Button;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>   if </span>
-                    <span style={{color: '#ABB2BF'}}>(int32.Parse(textBox1.Text) == 0 && int32.Parse(textBox2.Text) == 0 && int32.Parse(textBox3.Text) == 0){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       MessageBox.show{'('} </span>
-                    <span style={{color: '#ff0000'}}>"인원수를 선택해주세요."</span>
-                    <span style={{color: '#ABB2BF'}}>{');'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                    <span style={{color: '#0000FF'}}> else </span>
-                    <span style={{color: '#ABB2BF'}}>{'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>       if</span>
-                    <span style={{color: '#ABB2BF'}}>   (count {'<='} num){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>           for </span>
-                    <span style={{color: '#ABB2BF'}}>{'('}</span>
-                    <span style={{color: '#0000FF'}}>int </span>
-                    <span style={{color: '#ABB2BF'}}>i = 0; i {'<'} 19; i++{'){'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#0000FF'}}>               if</span>
-                    <span style={{color: '#ABB2BF'}}>   (btn_c.Name {'=='} btn[i].Name){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>                   btn_c.BackColor = System.Drawing.Color.Green;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>               {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>            {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>        {'}'}</span>
-                    <span style={{color: '#0000FF'}}> else </span>
-                    <span style={{color: '#ABB2BF'}}>{'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       MessageBox.show{'('} </span>
-                    <span style={{color: '#ff0000'}}>"인원수 초과입니다."</span>
-                    <span style={{color: '#ABB2BF'}}>{');'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>    {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'}'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="C#" contents={texts3} />
+            <CodeBlock language="C#" contents={texts4} />
           </div>
         </div>
       </div>

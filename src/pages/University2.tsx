@@ -1,8 +1,65 @@
 import '../styles/University.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
 
 export default function University2(){
+  const texts1 = `
+  <div style="position: relative; top: 200px;"> 
+  <div class="slide"> 
+    <button class="prev" type="button">
+      <img id="slide_img" src="images/left.JPG" alt="left" /> 
+    </button>
+    <ul>
+        <li>
+          <img id="slide_img" src="images/그림1.PNG"  alt="NO" width="1200" width="400"/>
+        </li>
+          <img id="slide_img" src="images/그림2.PNG"  alt="NO" width="1200" width="400"/>
+        </li>
+          <img id="slide_img" src="images/그림3.PNG"  alt="NO" width="1200" width="400"/>
+        </li>
+    </ul>
+    <button class="next" type="button">
+    </div>
+  </div>
+  `
+
+  const texts2 = `
+  (function(){
+    var current = 0; //현재위치
+    var max = 0; //이미지 개수
+    var container; //list 요소를 감싸고 있는 ul
+    var interval;
+    function init(){
+      container=jQuery(".slice ul");
+      max=container.children().length;
+      events();
+      interval=setInterval(next, 3000); //이미지 자동 넘김 실행
+    }
+    function events(){
+      jQuery("button.prev").on("click", prev);
+      jQuery("button.next").on("click", next);
+    }
+    function prev(e){ //마지막 이미지일 때 첫번째로 이동
+      current--;
+      if(current <0) current=max-1;
+      animation();
+    }
+    function next(e){
+      current++;
+      if(current >max-1) current=0;
+      animation();
+    }
+    function animation(){ //이미지 넘김 액션
+      var moveX=current*1200;
+      TweenMax.to(container, 0.8, {marginLeft:-moveX, ease:Expo.easeOut});
+      clearInterval(interval);
+      interval = setInterval(next, 3000);
+    }
+    jQuery(document).ready(init);
+  })();
+  `
+
   return (
     <>
       <section id="article-header1">
@@ -71,264 +128,14 @@ export default function University2(){
           <h2 data-ke-size="size26"><b>주요 기능</b></h2>
           <div className='article2_contents contents_style'>
             <h4 id="다이나믹 배너(HTML)"><b>다이나믹 배너(HTML)</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="HTML">HTML</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>{'<div '}</span>
-                    <span style={{color: '#8CDCFE'}}>style=</span>
-                    <span style={{color: '#CE9178'}}>"position: relative; top: 200px;"</span>
-                    <span style={{color: '#1E50B3'}}>{'> '}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>{' <div '}</span>
-                    <span style={{color: '#8CDCFE'}}>class=</span>
-                    <span style={{color: '#CE9178'}}>"slide"</span>
-                    <span style={{color: '#1E50B3'}}>{'> '}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>{'   <button '}</span>
-                    <span style={{color: '#8CDCFE'}}>class=</span>
-                    <span style={{color: '#CE9178'}}>"prev"</span>
-                    <span style={{color: '#8CDCFE'}}> type=</span>
-                    <span style={{color: '#CE9178'}}>"button"</span>
-                    <span style={{color: '#1E50B3'}}>{'>'}</span>
-
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>     {'<img '}</span>
-                    <span style={{color: '#8CDCFE'}}>id=</span>
-                    <span style={{color: '#CE9178'}}>"slide_img"</span>
-                    <span style={{color: '#8CDCFE'}}> src=</span>
-                    <span style={{color: '#CE9178'}}>"images/left.JPG"</span>
-                    <span style={{color: '#8CDCFE'}}> alt=</span>
-                    <span style={{color: '#CE9178'}}>"left"</span>
-                    <span style={{color: '#1E50B3'}}> {'/> '}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>   {'</button>' }</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>   {'<ul>'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>       {'<li>'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>         {'<img '}</span>
-                    <span style={{color: '#8CDCFE'}}>id=</span>
-                    <span style={{color: '#CE9178'}}>"slide_img" </span>
-                    <span style={{color: '#8CDCFE'}}>src=</span>
-                    <span style={{color: '#CE9178'}}>"images/그림1.PNG" </span>
-                    <span style={{color: '#8CDCFE'}}> alt=</span>
-                    <span style={{color: '#CE9178'}}>"NO"</span>
-                    <span style={{color: '#8CDCFE'}}> width=</span>
-                    <span style={{color: '#CE9178'}}>"1200"</span>
-                    <span style={{color: '#8CDCFE'}}> width=</span>
-                    <span style={{color: '#CE9178'}}>"400"</span>
-                    <span style={{color: '#1E50B3'}}>{'/>'}</span>
-                  </span>
-                  <span className='line'>
-                    <span style={{color: '#1E50B3'}}>       {'</li>'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>         {'<img '}</span>
-                    <span style={{color: '#8CDCFE'}}>id=</span>
-                    <span style={{color: '#CE9178'}}>"slide_img" </span>
-                    <span style={{color: '#8CDCFE'}}>src=</span>
-                    <span style={{color: '#CE9178'}}>"images/그림2.PNG" </span>
-                    <span style={{color: '#8CDCFE'}}> alt=</span>
-                    <span style={{color: '#CE9178'}}>"NO"</span>
-                    <span style={{color: '#8CDCFE'}}> width=</span>
-                    <span style={{color: '#CE9178'}}>"1200"</span>
-                    <span style={{color: '#8CDCFE'}}> width=</span>
-                    <span style={{color: '#CE9178'}}>"400"</span>
-                    <span style={{color: '#1E50B3'}}>{'/>'}</span>
-                  </span>
-                  <span className='line'>
-                    <span style={{color: '#1E50B3'}}>       {'</li>'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>         {'<img '}</span>
-                    <span style={{color: '#8CDCFE'}}>id=</span>
-                    <span style={{color: '#CE9178'}}>"slide_img" </span>
-                    <span style={{color: '#8CDCFE'}}>src=</span>
-                    <span style={{color: '#CE9178'}}>"images/그림3.PNG" </span>
-                    <span style={{color: '#8CDCFE'}}> alt=</span>
-                    <span style={{color: '#CE9178'}}>"NO"</span>
-                    <span style={{color: '#8CDCFE'}}> width=</span>
-                    <span style={{color: '#CE9178'}}>"1200"</span>
-                    <span style={{color: '#8CDCFE'}}> width=</span>
-                    <span style={{color: '#CE9178'}}>"400"</span>
-                    <span style={{color: '#1E50B3'}}>{'/>'}</span>
-                  </span>
-                  <span className='line'>
-                    <span style={{color: '#1E50B3'}}>       {'</li>'}</span>
-                  </span>
-                  <span className='line'>
-                    <span style={{color: '#1E50B3'}}>   {'</ul>'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#1E50B3'}}>{'   <button '}</span>
-                    <span style={{color: '#8CDCFE'}}>class=</span>
-                    <span style={{color: '#CE9178'}}>"next"</span>
-                    <span style={{color: '#8CDCFE'}}> type=</span>
-                    <span style={{color: '#CE9178'}}>"button"</span>
-                    <span style={{color: '#1E50B3'}}>{'>'}</span>
-                  </span>
-                  <span className='line'>
-                    <span style={{color: '#1E50B3'}}>  {'</div>'}</span>
-                  </span>
-                  <span className='line'>
-                    <span style={{color: '#1E50B3'}}> {'</div>'}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="HTML" contents={texts1} />
             <ol style={{listStyleType: 'decimal'}} data-ke-list-type="decimal">
               <li>slide 픽셀 1200, 위치 relative</li>
               <li>첫번째 이미지만 노출 되도록 css 조정</li>
               <li>arrow 버튼 위치 absolute, top 픽셀 220 </li>
             </ol>
             <h4 id="다이나믹 배너(JABASCRIPT)"><b>다이나믹 배너(JABASCRIPT)</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="python">python</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"("}</span>
-                    <span style={{color: '#4F6DFF'}}>function()</span>
-                    <span style={{color: '#ABB2BF'}}>{"{"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   var </span>
-                    <span style={{color: '#ABB2BF'}}>current = 0;</span>
-                    <span style={{color: '#A31515'}}> //현재위치</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   var </span>
-                    <span style={{color: '#ABB2BF'}}>max = 0;</span>
-                    <span style={{color: '#A31515'}}> //이미지 개수</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   var </span>
-                    <span style={{color: '#ABB2BF'}}>container;</span>
-                    <span style={{color: '#A31515'}}> //list 요소를 감싸고 있는 ul</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   var </span>
-                    <span style={{color: '#ABB2BF'}}>interval;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   function </span>
-                    <span style={{color: '#ABB2BF'}}>init(){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       container=jQuery{'('}</span>
-                    <span style={{color: '#A31515'}}>".slice ul"</span>
-                    <span style={{color: '#ABB2BF'}}>{')'};</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       max=container.children().length;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       events();</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       interval=setInterval(next, 3000);</span>
-                    <span style={{color: '#A31515'}}> //이미지 자동 넘김 실행</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   function </span>
-                    <span style={{color: '#ABB2BF'}}>events(){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       jQuery{'('}</span>
-                    <span style={{color: '#A31515'}}>"button.prev"</span>
-                    <span style={{color: '#ABB2BF'}}>{')'}</span>
-                    <span style={{color: '#ABB2BF'}}>.on{'('}</span>
-                    <span style={{color: '#A31515'}}>"click"</span>
-                    <span style={{color: '#ABB2BF'}}>, prev{')'};</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       jQuery{'('}</span>
-                    <span style={{color: '#A31515'}}>"button.next"</span>
-                    <span style={{color: '#ABB2BF'}}>{')'}</span>
-                    <span style={{color: '#ABB2BF'}}>.on{'('}</span>
-                    <span style={{color: '#A31515'}}>"click"</span>
-                    <span style={{color: '#ABB2BF'}}>, next{')'};</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   function </span>
-                    <span style={{color: '#ABB2BF'}}>prev(e){'{'}</span>
-                    <span style={{color: '#A31515'}}> //마지막 이미지일 때 첫번째로 이동</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       current--;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       if(current {'<'}0) current=max-1;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       animation();</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   function </span>
-                    <span style={{color: '#ABB2BF'}}>next(e){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       current++;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       if(current {'>'}max-1) current=0;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       animation();</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   function </span>
-                    <span style={{color: '#ABB2BF'}}>animation(){'{'}</span>
-                    <span style={{color: '#A31515'}}> //이미지 넘김 액션</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       var </span>
-                    <span style={{color: '#ABB2BF'}}>moveX=current*1200;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       TweenMax.to(container, 0.8, {'{'}marginLeft:-moveX, ease:Expo.easeOut{'}'});</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>       clearInterval(interval);</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       interval = setInterval(next, 3000);</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'}'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   jQuery(document).ready(init);</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{'})'}();</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language="JAVASCRIPT" contents={texts2} />
             <h4 id="실행화면"><b>실행화면</b></h4>
             <div style={{display: 'flex', marginBottom: '50px', justifyContent: 'space-between'}}>
               <img style={{width: '45%', border: '1px solid #000'}} src={process.env.PUBLIC_URL+"/images/prdDetail.png"}/>
