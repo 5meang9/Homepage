@@ -1,8 +1,79 @@
 import '../styles/University.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import CodeBlock from '../component/CodeBlock';
 
 export default function Company1(){
+  const queryTexts = `
+  with tabs as(
+    (select
+        date_trunc('month',date)as gagongdate,
+        ...
+        sum(coalesce(p_ea,0)) as p_ea
+    from sales
+    where data::date between {start_date}::date and {end_date}::date
+    group by 1,2,3,4)
+    union all
+    (select
+        date_trunc('month',closed_at)as gagongdate,
+        ...
+        sum(coalesce(sod.shipping_qty,0)) as p_ea
+    from sales_orders so
+    join sales_order_details sod
+        on so.id = sod.sales_order_id and so.rm_tf is no true
+    where closed_at::date between {start_date}::date and {end_date}::date
+    group by 1,2,3,4)
+    (select
+        date_trunc('month',o.closed_at)as gagongdate,
+        ...
+        sum(p_ea) - sum(case when claim_return_status_code == '04' then claim_return_qty else 0 end) as p_ea,
+    from sabang_orders o
+    where closed_at::date between {start_date}::date and {end_date}::date
+    group by 1,2,3,4)
+    union all
+    ...
+  `
+  const texts = `
+  name: 'main category',
+  _children: [
+    {
+      name: 'sub category'
+    },
+     ...
+  ]
+  `
+  const treeTexts = `
+  function makeTreeData(datas, onlyNameCol){
+    trees = [];
+    let brandTmp;
+    let findBrandIndex = 0;
+    ...
+    //컨트롤러 데이터 row 별로 순회
+    datas.forEach((row, index) => {
+        //brand, gubun1, gubun2, gubun3 ... 키값으로 순회
+        Object.keys(row).forEach(col => {
+          //컬럼이 brand 일 때
+            if(col == 'brand'){
+              //현재 행의 브랜드가 이전 브랜드와 같지 않을 경우에 객체 배열 만들어줌.
+              if(row[col] !== brandTmp){
+                  //[{item:'AGL',depth:1,_children:[]}, {item:'AND',depth:1,_children:[]}]
+                  // => item 에 brand, 트리구조로 만들 _children 배열 구조로 생성
+                  brandTmp = row[col]; //이전 brand 저장
+                  //col 을 제외한 sum, 2023-01-01, 2023-02-01 등의 키를 가진 객체 생성
+                  onlyNameCol.forEach(col => makeObj[col] = row[col]);
+                  trees.push({item:row[col],depth:1, ...makeObj, ...(hasCategory && {_children:[]})});
+                  //previous 브랜드와 같은 값을 가진 트리의 인덱스 구하기
+                  findBrandIndex = trees.findIndex(obj => obj.item === brandTmp);
+                  gubun1Tmp = '';
+                //현재 행의 브랜드가 previous 브랜드와 같지 않을 경우
+               }else{
+                  //sum, 2023-01-01, 2023-02-01 등 키의 값을 더해준다.
+                  onlyNameCol.forEach(col => trees[findBrandIndex][col] += row[col]);
+                  makeObj = {};
+               }
+             -------------------중략------------------------ 
+  `
+
   return (
     <>
       <section id="article-header6">
@@ -82,235 +153,21 @@ export default function Company1(){
           <div className='article2_contents contents_style'>
             <h4 id="Query 구조"><b>Query 구조</b></h4>
             <img className='article2_contents_img1' style={{width: '56%'}} src={process.env.PUBLIC_URL+"/images/query_coll.png"}/>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="postgresql">postgresql</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#2B91AF'}}>with tabs as{'('}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"(select"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"date_trunc('month',date)as gagongdate,"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"..."}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"sum(coalesce(p_ea,0)) as p_ea"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"from sales"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"where data::date between {start_date}::date and {end_date}::date"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"group by 1,2,3,4)"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   {"union all"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"(select"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"date_trunc('month',closed_at)as gagongdate,"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"..."}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"sum(coalesce(sod.shipping_qty,0)) as p_ea"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"from sales_orders so"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"join sales_order_details sod"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"on so.id = sod.sales_order_id and so.rm_tf is no true"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"where closed_at::date between {start_date}::date and {end_date}::date"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"group by 1,2,3,4)"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"(select"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"date_trunc('month',o.closed_at)as gagongdate,"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"..."}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"sum(p_ea) - sum(case when claim_return_status_code == '04' then claim_return_qty else 0 end) as p_ea,"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"from sabang_orders o"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"where closed_at::date between {start_date}::date and {end_date}::date"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"group by 1,2,3,4)"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>   {"union all"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"..."}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}> {")select"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>     {"..."}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}> {"from tabs t"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}> {"..."}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language='POSTGRESQL' contents={queryTexts} />
             <ol style={{listStyleType: 'decimal'}} data-ke-list-type="decimal">
               <li>각 매출집계 테이블의 필요한 컬럼 조회</li>
               <li>매출집계 테이블 <span style={{color: '#4F6DFF'}}>union all </span>로 합치기</li>
               <li>with as 로 묶은 쿼리 조회</li>
             </ol>
             <h4 id="Tui Grid Tree 구조 설명"><b>Tui Grid Tree 구조 설명</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>{"name: 'main category',"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"_children: ["}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>     {"{"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"name: 'sub category'"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>     {"},"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>      {"..."}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {"]"}</span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language='JavaScript' contents={texts} />
             <ol style={{listStyleType: 'decimal'}} data-ke-list-type="decimal">
               <li>name {'==>'} tree 구조 객체를 만들기 위한 key, 커스텀 가능</li>
               <li>_children {'==>'} name 의 하위로 노출될 서브 카테고리 객체</li>
               <li>하위로 만들고 싶지 않다면, 대카테고리의 같은 선상에 객체를 만들면 된다.</li>
             </ol>
             <h4 id="트리구조 커스텀"><b>트리구조 커스텀</b></h4>
-            <div className='code_box'>
-              <div className="codeBlock_stylish"><span data-ke-language="JavaScript">JavaScript</span></div>
-              <pre className="shiki one-dark-pro shiki-copy-wrapper" style={{backgroundColor: '#282c34'}}>
-                <code>
-                  <span className="line">
-                    <span style={{color: '#4F6DFF'}}>function </span>
-                    <span style={{color: '#2B91AF'}}>makeTreeData</span>
-                    <span style={{color: '#ABB2BF'}}>(datas, onlyNameCol){'{'}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   trees = [];</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   let brandTmp;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   let findBrandIndex = 0;</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   ...</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>   {'datas.forEach((row, index) => {'}</span>
-                    <span style={{color: '#008000'}}>  //컨트롤러 데이터 row 별로 순회</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>       {"Object.keys(row).forEach(col => {"}</span>
-                    <span style={{color: '#008000'}}>  //brand, gubun1, gubun2, gubun3 ... 키값으로 순회</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>           {"if(col == 'brand'){"}</span>
-                    <span style={{color: '#008000'}}> //컬럼이 brand 일 때</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB0080002BF'}}>             {"//현재 행의 브랜드가 이전 브랜드와 같지 않을 경우에 객체 배열 만들어줌."}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>             {"if(row[col] !== brandTmp){"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>                 //{"[{item:'AGL',depth:1,_children:[]}, {item:'AND',depth:1,_children:[]}]"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>                 //{" => item 에 brand, 트리구조로 만들 _children 배열 구조로 생성"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>                 {"brandTmp = row[col];"}</span>
-                    <span style={{color: '#008000'}}> //이전 brand 저장</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>                 //col 을 제외한 sum, 2023-01-01, 2023-02-01 등의 키를 가진 객체 생성</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>                 {"onlyNameCol.forEach(col => makeObj[col] = row[col]);"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>                 {"trees.push({item:row[col],depth:1, ...makeObj, ...(hasCategory && {_children:[]})});"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>                 //previous 브랜드와 같은 값을 가진 트리의 인덱스 구하기</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>                 {"findBrandIndex = trees.findIndex(obj => obj.item === brandTmp);"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>                 {"gubun1Tmp = '';"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>              {"}else{"}</span>
-                    <span style={{color: '#008000'}}>  //현재 행의 브랜드가 previous 브랜드와 같지을 경우</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#008000'}}>                  //sum, 2023-01-01, 2023-02-01 등 키의 값을 더해준다.</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>                 {"onlyNameCol.forEach(col => trees[findBrandIndex][col] += row[col]);"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>                 {"makeObj = {};"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>              {"}"}</span>
-                  </span>
-                  <span className="line">
-                    <span style={{color: '#ABB2BF'}}>            -------------------중략------------------------ </span>
-                  </span>
-                </code>
-              </pre>
-            </div>
+            <CodeBlock language='JavaScript' contents={treeTexts} />
           </div>
         </div>
       </div>
